@@ -167,8 +167,8 @@ L’application doit être développée **progressivement**, selon une approche 
 
 ---
 
-> 🧭 **Conseil méthodologique :**
-> - Utilisez l'outil projet de votre repo github et avancez par issues. Les issues doivent être très atomiques, ne concerner que des ensembles très réduits de fonctionnalité. N’hésitez pas à créer de nouveaux labels dans l'outil de gestion de projets et à grouper des issues par fonctionnalités grâce aux [milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones)
-> - Commencez à résoudre vos issues par la rédaction de tests, ne codez rien qui ne soit pas une solution apportée à un test qui échoue. Lors de l’examen, une de mes premières vérification sera de lancer votre batterie de tests
-> - Ne progressez dans le repo que par branches mergées via des pull requests. Cela vous donne une occasion que vous devez absolument exploiter, de commenter l'évolution du projet. Passez du temps à commenter vos étapes dans ces merge de pull requests. Ça a autant de valeur que le code.  
+**Conseil méthodologique :**
+- Utilisez l'outil projet de votre repo github et avancez par issues. Les issues doivent être très atomiques, ne concerner que des ensembles très réduits de fonctionnalité. N’hésitez pas à créer de nouveaux labels dans l'outil de gestion de projets et à grouper des issues par fonctionnalités grâce aux [milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones)
+- Commencez à résoudre vos issues par la rédaction de tests, ne codez rien qui ne soit pas une solution apportée à un test qui échoue. Lors de l’examen, une de mes premières vérification sera de lancer votre batterie de tests
+- Ne progressez dans le repo que par branches mergées via des pull requests. Cela vous donne une occasion que vous devez absolument exploiter, de commenter l'évolution du projet. Passez du temps à commenter vos étapes dans ces merge de pull requests. Ça a autant de valeur que le code.  
 
