@@ -1,0 +1,9 @@
+@layer base{
+    :root{
+        --text-2xl: 56px;
+        --text-xl: 24px;
+        --text-lg: 20px;
+        --text-sm: 16px;
+        --text-xs: 14px;
+    }
+}
