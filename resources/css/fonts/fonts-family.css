@@ -1,0 +1,13 @@
+@font-face{
+    font-family: "Nunito";
+    font-weight: 200 900;
+    font-display: swap;
+    src: url("../../fonts/Nunito-VariableFont_wght.ttf");
+}
+
+@font-face{
+    font-family: "Baloo";
+    font-weight: 400 800;
+    font-display: swap;
+    src: url("../../fonts/Baloo2-VariableFont_wght.ttf");
+}
