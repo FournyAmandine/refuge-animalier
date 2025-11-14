@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import "colors/colors.css";
 @import "fonts/fonts-sizes.css";
+@import "fonts/fonts-family.css";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
