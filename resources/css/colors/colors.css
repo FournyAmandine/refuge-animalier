@@ -1,0 +1,14 @@
+@layer base{
+    :root{
+        --color-orange-50: #F5D0B3;
+        --color-orange-100: #F9C096;
+        --color-orange-200: #F3AB75;
+        --color-orange-300: #F8862D;
+        --color-orange-400: #BF560C;
+        --color-orange-500: #843C06;
+        --color-orange-600: #6D3005;
+        --color-orange-700: #562504;
+        --color-orange-800: #401B03;
+        --color-orange-900: #2B1202;
+    }
+}
