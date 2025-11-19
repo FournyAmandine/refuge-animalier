@@ -5,13 +5,7 @@
 
 .link-adopt{
     color: var(--color-orange-50);
-    padding: 6px 117px;
+    padding: 0.375rem 7.3125rem;
     background-color: var(--color-orange-600);
-    border-radius: 10px;
-}
-
-a:hover {
-    pointer-events: auto;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
+    border-radius: 0.625rem;
 }

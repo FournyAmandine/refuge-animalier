@@ -7,4 +7,5 @@
         <path class="nav__path" d="M6.25 21.8047H23.75" stroke-width="2"></path>
     </svg>
 </label>
+
 <x-navigation.links/>
