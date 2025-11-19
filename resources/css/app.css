@@ -4,6 +4,7 @@
 @import "./fonts/fonts-family.css";
 @import "./public/burger-menu.css";
 @import "./public/icones.css";
+@import "./public/navigation.css";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';

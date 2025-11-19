@@ -7,10 +7,4 @@
         <path class="nav__path" d="M6.25 21.8047H23.75" stroke-width="2"></path>
     </svg>
 </label>
-<ul class="nav__container">
-    <li><a href="#">Nos compagnons</a></li>
-    <li><a href="#"></a>Le refuge</li>
-    <li><a href="#"></a>Devenir bénévole</li>
-    <li><a href="#">Nous contacter</a></li>
-    <li><a href="#">Adopter</a></li>
-</ul>
+<x-navigation.links/>

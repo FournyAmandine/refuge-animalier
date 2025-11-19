@@ -1,4 +1,4 @@
-<header class="m-[0.9375rem] pb-[0.625rem] border-b-2 border-orange-700">
+<header class="p-[0.9375rem] pb-[0.625rem] border-b-2 border-orange-600 bg-white">
     <a class="go_back" href="javascript:history.go(-1)" title="Retourner sur la page précédente"><span>Retour</span></a>
     <div class="flex items-end justify-between">
 

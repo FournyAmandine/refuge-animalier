@@ -9,7 +9,7 @@
     <title>{!! $title_page !!}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
+<body class="bg-orange-50">
     <x-structure.header/>
 
     <x-structure.footer/>

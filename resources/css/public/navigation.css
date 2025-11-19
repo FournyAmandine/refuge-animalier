@@ -1,0 +1,17 @@
+.burger_link {
+    margin-bottom: 2.5em;
+    background: url("../../images/icones/arrow_right.svg") right no-repeat;
+}
+
+.link-adopt{
+    color: var(--color-orange-50);
+    padding: 6px 117px;
+    background-color: var(--color-orange-600);
+    border-radius: 10px;
+}
+
+a:hover {
+    pointer-events: auto;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}

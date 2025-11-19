@@ -1,5 +1,21 @@
 .nav__container{
-    display: none;
+    left: -100%;
+    transform: translate(0);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    top: 111px;
+    right: auto;
+    text-align: left;
+    background-color: white;
+    padding: 50px 40px;
+    color: var(--color-orange-600);
+    font-weight: 600;
+    font-size: 1.25rem;
 }
 
 .nav__check {
@@ -7,30 +23,7 @@
 }
 
 #menu-toggle:checked ~ .nav__container {
-    display: flex;
-    z-index: 1;
-    position: absolute;
-    width: 50%;
-    top: 0;
-    left: auto !important;
-    right: 0 !important;
-    height: 100vh;
-    text-align: right;
-    border-top: none;
-}
-
-li {
-    margin-bottom: 3em;
-}
-
-li:first-of-type {
-    margin-top: 4.375em;
-}
-
-a:hover {
-    pointer-events: auto;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
+    left: 0;
 }
 
 .nav__toggle {
