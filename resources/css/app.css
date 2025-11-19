@@ -1,7 +1,9 @@
 @import 'tailwindcss';
-@import "colors/colors.css";
-@import "fonts/fonts-sizes.css";
-@import "fonts/fonts-family.css";
+@import "./colors/colors.css";
+@import "./fonts/fonts-sizes.css";
+@import "./fonts/fonts-family.css";
+@import "./public/burger-menu.css";
+@import "./public/icones.css";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';

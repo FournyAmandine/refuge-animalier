@@ -1,0 +1,16 @@
+span{
+    visibility: hidden;
+}
+
+.go_back{
+    background: url("../../images/icones/back.svg") center no-repeat;
+    width: 1.5rem;
+    display: inline-block;
+}
+
+.header_animaux{
+    background: url("../../images/icones/pattes-small.svg") center no-repeat;
+    width: 1.625rem;
+    height: 1.5rem;
+}
+
