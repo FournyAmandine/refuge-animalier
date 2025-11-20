@@ -10,8 +10,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-orange-50">
-    <x-structure.header/>
-
-    <x-structure.footer/>
+    <x-public.structure.header/>
+    {!! $slot !!}
+    <x-public.structure.footer/>
 </body>
 </html>
