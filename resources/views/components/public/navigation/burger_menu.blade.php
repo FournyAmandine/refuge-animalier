@@ -8,4 +8,5 @@
     </svg>
 </label>
 
-<x-navigation.links/>
+
+<x-public.navigation.links nav_class="nav__container" li_class="burger_link"/>

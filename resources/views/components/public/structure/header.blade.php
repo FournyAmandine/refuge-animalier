@@ -4,11 +4,10 @@
     <nav class="flex items-end justify-between">
         <h2 class="sro">Navigation principale</h2>
 
-        <x-navigation.burger_menu>
+        <x-public.navigation.burger_menu/>
 
-        </x-navigation.burger_menu>
 
-        <a href="{!! route('public.homepage') !!}" title="Revenir à la page d'accueil"><img width="174" height="59" src="assets/img/logo-tel.svg" alt="Logo Les Pattes Heureuses avec une patte de chat dans une maison"></a>
+        <a href="{!! route('public.homepage') !!}" title="Revenir à la page d'accueil"><img width="174" height="59" src="{!! asset('assets/img/logo-tel.svg') !!}" alt="Logo Les Pattes Heureuses avec une patte de chat dans une maison"></a>
 
         <a class="header_animaux" href="{!! route('public.homepage') !!}" title="Voir les animaux"><span>Voir les animaux</span></a>
     </nav>
