@@ -1,0 +1,43 @@
+span:not(.ariane){
+    visibility: hidden;
+}
+
+.go_back{
+    background: url("../../images/icones/back.svg") center no-repeat;
+    width: 1.5rem;
+    display: inline-block;
+}
+
+.header_animaux{
+    background: url("../../images/icones/pattes-small.svg") center no-repeat;
+    width: 1.625rem;
+    height: 1.5rem;
+}
+
+.details_mail, .details_maps, .details_tel{
+    padding: 0.5rem 1.875rem;
+}
+
+.details_maps{
+    background: url("../../images/icones/pin_light.svg") left no-repeat;
+}
+
+.details_mail{
+    background: url("../../images/icones/message.svg") left no-repeat;
+}
+
+.details_tel{
+    background: url("../../images/icones/telephone.svg") left no-repeat;
+    margin-left: 0.4375rem;
+    padding-left: 1.4375rem;
+}
+
+#discover_companion{
+    background: url("../../images/icones/button_arrow.svg") left no-repeat;
+    padding: 0.5rem .875rem;
+}
+
+.item_list{
+    background: url("../../images/icones/pattes-small.svg") left no-repeat;
+    padding: 0.5rem 2rem;
+}
