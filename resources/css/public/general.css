@@ -13,8 +13,12 @@
   outline: 1px solid red;
 }*/
 
+main{
+    padding-top: 1.25rem;
+    padding-bottom: 6.25rem;
+}
+
 section:not(.slider){
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-
 }
