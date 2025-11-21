@@ -1,4 +1,4 @@
-span{
+span:not(.ariane){
     visibility: hidden;
 }
 
@@ -35,4 +35,9 @@ span{
 #discover_companion{
     background: url("../../images/icones/button_arrow.svg") left no-repeat;
     padding: 0.5rem .875rem;
+}
+
+.item_list{
+    background: url("../../images/icones/pattes-small.svg") left no-repeat;
+    padding: 0.5rem 2rem;
 }

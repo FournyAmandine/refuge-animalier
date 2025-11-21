@@ -13,8 +13,18 @@
   outline: 1px solid red;
 }*/
 
+main{
+    padding-top: 1.25rem;
+    padding-bottom: 6.25rem;
+    color: rgba(0, 0, 0, 0.8);
+}
+
 section:not(.slider){
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+}
 
+h3, h2{
+    font-family: Baloo, sans-serif;
+    font-weight: 800;
 }
