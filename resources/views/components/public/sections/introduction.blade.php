@@ -1,5 +1,5 @@
-<section {{ $attributes->class(['flex flex-col pt-[3.75rem] pb-20']) }}>
-    <div class="z-1">
+<section {{ $attributes->class(['flex flex-col pt-[3.75rem] pb-20 z-1']) }}>
+    <div>
         <figure>
             <img class="" src="{!! asset('assets/img/logo-medium.svg') !!}"
                  alt="Logo Les Pattes Heureuses avec une patte de chat dans une maison" width="207" height="72">
