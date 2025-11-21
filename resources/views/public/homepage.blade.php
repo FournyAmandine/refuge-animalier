@@ -21,22 +21,39 @@
         Les Pattes Heureuses
     </x-slot:title_page>
     <main>
-        <section class="flex flex-col pt-[3.75rem] pb-20">
-            <div class="z-1">
-                <img class="" src="{!! asset('assets/img/logo-medium.svg') !!}"
-                     alt="Logo Les Pattes Heureuses avec une patte de chat dans une maison" width="207" height="72">
-                <h2 class="mt-14 mb-32 font-semibold text-xl max-w-44">Offrez-leur une seconde chance, ils vous rendront
-                    un amour infini !</h2>
-            </div>
-            <img class="absolute right-0 mr-5 mt-4" src="{!! asset('assets/img/golden-principal.png') !!}" width="290"
-                 height="326" alt="Illustration d'un chien, golden retriever assis">
-            <div>
-                <x-public.button padding_x="px-5.5" href="#" label="Voir nos compagnons"
-                                 title="Aller vers la page des animaux"/>
-                <x-public.button padding_x="px-10" href="#" label="Adopter" title="Aller vers la page d'adoption'"/>
-            </div>
-        </section>
+        <x-public.sections.introduction/>
         <x-public.sections.slider :cards="$cards"/>
-
+        <x-public.sections.text-media
+            section_title="Notre refuge"
+            content="Le refuge Les Pattes Heureuses œuvre chaque jour pour le bien-être animal. Grâce à une équipe de bénévoles dévoués, nous assurons l’accueil, les soins, la réhabilitation et l’adoption responsable de nombreux animaux. Depuis sa création, le refuge Les Pattes Heureuses s’engage à offrir protection, soins et amour aux animaux abandonnés. Ici, chaque patte compte, chaque histoire mérite une fin heureuse."
+            flex="flex-row-reverse"
+            px="px-8"
+            href="#"
+            title="Allez vers la page de notre refuge"
+            label="En apprendre plus"
+            :src="asset('assets/img/chien_1.png')"
+            alt="illustration d'un chien corgi assis brun et blanc"
+            width_img="137"
+            heigth_img="207"
+            position_x="left-7"
+            position_top="top-[-3rem]"
+            :src_patte="asset('assets/img/patte-left_medium.svg')"
+        />
+        <x-public.sections.text-media
+            section_title="Être bénévole"
+            content="Être bénévole au refuge Les Pattes Heureuses, c’est participer à une mission pleine de sens : offrir des soins, des promenades, des jeux et surtout de l’affection à nos pensionnaires. Que vous ayez une heure ou une journée, votre présence compte. Ensemble, faisons rimer entraide et bonheur animal."
+            flex="flex-row"
+            px="px-3"
+            href="#"
+            title="Allez vers la page de bénévolat"
+            label="Devenir bénévole"
+            :src="asset('assets/img/chien_2.png')"
+            alt="illustration d'un chien labrador assis brun, noir et blanc"
+            width_img="180"
+            heigth_img="180"
+            position_x="right-0"
+            position_top="top-[-5rem]"
+            :src_patte="asset('assets/img/patte-right_medium.svg')"
+        />
     </main>
 </x-public.app>
