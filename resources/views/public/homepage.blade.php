@@ -24,10 +24,12 @@
         <x-public.sections.introduction/>
         <x-public.sections.slider :cards="$cards"/>
         <x-public.sections.text-media
+            :has_main_title="false"
             section_title="Notre refuge"
             content="Le refuge Les Pattes Heureuses œuvre chaque jour pour le bien-être animal. Grâce à une équipe de bénévoles dévoués, nous assurons l’accueil, les soins, la réhabilitation et l’adoption responsable de nombreux animaux. Depuis sa création, le refuge Les Pattes Heureuses s’engage à offrir protection, soins et amour aux animaux abandonnés. Ici, chaque patte compte, chaque histoire mérite une fin heureuse."
-            flex="flex-row-reverse"
-            px="px-8"
+            class="flex-row-reverse"
+            class_button="px-8"
+            :button="true"
             href="{!! route('public.aboutpage') !!}"
             title="Allez vers la page de notre refuge"
             label="En apprendre plus"
@@ -35,24 +37,23 @@
             alt="illustration d'un chien corgi assis brun et blanc"
             width_img="137"
             heigth_img="207"
-            position_x="left-7"
-            position_top="top-[-3rem]"
+            class_img="absolute left-7 top-[-3rem]"
             :src_patte="asset('assets/img/patte-left_medium.svg')"
         />
         <x-public.sections.text-media
+            :has_main_title="false"
             section_title="Être bénévole"
             content="Être bénévole au refuge Les Pattes Heureuses, c’est participer à une mission pleine de sens : offrir des soins, des promenades, des jeux et surtout de l’affection à nos pensionnaires. Que vous ayez une heure ou une journée, votre présence compte. Ensemble, faisons rimer entraide et bonheur animal."
-            flex="flex-row"
-            px="px-3"
+            class_button="px-3"
             href="#"
             title="Allez vers la page de bénévolat"
             label="Devenir bénévole"
+            :button="true"
             :src="asset('assets/img/chien_2.png')"
             alt="illustration d'un chien labrador assis brun, noir et blanc"
             width_img="180"
             heigth_img="180"
-            position_x="right-0"
-            position_top="top-[-5rem]"
+            class_img="absolute right-0 top-[-5rem]"
             :src_patte="asset('assets/img/patte-right_medium.svg')"
         />
     </main>
