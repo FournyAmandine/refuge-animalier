@@ -1,0 +1,58 @@
+.nav__container{
+    left: -100%;
+    transform: translate(0);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    top: 111px;
+    right: auto;
+    text-align: left;
+    background-color: white;
+    padding: 3.125rem 2.5rem;
+    color: var(--color-orange-600);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.nav__check {
+    display: none;
+}
+
+#menu-toggle:checked ~ .nav__container {
+    left: 0;
+}
+
+.nav__toggle {
+    display: flex;
+    background: none;
+    border: none;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.nav__path {
+    stroke: var(--color-orange-700);
+    stroke-linecap: round;
+    transform-origin: center;
+    transition: all 0.3s;
+}
+
+.nav__check:checked + .nav__toggle {
+    svg {
+        path:first-of-type {
+            transform: rotate(45deg) translateY(6px);
+        }
+
+        path:nth-of-type(2) {
+            opacity: 0;
+        }
+
+        path:last-of-type {
+            transform: rotate(-45deg) translateY(-7px);
+        }
+    }
+}
