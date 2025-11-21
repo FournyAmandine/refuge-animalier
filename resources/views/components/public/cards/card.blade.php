@@ -9,7 +9,7 @@
 @endphp
 
 
-<article class="bg-orange-100 border-2 border-orange-600 max-w-77.5 rounded-xl relative">
+<article class="bg-orange-100 border-2 border-orange-600 max-w-77.5 rounded-xl relative shadow-[var(--shadow-xl)]">
     <div class="relative">
         <x-public.cards.card_img :src="$src" :alt="$alt" :name="$name" />
     </div>
