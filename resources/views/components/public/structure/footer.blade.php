@@ -26,7 +26,7 @@
         <ul class="flex flex-wrap max-w-9/12 gap-x-[2.5rem] gap-y-[0.9375rem]">
             <li class="w-33">Lundi&nbsp;:&nbsp;10h-15h</li>
             <li>Mardi&nbsp;:&nbsp;9h-17h</li>
-            <li class="w-33">Mercredi &nbsp;:&nbsp;9h-17h</li>
+            <li class="w-34">Mercredi &nbsp;:&nbsp;9h-17h</li>
             <li>Jeudi&nbsp;:&nbsp;9h-17h</li>
             <li class="w-33">Vendredi&nbsp;:&nbsp;9h-20h</li>
             <li>Samedi&nbsp;:&nbsp;9h-18h</li>
