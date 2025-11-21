@@ -18,7 +18,7 @@
 
 <x-public.app>
     <x-slot:title_page>
-        Les Pattes Heureuses
+        Accueil
     </x-slot:title_page>
     <main>
         <x-public.sections.introduction/>
@@ -28,7 +28,7 @@
             content="Le refuge Les Pattes Heureuses œuvre chaque jour pour le bien-être animal. Grâce à une équipe de bénévoles dévoués, nous assurons l’accueil, les soins, la réhabilitation et l’adoption responsable de nombreux animaux. Depuis sa création, le refuge Les Pattes Heureuses s’engage à offrir protection, soins et amour aux animaux abandonnés. Ici, chaque patte compte, chaque histoire mérite une fin heureuse."
             flex="flex-row-reverse"
             px="px-8"
-            href="#"
+            href="{!! route('public.aboutpage') !!}"
             title="Allez vers la page de notre refuge"
             label="En apprendre plus"
             :src="asset('assets/img/chien_1.png')"
