@@ -9,7 +9,9 @@
 
 <footer class="bg-white flex flex-col border-b-2 border-orange-600">
     <h2 class="sro">Footer des Pattes Heureuses</h2>
-    <img class="m-auto" src="{!! asset('assets/img/logo-medium.svg') !!}" alt="Logo Les Pattes Heureuses avec une patte de chat dans une maison" width="305" height="115">
+    <figure>
+        <img class="m-auto" src="{!! asset('assets/img/logo-medium.svg') !!}" alt="Logo Les Pattes Heureuses avec une patte de chat dans une maison" width="305" height="115">
+    </figure>
     <div class="mt-[4.375rem] flex flex-col items-center gap-[0.625rem]">
         <h3 class="text-orange-600 font-semibold text-xl text-center mb-[0.9375rem]">Coordonnées</h3>
         <ul>
@@ -22,13 +24,13 @@
     <div class="my-[4.375rem] flex flex-col items-center">
         <h3 class="text-orange-600 font-semibold text-xl mb-[0.9375rem]">Heures d'ouverture</h3>
         <ul class="flex flex-wrap max-w-9/12 gap-x-[2.5rem] gap-y-[0.9375rem]">
-            <li class="w-33">Lundi : 10h-15h</li>
-            <li>Mardi : 9h-17h</li>
-            <li class="w-33">Mercredi  : 9h-17h</li>
-            <li>Jeudi  : 9h-17h</li>
-            <li class="w-33">Vendredi  : 9h-20h</li>
-            <li>Samedi : 9h-18h</li>
-            <li class="w-40">Dimanche  : 11h-17h</li>
+            <li class="w-33">Lundi&nbsp;:&nbsp;10h-15h</li>
+            <li>Mardi&nbsp;:&nbsp;9h-17h</li>
+            <li class="w-33">Mercredi &nbsp;:&nbsp;9h-17h</li>
+            <li>Jeudi&nbsp;:&nbsp;9h-17h</li>
+            <li class="w-33">Vendredi&nbsp;:&nbsp;9h-20h</li>
+            <li>Samedi&nbsp;:&nbsp;9h-18h</li>
+            <li class="w-40">Dimanche&nbsp;:&nbsp;11h-17h</li>
         </ul>
     </div>
     <div class="mb-[1.875rem] px-[3.4375rem]">
