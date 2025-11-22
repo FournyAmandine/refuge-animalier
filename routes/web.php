@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnimalController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function (){
@@ -10,6 +11,4 @@ Route::get('/about', function (){
     return view('public.aboutpage');
 })->name('public.aboutpage');
 
-Route::get('/animals', function (){
-    return view('public.animals.index');
-})->name('public.animals.index');
+Route::get('/animals', [AnimalController::class, 'index'])->name('public.animals.index');
