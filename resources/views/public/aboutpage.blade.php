@@ -76,7 +76,7 @@
             class_button="px-4.5"
             class="flex-row-reverse"
             :button="true"
-            href="#"
+            href="{!! route('public.animals.index') !!}"
             title="Allez vers la page animaux"
             label="Voir nos compagnons"
             :src="asset('assets/img/chat_4.png')"

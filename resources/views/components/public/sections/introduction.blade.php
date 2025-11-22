@@ -13,7 +13,7 @@
     </figure>
 
     <div>
-        <x-public.button padding_x="px-5.5" href="#" label="Voir nos compagnons"
+        <x-public.button padding_x="px-5.5" href="{!! route('public.animals.index') !!}" label="Voir nos compagnons"
                          title="Aller vers la page des animaux"/>
         <x-public.button padding_x="px-10" href="#" label="Adopter" title="Aller vers la page d'adoption'"/>
     </div>

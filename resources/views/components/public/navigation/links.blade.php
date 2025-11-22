@@ -1,7 +1,7 @@
 @props(['nav_class', 'li_class'])
 @php
     $links = [
-        ['li_class' => $li_class, 'href'=>'#', 'label'=>'Nos compagnons', 'title'=>'Aller vers la page des compagnons'],
+        ['li_class' => $li_class, 'href'=>route('public.animals.index'), 'label'=>'Nos compagnons', 'title'=>'Aller vers la page des compagnons'],
         ['li_class' => $li_class, 'href'=>route('public.aboutpage'), 'label'=>'Le refuge', 'title'=>'Aller vers la page du refuge'],
         ['li_class' => $li_class, 'href'=>'#', 'label'=>'Devenir bénévole', 'title'=>'Aller vers la page de bénévole'],
         ['li_class' => $li_class, 'href'=>'#', 'label'=>'Nous contacter', 'title'=>'Aller vers la page de contact'],
