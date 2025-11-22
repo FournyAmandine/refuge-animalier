@@ -14,6 +14,8 @@ return new class extends Migration {
             $table->date('birth_date');
             $table->string('age');
             $table->string('race');
+            $table->string('state');
+            $table->string('img_path');
             $table->timestamps();
         });
     }
