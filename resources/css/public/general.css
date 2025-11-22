@@ -24,7 +24,7 @@ section:not(.slider){
     padding-right: 1.25rem;
 }
 
-h3, h2{
+h3, h2:not(.intro){
     font-family: Baloo, sans-serif;
     font-weight: 800;
 }

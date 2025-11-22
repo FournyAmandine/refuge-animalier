@@ -8,7 +8,7 @@
     <h3 class=" text-orange-50 font-bold text-2xl underline decoration-orange-400 decoration-2">
         {!! $name !!}
     </h3>
-    <figure>
+    <figure class="flex">
         <img src="{!! asset('assets/img/icones/pattes-small.svg') !!}" alt="Icone de patte d'un chat" width="21" height="18">
     </figure>
 </div>
