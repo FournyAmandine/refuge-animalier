@@ -7,7 +7,7 @@
     ];
 @endphp
 
-<footer class="bg-white flex flex-col border-b-2 border-orange-600">
+<footer class="bg-white flex flex-col border-t-2 border-orange-600">
     <h2 class="sro">Footer des Pattes Heureuses</h2>
     <figure>
         <img class="m-auto" src="{!! asset('assets/img/logo-medium.svg') !!}" alt="Logo Les Pattes Heureuses avec une patte de chat dans une maison" width="305" height="115">
