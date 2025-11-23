@@ -13,10 +13,13 @@
   outline: 1px solid red;
 }*/
 
-main{
-    padding-top: 1.25rem;
+main:not(.contact_form){
     padding-bottom: 6.25rem;
+}
+
+main{
     color: rgba(0, 0, 0, 0.8);
+    padding-top: 1.25rem;
 }
 
 section:not(.slider){
