@@ -11,4 +11,8 @@ Route::get('/about', function (){
     return view('public.aboutpage');
 })->name('public.aboutpage');
 
+Route::get('/contact', function (){
+    return view('public.contactpage');
+})->name('public.contactpage');
+
 Route::get('/animals', [AnimalController::class, 'index'])->name('public.animals.index');
