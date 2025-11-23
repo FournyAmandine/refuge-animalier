@@ -2,7 +2,7 @@
     <x-slot:title_page>
         Devenir bénévole
     </x-slot:title_page>
-    <main class="contact_form pb-11">
+    <main class="contact_form pb-11 relative">
         <x-public.sections.intro title="Devenez bénévole&nbsp;!" ariane="Refuge/Bénévole"/>
         <x-public.sections.form>
             <x-public.form.fields.input field_name="last_name" required="required" placeholder="Doe" label="Entrez votre nom"/>
@@ -15,7 +15,7 @@
                 Devenir bénévole
             </x-slot:button_label>
         </x-public.sections.form>
-        <img class="absolute bottom-[-6rem] px-5" src="{!! asset('assets/img/lapin_benevole.png') !!}" alt="Illustration d'un golden retriever" width="180" height="206">
+        <img class="absolute bottom-[-0.7rem] px-5" src="{!! asset('assets/img/lapin_benevole.png') !!}" alt="Illustration d'un golden retriever" width="180" height="206">
     </main>
 </x-public.app>
 
