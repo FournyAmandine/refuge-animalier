@@ -14,9 +14,7 @@
         Notre refuge
     </x-slot:title_page>
     <main>
-        <span class="ariane pl-5 text-sm text-orange-600 font-semibold italic pb-5">Refuge</span>
-
-        <h2 class="pl-5 [font-size:var(--text-3xl)] text-orange-600 underline decoration-orange-400 decoration-3 py-5">Découvrez notre refuge</h2>
+        <x-public.sections.intro title="Découvrez notre refuge" ariane="Refuge"/>
 
         <x-public.sections.text-media-list
             :has_main_title="true"
