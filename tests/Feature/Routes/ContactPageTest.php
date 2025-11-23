@@ -1,7 +1,7 @@
 <?php
 
 
-it('verifies if the public.contactpage dislays correctly the contactpage and the form', function () {
+it('verifies if the public.contactpage dislays correctly the contactpage view and the form', function () {
 
     $response = \Pest\Laravel\get(route('public.contactpage'));
 
