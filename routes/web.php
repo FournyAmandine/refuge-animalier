@@ -15,4 +15,8 @@ Route::get('/contact', function (){
     return view('public.contactpage');
 })->name('public.contactpage');
 
+Route::get('/benevoles', function (){
+    return view('public.volunteerpage');
+})->name('public.volunteerpage');
+
 Route::get('/animals', [AnimalController::class, 'index'])->name('public.animals.index');
