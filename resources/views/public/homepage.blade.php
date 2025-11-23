@@ -45,7 +45,7 @@
             section_title="Être bénévole"
             content="Être bénévole au refuge Les Pattes Heureuses, c’est participer à une mission pleine de sens : offrir des soins, des promenades, des jeux et surtout de l’affection à nos pensionnaires. Que vous ayez une heure ou une journée, votre présence compte. Ensemble, faisons rimer entraide et bonheur animal."
             class_button="px-3"
-            href="#"
+            href="{!! route('public.volunteerpage') !!}"
             title="Allez vers la page de bénévolat"
             label="Devenir bénévole"
             :button="true"

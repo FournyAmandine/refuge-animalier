@@ -41,7 +41,7 @@
             class_button="px-5"
             class="flex-row-reverse"
             :button="true"
-            href="#"
+            href="{!! route('public.volunteerpage') !!}"
             title="Allez vers la page bénévole"
             label="Devenir bénévole"
             :src="asset('assets/img/chat_2.png')"
