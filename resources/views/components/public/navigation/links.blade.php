@@ -5,7 +5,7 @@
         ['li_class' => $li_class, 'href'=>route('public.aboutpage'), 'label'=>'Le refuge', 'title'=>'Aller vers la page du refuge'],
         ['li_class' => $li_class, 'href'=>route('public.volunteerpage'), 'label'=>'Devenir bénévole', 'title'=>'Aller vers la page de bénévole'],
         ['li_class' => $li_class, 'href'=>route('public.contactpage'), 'label'=>'Nous contacter', 'title'=>'Aller vers la page de contact'],
-        ['li_class' => $li_class, 'href'=>'#', 'label'=>'Adopter', 'title'=>'Aller vers la page d’adoption'],
+        ['li_class' => $li_class, 'href'=>route('public.adoptionpage'), 'label'=>'Adopter', 'title'=>'Aller vers la page d’adoption'],
     ];
 @endphp
 

@@ -15,6 +15,6 @@
     <div>
         <x-public.button class_button="px-5.5" href="{!! route('public.animals.index') !!}" label="Voir nos compagnons"
                          title="Aller vers la page des animaux"/>
-        <x-public.button class_button="px-10" href="#" label="Adopter" title="Aller vers la page d'adoption"/>
+        <x-public.button class_button="px-10" href="{!! route('public.adoptionpage') !!}" label="Adopter" title="Aller vers la page d'adoption"/>
     </div>
 </section>
