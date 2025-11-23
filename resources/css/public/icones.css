@@ -41,3 +41,11 @@ span:not(.ariane){
     background: url("../../images/icones/pattes-small.svg") left no-repeat;
     padding: 0.5rem 2rem;
 }
+
+.search{
+    background-image: url("../../images/icones/search.svg");
+    background-position: right 1.5rem center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 1.5rem;
+}

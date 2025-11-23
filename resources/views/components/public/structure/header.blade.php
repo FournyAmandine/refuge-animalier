@@ -9,6 +9,6 @@
 
         <a href="{!! route('public.homepage') !!}" title="Revenir à la page d'accueil"><img width="174" height="59" src="{!! asset('assets/img/logo-tel.svg') !!}" alt="Logo Les Pattes Heureuses avec une patte de chat dans une maison"></a>
 
-        <a class="header_animaux" href="{!! route('public.homepage') !!}" title="Voir les animaux"><span>Voir les animaux</span></a>
+        <a class="header_animaux" href="{!! route('public.animals.index') !!}" title="Voir les animaux"><span>Voir les animaux</span></a>
     </nav>
 </header>

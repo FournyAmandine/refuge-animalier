@@ -1,4 +1,4 @@
-@props(['dd' => [], 'alt', 'src', 'name'])
+@props(['dd' => [], 'alt', 'src', 'name', 'title', 'href'])
 
 @php
     $definitions = [
@@ -15,6 +15,6 @@
     </div>
     <div class="pt-4 pb-3 px-5">
         <x-public.cards.card_definition :definitions="$definitions" :dd="$dd"/>
-        <x-public.cards.card_button label="Découvrir ce compagnon"/>
+        <x-public.cards.card_button label="Découvrir ce compagnon" :href="$href" :title="$title"/>
     </div>
 </article>
