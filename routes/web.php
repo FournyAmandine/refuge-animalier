@@ -24,3 +24,5 @@ Route::get('/adoption', function (){
 })->name('public.adoptionpage');
 
 Route::get('/animals', [AnimalController::class, 'index'])->name('public.animals.index');
+
+Route::get('/animals{animal}', [AnimalController::class, 'show'])->name('public.animals.show');
