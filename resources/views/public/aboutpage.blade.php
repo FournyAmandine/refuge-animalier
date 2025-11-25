@@ -21,7 +21,7 @@
             section_title="Notre histoire"
             content="Notre objectif est simple : protéger, soigner et replacer chaque animal dans un foyer adapté et aimant. Mais au-delà de l’adoption, nous croyons en une mission plus large&nbsp;:"
             class_button="px-3 absolute left-0 z-2"
-            href="#"
+            href="{!! route('public.adoptionpage') !!}"
             title="Allez vers la page d'adoption'"
             label="Devenir un foyer accueillant"
             :button="true"

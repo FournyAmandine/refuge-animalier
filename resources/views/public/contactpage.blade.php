@@ -2,7 +2,7 @@
     <x-slot:title_page>
         Contact
     </x-slot:title_page>
-    <main class="contact_form pb-11">
+    <main class="contact_form pb-11 relative">
         <x-public.sections.intro title="Contactez-nous&nbsp;!" ariane="Contact"/>
         <x-public.sections.form>
             <x-public.form.fields.input field_name="last_name" required="required" placeholder="Doe" label="Entrez votre nom"/>
@@ -16,7 +16,7 @@
                 Envoyer le message
             </x-slot:button_label>
         </x-public.sections.form>
-        <img class="absolute bottom-[-0.1rem] px-5" src="{!! asset('assets/img/chien_contact.png') !!}" alt="Illustration d'un golden retriever" width="180" height="206">
+        <img class="absolute bottom-[-1.63rem] px-5" src="{!! asset('assets/img/chien_contact.png') !!}" alt="Illustration d'un golden retriever" width="180" height="206">
     </main>
 </x-public.app>
 
