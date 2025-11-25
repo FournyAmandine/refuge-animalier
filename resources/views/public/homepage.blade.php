@@ -24,6 +24,7 @@
         <x-public.sections.introduction/>
         <x-public.sections.slider :cards="$cards"/>
         <x-public.sections.text-media
+            class_section="pb-20 pt-26"
             :has_main_title="false"
             section_title="Notre refuge"
             content="Le refuge Les Pattes Heureuses œuvre chaque jour pour le bien-être animal. Grâce à une équipe de bénévoles dévoués, nous assurons l’accueil, les soins, la réhabilitation et l’adoption responsable de nombreux animaux. Depuis sa création, le refuge Les Pattes Heureuses s’engage à offrir protection, soins et amour aux animaux abandonnés. Ici, chaque patte compte, chaque histoire mérite une fin heureuse."
