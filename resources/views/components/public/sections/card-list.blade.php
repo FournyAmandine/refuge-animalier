@@ -8,7 +8,7 @@
         <x-public.cards.card src="{!! $animal->img_path !!}"
                              alt="Photo de {!! $animal->name !!}"
                              title="{!! $animal->name !!}"
-                             href="#"
+                             href="{!! route('public.animals.show', $animal->id) !!}"
                              name="{!! $animal->name !!}" :dd="[$animal->sexe,$animal->age . 'ans',$animal->race]"/>
     @endforeach
 </section>
