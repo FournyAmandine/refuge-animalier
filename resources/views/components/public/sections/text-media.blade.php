@@ -14,10 +14,11 @@
         'position_top',
         'button'=>true,
         'class_img',
-        'has_main_title'=>false
+        'has_main_title'=>false,
+        'class_section'
         ])
 
-<section class="pb-20">
+<section class="{!! $class_section?? 'pb-20'!!}">
     @if($has_main_title)
         <h3 class="text-orange-600 text-xl pb-2.5 pt-5">{!! $section_title !!}</h3>
     @else
