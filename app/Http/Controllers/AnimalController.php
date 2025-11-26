@@ -15,6 +15,10 @@ class AnimalController extends Controller
 
     public function show(Animal $animal)
     {
-        return view('public.animals.show', compact('animal'));
+        $animals = Animal::where('state', AnimalStatus::Available)
+            ->where('id', '!=', $animal->id)
+            ->orderBy('animals.created_at')
+            ->paginate(4);
+        return view('public.animals.show', compact('animals', 'animal'));
     }
 }
