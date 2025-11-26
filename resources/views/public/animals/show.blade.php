@@ -1,21 +1,3 @@
-@php
-    \Carbon\Carbon::setLocale('fr');
-    $cards=[
-        ['src'=>asset('assets/img/charly.png'), 'alt'=>'Photo d’un chien border collie noir et blanc dans les plantes', 'name'=>'Charly', 'dd'=>[
-            'Mâle', '2 ans', 'Border collie'
-        ]],
-        ['src'=>asset('assets/img/moka.png'), 'alt'=>'Photo d’un chat roux couché à terre', 'name'=>'Moka', 'dd'=>[
-            'Mâle', '1 an', 'Caniche'
-        ]],
-        ['src'=>asset('assets/img/simba.png'), 'alt'=>'Photo d’un chien caniche brun qui court', 'name'=>'Simba', 'dd'=>[
-            'Mâle', '4 ans', 'Chat'
-        ]],
-        ['src'=>asset('assets/img/panpan.png'), 'alt'=>'Photo d’un petit lapin nain dans l’herbe', 'name'=>'Panpan', 'dd'=>[
-            'Femelle', '10 mois', 'Lapin nain'
-        ]],
-    ]
-@endphp
-
 <x-public.app>
     <x-slot:title_page>
         {!! $animal->name !!}
