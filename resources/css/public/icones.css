@@ -8,6 +8,9 @@ span:not(.ariane):not(.required):not(.return){
         width: 1.5rem;
         display: inline-block;
     }
+    .return{
+        visibility: hidden;
+    }
 }
 
 @media (min-width: 768px) {

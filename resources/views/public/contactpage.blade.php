@@ -2,7 +2,7 @@
     <x-slot:title_page>
         Contact
     </x-slot:title_page>
-    <main class="contact_form pb-11 relative md:w-4/5 m-auto">
+    <main class="contact_form pb-11 relative md:w-4/5 md:m-auto">
         <x-public.sections.intro title="Contactez-nous&nbsp;!" ariane="Contact"/>
         <x-public.sections.form>
             <div class="md:flex md:gap-5">
