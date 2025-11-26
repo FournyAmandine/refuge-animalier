@@ -12,6 +12,8 @@
     color: var(--color-orange-50);
     background-color: var(--color-orange-600);
     border-radius: 0.625rem;
+    width: 7rem;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -49,3 +51,8 @@
     column-gap: 1.875rem;
 }
 
+@media (min-width: 768px) {
+    .footer_nav{
+
+    }
+}
