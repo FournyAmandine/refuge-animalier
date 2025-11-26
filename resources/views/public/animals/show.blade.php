@@ -43,7 +43,15 @@
         <section>
             <h3 class="pt-20 text-xl text-orange-600 pb-3">Faites connaissance avec notre compagnon</h3>
             <form action="#" method="get">
-                <x-public.form.adoption-form/>
+                <x-public.form.adoption-form>
+                    <x-slot:options>
+                        <x-public.form.fields.option
+                            selected="selected"
+                            value="{!! $animal->name !!}"
+                            option_name="{!! $animal->name !!}"
+                        />
+                    </x-slot:options>
+                </x-public.form.adoption-form>
                 <div class="flex justify-end">
                     <x-public.form.buttons.button text="Envoyer la demande" />
                 </div>
@@ -51,7 +59,8 @@
         </section>
         <section class="show_cards pt-28 text-xl relative pb-21">
             <img class="absolute z-1 right-6 top-18" src="{!! asset("assets/img/chien_3.png") !!}" alt="Illustration d'un petit chien beige qui rit" width="108" height="127">
-            <x-public.sections.slider :cards="$cards"/>
+            <x-public.sections.card-list :animals="$animals"
+                                         class="grid grid-cols-[repeat(4,310px)] gap-5 overflow-x-scroll py-4 px-[1.25rem]"/>
             <img class="absolute z-1 left-6 bottom-[-0.5rem]" src="{!! asset("assets/img/lapin_2.png") !!}"
                  alt="Illustration d'un petit lapin roux" width="108" height="128">
         </section>
