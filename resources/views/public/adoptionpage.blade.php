@@ -10,7 +10,7 @@
                     @foreach($animals as $animal)
                         <x-public.form.fields.option
                             value="{!! $animal->name !!}"
-                            option_name="{!! $animal->name !!}"
+                            option_name="{!! $animal->name !!} - {!! $animal->race !!}"
                         />
                     @endforeach
                 </x-slot:options>

@@ -9,7 +9,7 @@ class AdoptionFormController extends Controller
 {
     public function index()
     {
-        $animals = Animal::where('state', AnimalStatus::Available);
+        $animals = Animal::where('state', AnimalStatus::Available)->get();
         return view('public.adoptionpage', compact('animals'));
     }
 }
