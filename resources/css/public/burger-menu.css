@@ -56,3 +56,10 @@
         }
     }
 }
+
+@media (min-width: 768px) {
+    .nav__container{
+        top: 66px;
+        width: 40%;
+    }
+}

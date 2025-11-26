@@ -8,11 +8,32 @@
 }
 
 
-.burger_link:nth-last-of-type(1), .footer_link:nth-last-of-type(1){
+.burger_link:nth-last-of-type(1), .footer_link:nth-last-of-type(1), .nav_links:nth-last-of-type(1){
     color: var(--color-orange-50);
     background-color: var(--color-orange-600);
     border-radius: 0.625rem;
 }
+
+@media (min-width: 768px) {
+    .nav_links{
+        display: none;
+    }
+    .nav_links:nth-last-of-type(1){
+        display: block;
+        padding: 0.375rem 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav_links{
+        color: var(--color-orange-600);
+        font-weight: 600;
+        display:block;
+    }
+}
+
+
+
 
 .footer_link:nth-last-of-type(1){
     padding: 0.3125rem 1.75rem;

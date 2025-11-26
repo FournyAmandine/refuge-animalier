@@ -2,11 +2,14 @@ span:not(.ariane):not(.required){
     visibility: hidden;
 }
 
-.go_back{
-    background: url("../../images/icones/back.svg") center no-repeat;
-    width: 1.5rem;
-    display: inline-block;
+@media (max-width: 767px) {
+    .go_back{
+        background: url("../../images/icones/back.svg") center no-repeat;
+        width: 1.5rem;
+        display: inline-block;
+    }
 }
+
 
 .header_animaux{
     background: url("../../images/icones/pattes-small.svg") center no-repeat;
