@@ -9,7 +9,7 @@
     <title>{!! $title_page !!} - Les Pattes Heureuses</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-orange-50">
+<body class="bg-orange-50 max-w-[125rem] m-auto">
     <x-public.structure.header/>
     {!! $slot !!}
     <x-public.structure.footer/>
