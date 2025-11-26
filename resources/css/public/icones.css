@@ -1,4 +1,4 @@
-span:not(.ariane):not(.required){
+span:not(.ariane):not(.required):not(.return){
     visibility: hidden;
 }
 
@@ -9,6 +9,19 @@ span:not(.ariane):not(.required){
         display: inline-block;
     }
 }
+
+@media (min-width: 768px) {
+    .go_back_ordi{
+        background: url("../../images/icones/back.svg") center no-repeat;
+        width: 1.5rem;
+        display: inline-block;
+        padding-left: 3.5rem;
+        color: var(--color-orange-600);
+        font-weight: 600;
+    }
+}
+
+
 
 
 .header_animaux{

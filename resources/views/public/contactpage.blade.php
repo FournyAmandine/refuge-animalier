@@ -2,11 +2,13 @@
     <x-slot:title_page>
         Contact
     </x-slot:title_page>
-    <main class="contact_form pb-11 relative">
+    <main class="contact_form pb-11 relative md:w-4/5 m-auto">
         <x-public.sections.intro title="Contactez-nous&nbsp;!" ariane="Contact"/>
         <x-public.sections.form>
-            <x-public.form.fields.input field_name="last_name" required="required" placeholder="Doe" label="Entrez votre nom"/>
-            <x-public.form.fields.input field_name="first_name" required="required" placeholder="John" label="Entrez votre prénom"/>
+            <div class="md:flex md:gap-5">
+                <x-public.form.fields.input field_name="last_name" required="required" placeholder="Doe" label="Entrez votre nom"/>
+                <x-public.form.fields.input field_name="first_name" required="required" placeholder="John" label="Entrez votre prénom"/>
+            </div>
             <x-public.form.fields.input type="email" field_name="email" required="required" placeholder="John@doe.be" label="Entrez votre email"/>
             <x-public.form.fields.textarea field_name="message" label="Entrez votre message" placeholder="Je vous contacte pour savoir..."/>
             <x-slot:text>
@@ -16,7 +18,9 @@
                 Envoyer le message
             </x-slot:button_label>
         </x-public.sections.form>
-        <img class="absolute bottom-[-1.63rem] px-5" src="{!! asset('assets/img/chien_contact.png') !!}" alt="Illustration d'un golden retriever" width="180" height="206">
+        <figure class="">
+            <img class="absolute bottom-[-1.63rem] px-5 scale-100 md:scale-150 md:bottom-[-2.4rem] md:left-[-5rem] origin-bottom" src="{!! asset('assets/img/chien_contact.png') !!}" alt="Illustration d'un golden retriever" width="180" height="206">
+        </figure>
     </main>
 </x-public.app>
 
