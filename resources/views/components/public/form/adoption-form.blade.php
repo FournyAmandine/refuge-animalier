@@ -1,4 +1,8 @@
-    <x-public.form.fields.input field_name="last_name" required="required" placeholder="Doe" label="Entrez votre nom"/>
+@props([
+    'options'
+])
+
+<x-public.form.fields.input field_name="last_name" required="required" placeholder="Doe" label="Entrez votre nom"/>
     <x-public.form.fields.input field_name="first_name" required="required" placeholder="John"
                                 label="Entrez votre prénom"/>
     <x-public.form.fields.input type="email" field_name="email" required="required" placeholder="John@doe.be"
@@ -19,12 +23,7 @@
                                 label="Entrez votre localité"/>
     <x-public.form.fields.textarea field_name="message" label="Décrivez votre lieu de vie"
                                    placeholder="J'habite en campagne avec un grand jardin..."/>
-    <x-public.form.fields.select field_name="companion" required="required"
-                                 label="Sélectionnez votre nouveau compagnon">
-        <x-public.form.fields.option selected="selected" value="none" option_name="--Votre choix--"/>
-        <x-public.form.fields.option value="charly" option_name="Charly"/>
-        <x-public.form.fields.option value="frimousse" option_name="Frimousse"/>
-        <x-public.form.fields.option value="happy" option_name="Happy"/>
-        <x-public.form.fields.option value="panpan" option_name="Panpan"/>
+    <x-public.form.fields.select field_name="companion" required="required" label="Sélectionnez votre nouveau compagnon">
+        {!! $options !!}
     </x-public.form.fields.select>
 

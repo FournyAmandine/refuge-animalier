@@ -5,7 +5,16 @@
     <main class="contact_form pb-11 relative">
         <x-public.sections.intro title="Adoptez un de nos compagnons&nbsp;!" ariane="Adoption"/>
         <x-public.sections.form>
-            <x-public.form.adoption-form/>
+            <x-public.form.adoption-form>
+                <x-slot:options>
+                    @foreach($animals as $animal)
+                        <x-public.form.fields.option
+                            value="{!! $animal->name !!}"
+                            option_name="{!! $animal->name !!}"
+                        />
+                    @endforeach
+                </x-slot:options>
+            </x-public.form.adoption-form>
             <x-slot:text>
                 Donnez à l’un de nos compagnons la chance de connaître la douceur d’un foyer, et découvrez à quel point leur
                 gratitude est infinie.
