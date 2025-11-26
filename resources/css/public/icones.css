@@ -1,4 +1,4 @@
-span:not(.ariane){
+span:not(.ariane):not(.required){
     visibility: hidden;
 }
 
