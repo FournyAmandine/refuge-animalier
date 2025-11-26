@@ -22,7 +22,8 @@
     </x-slot:title_page>
     <main>
         <x-public.sections.introduction/>
-        <x-public.sections.slider :cards="$cards"/>
+        <x-public.sections.card-list :animals="$animals"
+                                     class="grid grid-cols-[repeat(4,310px)] gap-5 overflow-x-scroll py-4 px-[1.25rem]"/>
         <x-public.sections.text-media
             class_section="pb-20 pt-26"
             :has_main_title="false"
