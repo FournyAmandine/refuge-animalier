@@ -12,9 +12,13 @@
     color: var(--color-orange-50);
     background-color: var(--color-orange-600);
     border-radius: 0.625rem;
-    width: 7rem;
     text-align: center;
 }
+
+.footer_link:nth-last-of-type(1), .nav_links:nth-last-of-type(1){
+    width: 7rem;
+}
+
 
 @media (min-width: 768px) {
     .nav_links{

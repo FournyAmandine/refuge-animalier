@@ -32,7 +32,7 @@
              height="326" alt="Illustration d'un chien, golden retriever assis">
     </figure>
 
-    <div class="flex gap-2 xs:gap-6 flex-wrap">
+    <div class="flex gap-2 xs:gap-6 flex-wrap z-1">
         <x-public.button class_button="px-5.5 lg:text-xl" href="{!! route('public.animals.index') !!}" label="Voir nos compagnons"
                          title="Aller vers la page des animaux"/>
         <x-public.button class_button="px-10 lg:text-xl" href="{!! route('public.adoptionpage') !!}" label="Adopter" title="Aller vers la page d'adoption"/>

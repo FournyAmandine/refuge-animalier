@@ -26,10 +26,11 @@
                                      class="grid grid-cols-[repeat(4,300px)] gap-5 overflow-x-scroll py-4"/>
         <x-public.sections.text-media
             class_section="pb-20 pt-26"
+            class_div=" md:flex-row-reverse md:gap-3 md:justify-end"
             :has_main_title="false"
             section_title="Notre refuge"
             content="Le refuge Les Pattes Heureuses œuvre chaque jour pour le bien-être animal. Grâce à une équipe de bénévoles dévoués, nous assurons l’accueil, les soins, la réhabilitation et l’adoption responsable de nombreux animaux. Depuis sa création, le refuge Les Pattes Heureuses s’engage à offrir protection, soins et amour aux animaux abandonnés. Ici, chaque patte compte, chaque histoire mérite une fin heureuse."
-            class="flex-row-reverse"
+            class="flex-row-reverse md:flex-col-reverse "
             class_button="px-8"
             :button="true"
             href="{!! route('public.aboutpage') !!}"
@@ -39,11 +40,12 @@
             alt="illustration d'un chien corgi assis brun et blanc"
             width_img="137"
             heigth_img="207"
-            class_img="absolute left-7 top-[-3rem]"
+            class_img="absolute left-7 top-[-3rem] md:left-16 md:top-10 w-2/1"
             :src_patte="asset('assets/img/patte-left_medium.svg')"
         />
         <x-public.sections.text-media
             :has_main_title="false"
+            class_div=""
             section_title="Être bénévole"
             content="Être bénévole au refuge Les Pattes Heureuses, c’est participer à une mission pleine de sens : offrir des soins, des promenades, des jeux et surtout de l’affection à nos pensionnaires. Que vous ayez une heure ou une journée, votre présence compte. Ensemble, faisons rimer entraide et bonheur animal."
             class_button="px-3"
