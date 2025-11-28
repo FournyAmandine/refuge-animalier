@@ -1,6 +1,5 @@
-<header class="p-[0.9375rem] pb-[0.625rem] border-b-2 border-orange-600 bg-white">
+<header class="overflow-clip p-[0.9375rem] pb-[0.625rem] border-b-2 border-orange-600 bg-white">
     <h1 class="sro">Les Pattes Heureuses</h1>
-    <a class="go_back md:hidden" href="javascript:history.go(-1)" title="Retourner sur la page précédente"><span>Retour</span></a>
     <nav class="flex items-end justify-between md:items-center">
         <h2 class="sro">Navigation principale</h2>
 

@@ -2,17 +2,6 @@ span:not(.ariane):not(.required):not(.return){
     visibility: hidden;
 }
 
-@media (max-width: 767px) {
-    .go_back{
-        background: url("../../images/icones/back.svg") center no-repeat;
-        width: 1.5rem;
-        display: inline-block;
-    }
-    .return{
-        visibility: hidden;
-    }
-}
-
 @media (min-width: 768px) {
     .go_back_ordi{
         background: url("../../images/icones/back.svg") center no-repeat;
