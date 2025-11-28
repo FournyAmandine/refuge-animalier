@@ -35,7 +35,7 @@
         </ul>
     </div>
 
-    <div class="mb-[1.875rem] md:my-[4.375rem] px-[3.4375rem] sm:w-1/2 m-auto md:px-0 md:w-2/5 xl:w-1/4 lg:px-[3.4375rem]">
+    <div class="mb-[1.875rem] w-1/1 flex flex-col items-center md:my-[4.375rem] sm:w-1/2 m-auto md:px-0 md:w-2/5 xl:w-1/4 lg:px-[3.4375rem]">
         <h3 class="text-orange-600 font-semibold text-xl text-center">Navigation</h3>
        <x-public.navigation.links nav_class="footer_nav" li_class="footer_link"/>
     </div>

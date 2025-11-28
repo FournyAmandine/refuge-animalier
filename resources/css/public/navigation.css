@@ -49,6 +49,7 @@
     row-gap: 0.625rem;
     padding-top: 0.9375rem;
     column-gap: 1.875rem;
+    width: 100%;
 }
 
 @media (min-width: 768px) {
