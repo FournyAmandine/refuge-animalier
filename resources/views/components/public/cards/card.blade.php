@@ -9,7 +9,7 @@
 @endphp
 
 
-<article class="bg-orange-100 border-2 border-orange-600 max-w-77.5 rounded-xl relative shadow-[var(--shadow-xl)]">
+<article class="bg-orange-100 border-2 border-orange-600 w-[300px] rounded-xl relative shadow-[var(--shadow-xl)]">
     <a class="absolute z-2 inset-0" title="{!! $title !!}" href="{!! $href !!}"><span>Voir la fiche de l'animal</span></a>
     <div>
         <div class="relative">
