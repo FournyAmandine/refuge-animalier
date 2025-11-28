@@ -45,6 +45,14 @@ main{
 
 @media (min-width: 1024px) {
     section:not(.slider):not(.show_cards){
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
+
+
+@media (min-width: 1920px) {
+    section:not(.slider):not(.show_cards){
         padding-left: 9rem;
         padding-right: 9rem;
     }

@@ -5,7 +5,7 @@
 
 <section class="">
     <h2 class="text-orange-600 text-xl">Nos derniers arrivants</h2>
-    <div {{ $attributes->class(['pt-10 flex flex-col gap-10 lg:gap-5 items-center slider']) }}>
+    <div {{ $attributes->class(['pt-10 flex flex-col gap-5 items-center slider']) }}>
         @foreach($animals as $animal)
             <x-public.cards.card src="{!! $animal->img_path !!}"
                                  alt="Photo de {!! $animal->name !!}"
