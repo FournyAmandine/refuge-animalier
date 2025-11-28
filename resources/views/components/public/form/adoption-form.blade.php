@@ -2,7 +2,7 @@
     'options'
 ])
 
-<div  class="md:flex md:gap-5">
+<div  class="md:flex md:gap-5 md:flex-wrap">
     <x-public.form.fields.input field_name="last_name" required="required" placeholder="Doe" label="Entrez votre nom"/>
     <x-public.form.fields.input field_name="first_name" required="required" placeholder="John" label="Entrez votre prénom"/>
 </div>
@@ -19,14 +19,14 @@
     <x-public.form.fields.input field_name="street" required="required" placeholder="Rue du Spi"
                                 label="Entrez votre rue"/>
     <x-public.form.fields.input type="number" field_name="numero" required="required" placeholder="52"
-                                label="Entrez votre numéro de maison"/>
+                                label="Entrez votre numéro"/>
     <x-public.form.fields.input type="text" field_name="postal" required="required" placeholder="6976"
                                 label="Entrez votre code postal"/>
 </div>
 <div class="md:flex md:gap-5 md:flex-wrap">
     <x-public.form.fields.input field_name="city" required="required" placeholder="Bartogne"
                                 label="Entrez votre localité"/>
-    <x-public.form.fields.select field_name="companion" required="required" label="Sélectionnez votre nouveau compagnon">
+    <x-public.form.fields.select field_name="companion" required="required" label="Sélectionnez votre compagnon">
         {!! $options !!}
     </x-public.form.fields.select>
 </div>

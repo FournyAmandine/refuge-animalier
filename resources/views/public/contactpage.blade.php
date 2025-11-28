@@ -2,10 +2,10 @@
     <x-slot:title_page>
         Contact
     </x-slot:title_page>
-    <main class="contact_form pb-11 relative md:w-4/5 md:m-auto">
+    <main class="contact_form pb-11 relative sm:w-4/5 sm:m-auto">
         <x-public.sections.intro title="Contactez-nous&nbsp;!" ariane="Contact"/>
         <x-public.sections.form>
-            <div class="md:flex md:gap-5">
+            <div class="md:flex md:gap-5 flex-wrap">
                 <x-public.form.fields.input field_name="last_name" required="required" placeholder="Doe" label="Entrez votre nom"/>
                 <x-public.form.fields.input field_name="first_name" required="required" placeholder="John" label="Entrez votre prénom"/>
             </div>
