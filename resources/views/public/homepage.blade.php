@@ -23,7 +23,7 @@
     <main>
         <x-public.sections.introduction/>
         <x-public.sections.card-list :animals="$animals"
-                                     class="grid grid-cols-[repeat(4,310px)] gap-5 overflow-x-scroll py-4 px-[1.25rem]"/>
+                                     class="grid grid-cols-[repeat(4,310px)] gap-5 overflow-x-scroll py-4"/>
         <x-public.sections.text-media
             class_section="pb-20 pt-26"
             :has_main_title="false"
