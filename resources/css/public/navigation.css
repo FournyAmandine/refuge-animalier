@@ -36,6 +36,14 @@
         font-weight: 600;
         display:block;
     }
+    .nav_links:hover{
+        color: var(--color-orange-800);
+        font-size: 1.05rem;
+    }
+    .nav_links:nth-last-of-type(1):hover{
+        color: var(--color-orange-50);
+        transform: scale(1.1);
+    }
 }
 
 
