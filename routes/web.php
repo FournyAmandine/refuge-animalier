@@ -16,6 +16,6 @@ Route::get('/animals{animal}', [AnimalController::class, 'show'])->name('public.
 Route::livewire('/dashboard', 'pages::dashboard')->name('dashboard');
 
 Route::livewire('/admin/animals/create', 'pages::animals.create')->name('admin.animals.create');
-Route::livewire('/admin/animals/edit', 'pages::animals.edit')->name('admin.animals.edit');
+Route::livewire('/admin/animals/{animal}/edit', 'pages::animals.edit')->name('admin.animals.edit');
 
 Route::livewire('/admin/volunteers/create', 'pages::volunteers.create')->name('admin.volunteers.create');
