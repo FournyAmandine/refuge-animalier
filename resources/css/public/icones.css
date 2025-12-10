@@ -1,4 +1,4 @@
-span:not(.ariane):not(.required):not(.return):not(.paginate){
+span:not(.ariane):not(.required):not(.return):not(.paginate):not(.animal_name):not(.day):not(.number){
     visibility: hidden;
 }
 
