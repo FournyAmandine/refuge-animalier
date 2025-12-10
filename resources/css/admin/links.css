@@ -1,5 +1,5 @@
 .admin_burger_link{
-    padding: 1rem 1.25rem;
+    padding: 0.8rem 1.25rem;
     border: 2px solid var(--color-orange-600);
     text-align: center;
     width: 90%;
@@ -32,7 +32,7 @@
     display: flex;
     flex-direction: column;
     background-color: var(--color-orange-50);
-    padding: 2.5rem 2.5rem 0;
+    padding: 0 2.5rem ;
     color: rgba(0, 0, 0, 0.8);
     font-weight: 600;
     font-size: 1.25rem;
@@ -58,8 +58,6 @@
         width: 100%;
     }
     .admin_side_nav_container{
-        font-size: 1.5rem;
-        justify-content: space-between;
     }
 
     .desktop_nav{

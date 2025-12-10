@@ -18,13 +18,13 @@
                  alt="Logo Les Pattes Heureuses avec une patte de chat dans une maison">
         </a>
     </li>
-    <li class="lg:pb-25">
+    <li class="lg:pb-15">
         <p class="border-b-2 border-orange-600 text-2xl lg:text-3xl text-orange-600 font-[Baloo] font-bold">Bonjour Elise,</p>
     </li>
     @foreach($links as $link)
         <x-admin.navigation.link li_class="{!! $li_class !!}" :href="$link['href']" :label="$link['label']" :title="$link['title']"/>
     @endforeach
-    <li class="pt-10 lg:pt-25">
+    <li class="pt-10 lg:pt-15">
         <div class="border-t-2 border-orange-600 py-8 flex justify-center">
             <x-admin.button href="#" title="Se déconnecter de votre compte" label="Déconnexion" class="px-7"/>
         </div>
