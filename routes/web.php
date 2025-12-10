@@ -18,3 +18,5 @@ Route::get('/adoption', [AdoptionFormController::class, 'index'])->name('public.
 Route::get('/animals', [AnimalController::class, 'index'])->name('public.animals.index');
 
 Route::get('/animals{animal}', [AnimalController::class, 'show'])->name('public.animals.show');
+
+Route::livewire('/dashboard', 'pages::dashboard')->name('dashboard');
