@@ -1,7 +1,7 @@
 <main class="lg:flex-1 bg-orange-50/30">
     <x-admin.sections.intro ariane="Fiche animale" title="Création d’une fiche animale"/>
     <section>
-        <form action="{!! route('admin.animals.create') !!}" method="post" class="xl:max-w-10/12 m-auto">
+        <form action="#" method="post" class="xl:max-w-10/12 m-auto">
             @csrf
                 <x-admin.form.fields.fieldset>
                     <x-slot:legend>
@@ -53,6 +53,9 @@
                 </x-slot:legend>
                 <x-admin.form.fields.textarea field_name="petowner" label="Entrez une note sur l’adoptant" placeholder="Ce chien est un peu fou mais très amical..."/>
             </x-admin.form.fields.fieldset>
+            <div class="flex justify-end">
+                <x-admin.form.buttons.button text="Créer la fiche"/>
+            </div>
         </form>
         <script>
             const typeSelect = document.getElementById('animal_type');
