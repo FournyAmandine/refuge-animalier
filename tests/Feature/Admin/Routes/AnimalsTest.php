@@ -8,4 +8,11 @@ it('verifies if the /admin/animals/create dislays correctly the admin.animals.cr
 
 });
 
+it('verifies if the /admin/animals/edit dislays correctly the admin.animals.edit view', function () {
+
+    $this->get(route('admin.animals.edit'))
+        ->assertSeeLivewire('pages::animals.edit');
+
+});
+
 
