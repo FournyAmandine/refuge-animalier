@@ -1,4 +1,4 @@
-<header class="p-[0.9375rem] pb-[0.625rem] bg-white lg:p-0 lg:w-[30rem] lg:sticky lg:top-0 lg:h-screen">
+<header class="p-[0.9375rem] pb-[0.625rem] bg-white lg:p-0 lg:sticky lg:top-0 lg:h-screen lg:shadow-xl">
     <h1 class="sro">Les Pattes Heureuses</h1>
     <nav class="flex items-center justify-between md:items-center lg:hidden border-b-2 border-orange-600">
         <h2 class="sro">Navigation principale</h2>

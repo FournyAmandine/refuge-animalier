@@ -16,7 +16,9 @@ class AnimalFactory extends Factory
 
         $name = ['Charly', 'Frimousse', 'Happy', 'Panpan', 'Moka', 'Simba', 'Bouboule', 'Bunny', 'Folette'];
         $sexe = ['Mâle', 'Femelle'];
-        $race = ['Chat', 'Lapin', 'Border Collie', 'American Staff', 'Caniche', 'Golden Retriever'];
+        $type = ['Chat', 'Lapin', 'Chien'];
+        $race = ['Border Collie', 'American Staff', 'Caniche', 'Golden Retriever'];
+        $coat = ['Brun', 'Noir', 'Poils longs bruns et blancs', 'Poils longs noirs et blancs', 'Poils courts blancs'];
         $state = [AnimalStatus::Adopted, AnimalStatus::Available, AnimalStatus::Care, AnimalStatus::Draft, AnimalStatus::Pending];
         $img_path = ['assets/img/bunny.png', 'assets/img/bouboule.png', 'assets/img/charly.png', 'assets/img/folette.png', 'assets/img/happy.png', 'assets/img/simba.png', 'assets/img/moka.png', 'assets/img/panpan.png'];
 
@@ -24,10 +26,15 @@ class AnimalFactory extends Factory
             'name' => $this->faker->randomElement($name),
             'sexe' => $this->faker->randomElement($sexe),
             'birth_date' => $this->faker->date(),
-            'age' => $this->faker->numberBetween(1, 8),
+            'arrival_date' => $this->faker->date(),
+            'vaccines' => 'Tétanos, rage',
+            'coat' => $this->faker->randomElement($coat),
+            'type' => $this->faker->randomElement($type),
             'race' => $this->faker->randomElement($race),
             'state' => AnimalStatus::Available,
             'img_path' => $this->faker->randomElement($img_path),
+            'description' => 'Petit chien fou et amitieux',
+            'petowner_description' => 'La personne est très souriante et à l’aise avec les animaux',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
