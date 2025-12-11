@@ -6,7 +6,7 @@
             <span class="text-red-600 required">*</span>
         @endif
     </label>
-    <select class="border-2 border-orange-600/80 bg-orange-600/10 rounded-lg p-2 disabled:opacity-50"
+    <select {!! $attributes->merge(['class'=>'border-2 border-orange-600/80 bg-orange-600/10 rounded-lg p-2 disabled:opacity-50']) !!}
             {!! $disabled??'' !!} name="{!! $field_name !!}" id="{!! $field_name !!}"  @if($required) required @endif>
         {!! $slot !!}
     </select>

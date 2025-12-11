@@ -9,7 +9,9 @@
     </label>
 
     <input
-        class="border-2 border-orange-600/80 bg-orange-600/10 rounded-lg p-2"
+        {{ $attributes->merge([
+             'class' => 'border-2 border-orange-600/80 bg-orange-600/10 rounded-lg p-2'
+         ]) }}
         type="{{ $type }}"
         name="{{ $field_name }}"
         id="{{ $field_name }}"
