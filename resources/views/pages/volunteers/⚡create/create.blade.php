@@ -14,10 +14,10 @@
                                                :required="true" placeholder="Maxime"/>
                 </div>
                 <div class="sm:flex sm:flex-wrap gap-6">
-                    <x-admin.form.fields.input field_name="volunteer_age" label="Entrez son âge" :required="true"
-                                               type="number" placeholder="1"/>
+                    <x-admin.form.fields.input field_name="volunteer_birth" label="Entrez sa date de naissance" :required="true" type="date" placeholder="1"/>
+
                     <x-admin.form.fields.input field_name="volunteer_email" label="Entrez son email" :required="true"
-                                               type="email" placeholder="1"/>
+                                               type="email" placeholder="chabroux.maxime@gmail.com"/>
                 </div>
             </x-admin.form.fields.fieldset>
             <x-admin.form.fields.fieldset>
