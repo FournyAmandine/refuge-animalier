@@ -17,7 +17,7 @@ Route::livewire('/dashboard', 'pages::dashboard')->name('dashboard');
 
 Route::livewire('/admin/animals/create', 'pages::animals.create')->name('admin.animals.create');
 Route::livewire('/admin/animals/{animal}/edit', 'pages::animals.edit')->name('admin.animals.edit');
-Route::livewire('/admin/animals/{animal}/show', 'pages::animals.show')->name('admin.animals.show');
+Route::livewire('/admin/animals/{animal}', 'pages::animals.show')->name('admin.animals.show');
 
 
 Route::livewire('/admin/volunteers/create', 'pages::volunteers.create')->name('admin.volunteers.create');
