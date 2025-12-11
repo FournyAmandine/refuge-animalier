@@ -1,7 +1,7 @@
 <main class="lg:flex-1 bg-orange-50/30">
     <x-admin.sections.intro ariane="Fiche animale" title="Création d’une fiche animale"/>
     <section>
-        <form action="#" method="post" class="xl:max-w-10/12 m-auto">
+        <form action="#" method="post" class="xl:max-w-10/12 m-auto" wire:submit="save">
             @csrf
                 <x-admin.form.fields.fieldset>
                     <x-slot:legend>
@@ -33,7 +33,7 @@
                         </x-public.form.fields.select>
                     </div>
                     <div class="sm:flex sm:flex-wrap gap-6">
-                        <x-admin.form.fields.input field_name="animal_age" label="Entrez son âge" :required="true" type="number" placeholder="1"/>
+                        <x-admin.form.fields.input field_name="animal_birth" label="Entrez sa date de naissance" :required="true" type="date" placeholder="1"/>
                         <x-admin.form.fields.input field_name="animal_vaccines" label="Entrez ses vaccins" placeholder="Tétanos, rage"/>
                     </div>
                 </x-admin.form.fields.fieldset>
