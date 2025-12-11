@@ -9,5 +9,10 @@ class Volunteer extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['last_name', 'first_name', 'birth_date', 'email'];
+    protected $casts = [
+        'availability' => 'array',
+    ];
+
+
+    protected $fillable = ['last_name', 'first_name', 'birth_date', 'email', 'availability'];
 }

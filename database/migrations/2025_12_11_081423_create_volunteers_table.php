@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->string('first_name');
             $table->date('birth_date');
             $table->string('email');
-            $table->json('availability');
+            $table->json('availability')->nullable();
             $table->timestamps();
         });
     }

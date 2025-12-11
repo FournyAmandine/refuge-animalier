@@ -22,6 +22,17 @@ class VolunteerEditForm extends Form
     #[Validate('required|string')]
     public $email = '';
 
+    #[Validate('array')]
+    public $availability = [
+        'monday' => ['active' => false, 'start' => null, 'end' => null],
+        'tuesday' => ['active' => false, 'start' => null, 'end' => null],
+        'wednesday' => ['active' => false, 'start' => null, 'end' => null],
+        'thursday' => ['active' => false, 'start' => null, 'end' => null],
+        'friday' => ['active' => false, 'start' => null, 'end' => null],
+        'saturday' => ['active' => false, 'start' => null, 'end' => null],
+        'sunday' => ['active' => false, 'start' => null, 'end' => null],
+    ];
+
     public function setVolunteer(Volunteer $volunteer)
     {
         $this->volunteer = $volunteer;
@@ -29,6 +40,7 @@ class VolunteerEditForm extends Form
         $this->first_name = $volunteer->first_name;
         $this->birth_date = $volunteer->birth_date;
         $this->email = $volunteer->email;
+        $this->availability = $volunteer->availability;
     }
 
     public function store()
@@ -40,6 +52,7 @@ class VolunteerEditForm extends Form
                 'first_name',
                 'birth_date',
                 'email',
+                'availability',
             ])
         );
     }
@@ -55,6 +68,7 @@ class VolunteerEditForm extends Form
                     'first_name',
                     'birth_date',
                     'email',
+                    'availability',
                 ]
             )
         );

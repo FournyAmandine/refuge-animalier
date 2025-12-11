@@ -14,11 +14,13 @@ class VolunteerFactory extends Factory
     {
         $last_name = ['Bourguignon', 'Fourny', 'Mozin', 'Briol', 'Bayet'];
         $first_name = ['Louis', 'Loïc', 'Anne', 'Victoria', 'Brigite', 'Laurent'];
+        $availability = [];
         return [
             'last_name' => $this->faker->randomElement($last_name),
             'first_name' => $this->faker->randomElement($first_name),
             'birth_date' => $this->faker->date(),
             'email' => $this->faker->email(),
+            'availability' => $availability,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
