@@ -13,14 +13,14 @@ return new class extends Migration {
             $table->string('sexe');
             $table->date('birth_date');
             $table->date('arrival_date');
-            $table->string('vaccines');
+            $table->string('vaccines')->nullable();
             $table->string('coat');
             $table->string('type');
-            $table->string('race');
+            $table->string('race')->nullable();
             $table->string('state');
             $table->string('img_path');
-            $table->string('description');
-            $table->string('petowner_description');
+            $table->string('description')->nullable();
+            $table->string('petowner_description')->nullable();
             $table->timestamps();
         });
     }

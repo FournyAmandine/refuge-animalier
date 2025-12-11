@@ -35,7 +35,7 @@ class AnimalEditForm extends Form
     #[Validate('required|string')]
     public $state = '';
 
-    #[Validate('string')]
+    #[Validate('required|string')]
     public $img_path = '';
 
     #[Validate('required|string')]
