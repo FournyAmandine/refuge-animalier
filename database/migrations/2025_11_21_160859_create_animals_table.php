@@ -12,10 +12,15 @@ return new class extends Migration {
             $table->string('name');
             $table->string('sexe');
             $table->date('birth_date');
-            $table->string('age');
+            $table->date('arrival_date');
+            $table->string('vaccines');
+            $table->string('coat');
+            $table->string('type');
             $table->string('race');
             $table->string('state');
             $table->string('img_path');
+            $table->string('description');
+            $table->string('petowner_description');
             $table->timestamps();
         });
     }
