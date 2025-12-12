@@ -1,7 +1,8 @@
 <main class="lg:flex-1 bg-orange-50/30">
     <x-admin.sections.intro ariane="Fiche animale" title="Création d’une fiche animale"/>
     <section>
-        <form action="{!! route('admin.animals.show') !!}" method="post" class="xl:max-w-10/12 m-auto" wire:submit="save">
+        <h3 class="sro">Formulaire de création</h3>
+        <form method="post" class="xl:max-w-10/12 m-auto" wire:submit="save">
             @csrf
                 <x-admin.form.fields.fieldset>
                     <x-slot:legend>

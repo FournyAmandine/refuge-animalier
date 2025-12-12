@@ -1,4 +1,4 @@
-@props(['src', 'alt'])
+@props(['src', 'alt', 'href', 'title'])
 
 
-<button><img src="{!! $src !!}" alt="{!! $alt !!}"></button>
+<a {!! $attributes !!} href="{!! $href !!}" title="{!! $title !!}"><img src="{!! $src !!}" alt="{!! $alt !!}"></a>

@@ -10,7 +10,7 @@ new class extends Component
 
     public $animal;
 
-    public function mount(string $animal): void
+    public function mount($animal): void
     {
         $this->animal = Animal::findOrFail($animal);
         $this->form->setAnimal($this->animal);
