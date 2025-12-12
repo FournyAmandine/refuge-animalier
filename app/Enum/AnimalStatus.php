@@ -4,10 +4,10 @@ namespace App\Enum;
 
 enum AnimalStatus:string
 {
-    case Adopted = 'adopted';
-    case Available = 'available';
-    case Pending = "pending adoption";
-    case Draft = "draft";
-    case Care = "care";
+    case Adopted = 'Adopté';
+    case Available = 'Disponible';
+    case Pending = "En attente d'adoption";
+    case Draft = "En attente de validation";
+    case Care = "En soin";
 
 }
