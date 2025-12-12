@@ -1,7 +1,7 @@
 @props(['src', 'alt', 'name'])
 
 <figure>
-    <img class="rounded-t-lg w-[336px] lg:w-[396px]" src="{!! $src !!}" alt="{!! $alt !!}">
+    <img class="rounded-t-lg w-1/1" src="{!! $src !!}" alt="{!! $alt !!}">
 </figure>
 <div class="absolute inset-0 bg-gradient-to-tr from-black/80 to-transparent rounded-t-lg"></div>
 <div class="absolute left-4 top-40 flex gap-4">

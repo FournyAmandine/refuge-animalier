@@ -5,6 +5,7 @@
 <main class="lg:flex-1 bg-orange-50/30">
     <x-admin.sections.intro ariane="Animaux/{!! $animal->name !!}" title="Fiche de {!! $animal->name !!}"/>
     <section class="m-4 p-4 min-[1400px]:mx-20 min-[1700px]:mx-30 md:p-8 bg-orange-50/7 [box-shadow:var(--shadow-xl)] rounded-xl md:flex animal md:gap-3 lg:flex-col xl:flex-row xl:gap-10 min-[1920px]:max-w-[1280px]  min-[1920px]:m-auto">
+        <h3 class="sro">{!! $animal->name !!}</h3>
         <div class="w-1/1 h-1/2 xl:w-1/2">
             <img class="rounded-xl w-1/1" src="{!! asset($animal->img_path) !!}" alt="Image d'un chien border collie noir et blanc">
         </div>

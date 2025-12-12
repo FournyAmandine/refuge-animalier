@@ -1,27 +1,19 @@
 @props([
     /** @var \Illuminate\Database\Eloquent\Collection|\App\Models\Animal[] */
-    'class_title'
+    'class_title',
+    'class_section',
+    'animals'
 ])
 
-@php
-    $animals=[
-        ['src'=>asset('assets/img/moka.png'), 'alt'=>'Photo de notre chien Moka', 'name'=>'Moka', 'dd'=>['Mâle', '1 an', 'Caniche', 'En attente d’adoption', '10 juin 2025']],
-        ['src'=>asset('assets/img/charly.png'), 'alt'=>'Photo de notre chien Charly', 'name'=>'Charly', 'dd'=>['Mâle', '2 ans', 'Caniche', 'En attente d’adoption', '10 novembre 2025']],
-        ['src'=>asset('assets/img/simba.png'), 'alt'=>'Photo de notre chat Simba', 'name'=>'Simba', 'dd'=>['Femelle', '3 ans', 'Caniche', 'En soin', '10 octobre 2025']],
-        ['src'=>asset('assets/img/bunny.png'), 'alt'=>'Photo de notre lapin Bunny', 'name'=>'Bunny', 'dd'=>['Femelle', '6 mois', 'Caniche', 'Adopté', '10 septembre 2025']],
-    ]
-@endphp
-
-
-<section class="pt-30">
+<section class="{!! $class_section??'' !!}">
     <h3 class="{!! $class_title??'title_section text-xl md:text-2xl font-medium underline decoration-orange-400 decoration-2 pb-2.5' !!}">
         Vos derniers arrivants</h3>
     <div {{ $attributes->class(['pb-5 flex flex-col gap-5 lg:gap-10 items-center slider']) }}>
         @foreach($animals as $animal)
-            <x-admin.dashboard.cards.card :src="$animal['src']"
-                                          :alt="$animal['alt']"
-                                          :name="$animal['name']" :dd="$animal['dd']" href="#"
-                                          :title="$animal['name']"/>
+            <x-admin.dashboard.cards.card src="{!! asset($animal->img_path) !!}"
+                                          alt="Photo de {!! $animal->name !!}"
+                                          name="{!! $animal->name !!}" :dd="[$animal->sexe, \Carbon\Carbon::parse($animal->birth_date)->locale('fr')->translatedFormat('d F Y'), $animal->race, $animal->state, \Carbon\Carbon::parse($animal->arrival_date)->locale('fr')->translatedFormat('d F Y')]" href="{!! route('admin.animals.show', $animal->id) !!}"
+                                          title="Voir la fiche de {!! $animal->name !!}" class="w-[340px] lg:w-[400px]"/>
         @endforeach
     </div>
     <div class="flex gap-2.5">
