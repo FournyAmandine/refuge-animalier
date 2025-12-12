@@ -10,6 +10,12 @@
     background-position: 32%;
 }
 
+.search{
+    background-image: url("../../images/icones/search.svg");
+    background-repeat: no-repeat;
+    background-position: 90%;
+}
+
 @media (min-width: 640px) {
     .modify{
         background-position: 30%;
