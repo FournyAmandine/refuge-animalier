@@ -2,7 +2,7 @@
 
 use Livewire\Livewire;
 
-it('verifies if the /admin/volunteers/create dislays correctly the admin.volunteers.create view', function () {
+it('renders successfully', function () {
 
     Livewire::test(route('admin.volunteers.create'))
         ->assertStatus(200)
