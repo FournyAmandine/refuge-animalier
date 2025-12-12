@@ -30,21 +30,21 @@ main{
 }
 
 @media (min-width: 544px) {
-    section:not(.slider):not(.show_cards):not(.stats){
+    section:not(.slider):not(.show_cards):not(.stats):not(.animal){
         padding-left: 2rem;
         padding-right: 2rem;
     }
 }
 
 @media (min-width: 768px) {
-    section:not(.slider):not(.show_cards):not(.stats):not(.todo){
+    section:not(.slider):not(.show_cards):not(.stats):not(.todo):not(.animal){
         padding-left: 3.5rem;
         padding-right: 3.5rem;
     }
 }
 
 @media (min-width: 1024px) {
-    section:not(.slider):not(.show_cards):not(.stats):not(.todo){
+    section:not(.slider):not(.show_cards):not(.stats):not(.todo):not(.animal){
         padding-left: 6rem;
         padding-right: 6rem;
     }
@@ -52,7 +52,7 @@ main{
 
 
 @media (min-width: 1920px) {
-    section:not(.slider):not(.show_cards):not(.stats):not(.todo){
+    section:not(.slider):not(.show_cards):not(.stats):not(.todo):not(.animal){
         padding-left: 9rem;
         padding-right: 9rem;
     }

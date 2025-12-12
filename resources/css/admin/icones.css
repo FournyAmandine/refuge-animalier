@@ -1,0 +1,42 @@
+.modify{
+    background-image: url("../../images/icones/modify_clear.svg");
+    background-repeat: no-repeat;
+    background-position: 35%;
+}
+
+.delete{
+    background-image: url("../../images/icones/delete_clear.svg");
+    background-repeat: no-repeat;
+    background-position: 32%;
+}
+
+@media (min-width: 640px) {
+    .modify{
+        background-position: 30%;
+    }
+
+    .delete{
+        background-position: 28%;
+    }
+}
+
+@media (min-width: 640px) {
+    .modify{
+        background-position: 20%;
+    }
+
+    .delete{
+        background-position: 18%;
+    }
+}
+
+@media (min-width: 1536px) {
+    .modify{
+        background-position: 20%;
+    }
+
+    .delete{
+        background-position: 12%;
+    }
+}
+
