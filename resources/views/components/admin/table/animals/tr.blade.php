@@ -1,8 +1,8 @@
 @props(['name', 'type','state', 'sexe', 'id', 'arrival_date', 'src'])
 
-<tr class="hover:bg-orange-200/20 border-b border-orange-200/70">
-    <td class="text-center p-4"><img class="inline-block rounded-xl" width="100" src="{!! $src !!}" alt=""></td>
-    <td class="text-center">{!! $name !!}</td>
+<tr class="hover:bg-orange-200/20 border-b border-orange-200/70 ">
+    <td class="text-center p-4"><a href="{!! route('admin.animals.show', $id) !!}" title="Aller vers la page de {!! $name !!}"><img class="inline-block rounded-xl hover:scale-110 duration-250 transition-all" width="100" src="{!! $src !!}" alt="Image de notre petit compagnon{!! $name !!}"></a></td>
+    <td class="text-center"><a class="hover:text-xl hover:text-orange-600" title="Aller vers la page de {!! $name !!}" href="{!! route('admin.animals.show', $id) !!}">{!! $name !!}</a></td>
     <td class="text-center">{!! $type !!}</td>
     <td class="text-center">{!! $state !!}</td>
     <td class="text-center">{!! $sexe !!}</td>
