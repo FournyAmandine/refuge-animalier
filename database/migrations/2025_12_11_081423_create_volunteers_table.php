@@ -12,8 +12,10 @@ return new class extends Migration {
             $table->string('last_name');
             $table->string('first_name');
             $table->date('birth_date');
+            $table->string('telephone');
             $table->string('email');
-            $table->json('availability')->nullable();
+            $table->string('profil_path');
+            $table->string('link_animal')->nullable();
             $table->timestamps();
         });
     }

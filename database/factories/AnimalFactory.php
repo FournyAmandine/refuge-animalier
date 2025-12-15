@@ -26,7 +26,6 @@ class AnimalFactory extends Factory
             'name' => $this->faker->randomElement($name),
             'sexe' => $this->faker->randomElement($sexe),
             'birth_date' => $this->faker->date(),
-            'arrival_date' => $this->faker->date(),
             'vaccines' => 'Tétanos, rage',
             'coat' => $this->faker->randomElement($coat),
             'type' => $this->faker->randomElement($type),
@@ -34,7 +33,6 @@ class AnimalFactory extends Factory
             'state' => AnimalStatus::Available,
             'img_path' => $this->faker->randomElement($img_path),
             'description' => 'Petit chien fou et amitieux',
-            'petowner_description' => 'La personne est très souriante et à l’aise avec les animaux',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

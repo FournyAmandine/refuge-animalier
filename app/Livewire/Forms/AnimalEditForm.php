@@ -20,9 +20,6 @@ class AnimalEditForm extends Form
     #[Validate('required|date')]
     public $birth_date = '';
 
-    #[Validate('required|date')]
-    public $arrival_date = '';
-
     #[Validate('required|string')]
     public $type = '';
 
@@ -36,7 +33,7 @@ class AnimalEditForm extends Form
     public $state = '';
 
     #[Validate('required|string')]
-    public $img_path = '';
+    public $img_path = 'assets/img/icones/profil_animal.png';
 
     #[Validate('required|string')]
     public $coat = '';
@@ -44,8 +41,6 @@ class AnimalEditForm extends Form
     #[Validate('string')]
     public $description = '';
 
-    #[Validate('string')]
-    public $petowner_description = '';
 
     public function setAnimal(Animal $animal)
     {
@@ -53,7 +48,6 @@ class AnimalEditForm extends Form
         $this->name = $animal->name;
         $this->sexe = $animal->sexe;
         $this->birth_date = $animal->birth_date;
-        $this->arrival_date = $animal->arrival_date;
         $this->type = $animal->type;
         $this->vaccines = $animal->vaccines;
         $this->race = $animal->race;
@@ -61,7 +55,6 @@ class AnimalEditForm extends Form
         $this->img_path = $animal->img_path;
         $this->coat = $animal->coat;
         $this->description = $animal->description;
-        $this->petowner_description = $animal->petowner_description;
     }
     public function store()
     {
@@ -71,7 +64,6 @@ class AnimalEditForm extends Form
                 'name',
                 'sexe',
                 'birth_date',
-                'arrival_date',
                 'type',
                 'vaccines',
                 'race',
@@ -79,7 +71,6 @@ class AnimalEditForm extends Form
                 'img_path',
                 'coat',
                 'description',
-                'petowner_description'
             ])
         );
     }
@@ -94,7 +85,6 @@ class AnimalEditForm extends Form
                     'name',
                     'sexe',
                     'birth_date',
-                    'arrival_date',
                     'type',
                     'vaccines',
                     'race',
@@ -102,7 +92,6 @@ class AnimalEditForm extends Form
                     'img_path',
                     'coat',
                     'description',
-                    'petowner_description'
                 ]
             )
         );
