@@ -48,12 +48,6 @@
                 </div>
                 <x-admin.form.fields.textarea field_name="animal_description" label="Entrez une brève description" placeholder="Ce chien est un peu fou mais très amical..."/>
             </x-admin.form.fields.fieldset>
-            <x-admin.form.fields.fieldset>
-                <x-slot:legend>
-                    L'adoptant
-                </x-slot:legend>
-                <x-admin.form.fields.textarea field_name="petowner" label="Entrez une note sur l’adoptant" placeholder="Ce chien est un peu fou mais très amical..."/>
-            </x-admin.form.fields.fieldset>
             <div class="flex justify-end">
                 <x-admin.form.buttons.button text="Créer la fiche"/>
             </div>
