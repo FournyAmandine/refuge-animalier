@@ -3,7 +3,7 @@
 <tbody>
 
 @foreach($animals as $animal)
-    <x-admin.table.tr
+    <x-admin.table.animals.tr
         src="{!! asset($animal->img_path) !!}"
         name="{!! $animal->name !!}"
         type="{!! $animal->type !!}"

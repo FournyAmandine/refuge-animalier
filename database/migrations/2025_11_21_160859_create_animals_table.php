@@ -12,7 +12,6 @@ return new class extends Migration {
             $table->string('name');
             $table->string('sexe');
             $table->date('birth_date');
-            $table->date('arrival_date');
             $table->string('vaccines')->nullable();
             $table->string('coat');
             $table->string('type');
@@ -20,7 +19,6 @@ return new class extends Migration {
             $table->string('state');
             $table->string('img_path');
             $table->string('description')->nullable();
-            $table->string('petowner_description')->nullable();
             $table->timestamps();
         });
     }

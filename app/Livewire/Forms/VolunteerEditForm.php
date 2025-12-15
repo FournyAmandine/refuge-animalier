@@ -22,16 +22,14 @@ class VolunteerEditForm extends Form
     #[Validate('required|string')]
     public $email = '';
 
-    #[Validate('array')]
-    public $availability = [
-        'monday' => ['active' => false, 'start' => null, 'end' => null],
-        'tuesday' => ['active' => false, 'start' => null, 'end' => null],
-        'wednesday' => ['active' => false, 'start' => null, 'end' => null],
-        'thursday' => ['active' => false, 'start' => null, 'end' => null],
-        'friday' => ['active' => false, 'start' => null, 'end' => null],
-        'saturday' => ['active' => false, 'start' => null, 'end' => null],
-        'sunday' => ['active' => false, 'start' => null, 'end' => null],
-    ];
+    #[Validate('required|string')]
+    public $telephone = '';
+
+    #[Validate('string')]
+    public $link_animal = '';
+
+    #[Validate('string')]
+    public $profil_path = 'assets/img/icones/profil_volunteer.png';
 
     public function setVolunteer(Volunteer $volunteer)
     {
@@ -40,7 +38,9 @@ class VolunteerEditForm extends Form
         $this->first_name = $volunteer->first_name;
         $this->birth_date = $volunteer->birth_date;
         $this->email = $volunteer->email;
-        $this->availability = $volunteer->availability;
+        $this->telephone = $volunteer->telephone;
+        $this->profil_path = $volunteer->profil_path;
+        $this->link_animal = $volunteer->link_animal;
     }
 
     public function store()
@@ -52,7 +52,9 @@ class VolunteerEditForm extends Form
                 'first_name',
                 'birth_date',
                 'email',
-                'availability',
+                'telephone',
+                'profil_path',
+                'link_animal'
             ])
         );
     }
@@ -68,7 +70,9 @@ class VolunteerEditForm extends Form
                     'first_name',
                     'birth_date',
                     'email',
-                    'availability',
+                    'telephone',
+                    'profil_path',
+                    'link_animal'
                 ]
             )
         );

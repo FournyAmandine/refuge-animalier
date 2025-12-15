@@ -14,5 +14,5 @@ class Volunteer extends Model
     ];
 
 
-    protected $fillable = ['last_name', 'first_name', 'birth_date', 'email', 'availability'];
+    protected $fillable = ['last_name', 'first_name', 'birth_date', 'email', 'telephone', 'availability', 'profil_path', 'link_animal'];
 }

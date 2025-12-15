@@ -23,3 +23,4 @@ Route::livewire('/admin/animals', 'pages::animals.index')->name('admin.animals.i
 
 Route::livewire('/admin/volunteers/create', 'pages::volunteers.create')->name('admin.volunteers.create');
 Route::livewire('/admin/volunteers/{volunteer}/edit', 'pages::volunteers.edit')->name('admin.volunteers.edit');
+Route::livewire('/admin/volunteers', 'pages::volunteers.index')->name('admin.volunteers.index');
