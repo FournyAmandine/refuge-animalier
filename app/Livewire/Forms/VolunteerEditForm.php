@@ -22,7 +22,7 @@ class VolunteerEditForm extends Form
     #[Validate('required|string')]
     public $email = '';
 
-    #[Validate('string')]
+    #[Validate('required|string')]
     public $telephone = '';
 
     #[Validate('string')]
@@ -52,7 +52,7 @@ class VolunteerEditForm extends Form
         $this->telephone = $volunteer->telephone;
         $this->profil_path = $volunteer->profil_path;
         $this->link_animal = $volunteer->link_animal;
-        foreach ($volunteer->availability as $availability) {
+        foreach ($volunteer->availability??[] as $availability) {
             $this->availability[$availability->day] = [
                 'active' => true,
                 'start' => $availability->start,
