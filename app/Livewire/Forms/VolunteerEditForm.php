@@ -22,7 +22,7 @@ class VolunteerEditForm extends Form
     #[Validate('required|string')]
     public $email = '';
 
-    #[Validate('required|string')]
+    #[Validate('string')]
     public $telephone = '';
 
     #[Validate('string')]
@@ -30,6 +30,17 @@ class VolunteerEditForm extends Form
 
     #[Validate('string')]
     public $profil_path = 'assets/img/icones/profil_volunteer.png';
+
+    #[Validate('array')]
+    public array $availability = [
+        'monday' => ['active' => false, 'start' => null, 'end' => null],
+        'tuesday' => ['active' => false, 'start' => null, 'end' => null],
+        'wednesday' => ['active' => false, 'start' => null, 'end' => null],
+        'thursday' => ['active' => false, 'start' => null, 'end' => null],
+        'friday' => ['active' => false, 'start' => null, 'end' => null],
+        'saturday' => ['active' => false, 'start' => null, 'end' => null],
+        'sunday' => ['active' => false, 'start' => null, 'end' => null],
+    ];
 
     public function setVolunteer(Volunteer $volunteer)
     {
@@ -41,12 +52,19 @@ class VolunteerEditForm extends Form
         $this->telephone = $volunteer->telephone;
         $this->profil_path = $volunteer->profil_path;
         $this->link_animal = $volunteer->link_animal;
+        foreach ($volunteer->availability as $availability) {
+            $this->availability[$availability->day] = [
+                'active' => true,
+                'start' => $availability->start,
+                'end' => $availability->end
+            ];
+        }
     }
 
     public function store()
     {
         $this->validate();
-        Volunteer::create(
+        $volunteer = Volunteer::create(
             $this->only([
                 'last_name',
                 'first_name',
@@ -57,6 +75,16 @@ class VolunteerEditForm extends Form
                 'link_animal'
             ])
         );
+
+        foreach ($this->availability as $day => $data) {
+            if ($data['active']) {
+                $volunteer->availabilities()->create([
+                    'day' => $day,
+                    'start' => $data['start'],
+                    'end' => $data['end'],
+                ]);
+            }
+        }
     }
 
     public function update()
@@ -76,5 +104,16 @@ class VolunteerEditForm extends Form
                 ]
             )
         );
+        $this->volunteer->availabilities()->delete();
+
+        foreach ($this->availability as $day => $data) {
+            if ($data['active']) {
+                $this->volunteer->availabilities()->create([
+                    'day' => $day,
+                    'start' => $data['start'],
+                    'end' => $data['end'],
+                ]);
+            }
+        }
     }
 }

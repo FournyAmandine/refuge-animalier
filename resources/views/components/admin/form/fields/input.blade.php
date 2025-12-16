@@ -1,4 +1,4 @@
-@props(['field_name', 'type' => 'text', 'placeholder' => '', 'required' => false, 'label', 'value' => '','accept'])
+@props(['field_name', 'type' => 'text', 'placeholder' => '', 'required' => false, 'label','accept'])
 
 <div class="flex flex-col flex-1 pb-5">
     <label class="font-semibold pb-1" for="{{ $field_name }}">
@@ -16,7 +16,6 @@
         name="{{ $field_name }}"
         id="{{ $field_name }}"
         placeholder="{{ $placeholder }}"
-        value="{{ $value ?? old($field_name) }}"
         accept="{{$accept??''}}"
         @if($required) required @endif
     >
