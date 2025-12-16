@@ -19,6 +19,11 @@
                     <x-admin.form.fields.input wire:model="form.email" field_name="volunteer_email" label="Entrez son email" :required="true"
                                                type="email" placeholder="chabroux.maxime@gmail.com"/>
                 </div>
+                <div>
+                    <x-admin.form.fields.input wire:model="form.telephone" field_name="volunteer_telephone" label="Entrez son téléphone" :required="true"
+                                               type="tel" placeholder="0483 34 21 13"/>
+                    <x-admin.form.fields.textarea wire:model="form.link_animal" field_name="volunteer_link_animal" label="Son lien avec les animaux" placeholder="Elle est douce avec les animaux"/>
+                </div>
             </x-admin.form.fields.fieldset>
             <x-admin.form.fields.fieldset>
                 <x-slot:legend>
