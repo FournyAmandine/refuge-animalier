@@ -2,6 +2,7 @@
 
 <div  class="{!! $class_div ?? 'flex items-center gap-2' !!}">
     <input  {!! $attributes->merge(['class'=>'w-5 h-5']) !!}
+            wire:model="form.availability.{{ $field_name }}.active"
             type="{!! $type ?? 'checkbox' !!}"
             name="{!! $field_name !!}_active"
             id="{!! $field_name !!}"

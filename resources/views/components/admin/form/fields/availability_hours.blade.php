@@ -1,4 +1,4 @@
-@props(['model', 'active'])
+@props(['model'])
 
 <div class="hours flex text-xl font-medium gap-6 disabled:opacity-40">
     <div class="flex gap-1">

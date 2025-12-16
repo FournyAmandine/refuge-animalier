@@ -18,7 +18,7 @@ new class extends Component
     public function save()
     {
         $this->form->update();
-        return $this->redirect(route('admin.volunteers.create'));
+        return $this->redirect(route('admin.volunteers.index'));
     }
 
 };
