@@ -44,13 +44,13 @@
                     <tbody>
                     @foreach($availabilities as $availability)
                         <tr class="text-center">
-                            <td class="border-r border-orange-600 py-2.5">
+                            <td class="border-r border-t border-orange-600 py-2.5">
                                 {!! $availability->day !!}
                             </td>
-                            <td class="border-r border-orange-600 py-2.5">
+                            <td class="border-r border-t border-orange-600 py-2.5">
                                 {!! $availability->start !!}
                             </td>
-                            <td>
+                            <td class="border-t border-orange-600">
                                 {!! $availability->end !!}
                             </td>
                         </tr>

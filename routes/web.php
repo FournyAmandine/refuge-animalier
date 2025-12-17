@@ -20,8 +20,9 @@ Route::livewire('/admin/animals/{animal}/edit', 'pages::animals.edit')->name('ad
 Route::livewire('/admin/animals/{animal}', 'pages::animals.show')->name('admin.animals.show');
 Route::livewire('/admin/animals', 'pages::animals.index')->name('admin.animals.index');
 
-
 Route::livewire('/admin/volunteers/create', 'pages::volunteers.create')->name('admin.volunteers.create');
 Route::livewire('/admin/volunteers/{volunteer}/edit', 'pages::volunteers.edit')->name('admin.volunteers.edit');
 Route::livewire('/admin/volunteers/{volunteer}', 'pages::volunteers.show')->name('admin.volunteers.show');
 Route::livewire('/admin/volunteers', 'pages::volunteers.index')->name('admin.volunteers.index');
+
+Route::livewire('/admin/messages', 'pages::messages.index')->name('admin.messages.index');
