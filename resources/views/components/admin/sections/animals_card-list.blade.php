@@ -11,8 +11,11 @@
     <div {{ $attributes->class(['pb-5 flex flex-col gap-5 lg:gap-10 items-center slider']) }}>
         @foreach($animals as $animal)
             <x-admin.dashboard.cards.card src="{!! asset($animal->img_path) !!}"
+                                          href_button="{!! route('admin.animals.edit', $animal->id) !!}"
+                                          animal_id="{!! $animal->id !!}"
                                           alt="Photo de {!! $animal->name !!}"
-                                          name="{!! $animal->name !!}" :dd="[$animal->sexe, \Carbon\Carbon::parse($animal->birth_date)->locale('fr')->translatedFormat('d F Y'), $animal->race, $animal->state, \Carbon\Carbon::parse($animal->arrival_date)->locale('fr')->translatedFormat('d F Y')]" href="{!! route('admin.animals.show', $animal->id) !!}"
+                                          name="{!! $animal->name !!}"
+                                          :dd="[$animal->sexe, \Carbon\Carbon::parse($animal->birth_date)->locale('fr')->translatedFormat('d F Y'), $animal->race, $animal->state, \Carbon\Carbon::parse($animal->created_at)->locale('fr')->translatedFormat('d F Y')]" href="{!! route('admin.animals.show', $animal->id) !!}"
                                           title="Voir la fiche de {!! $animal->name !!}" class="w-[340px] lg:w-[400px]"/>
         @endforeach
     </div>

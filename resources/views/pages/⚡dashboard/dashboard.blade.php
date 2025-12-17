@@ -30,8 +30,8 @@
         </x-admin.sections.card_dashboard>
     </div>
     <x-admin.sections.stats_cards/>
-    <x-admin.sections.animals_card-list class_section="pt-30" class="grid grid-cols-[repeat(4,350px)] gap-5 overflow-x-scroll py-2.5 lg:grid-cols-[repeat(4,400px)]"/>
-    <x-admin.sections.volunteers_card-list class="grid grid-cols-[repeat(4,350px)] gap-5 overflow-x-scroll py-2.5"/>
+    <x-admin.sections.animals_card-list :animals="$animals" class_section="pt-30" class="grid grid-cols-[repeat(4,350px)] gap-5 overflow-x-scroll py-2.5 lg:grid-cols-[repeat(4,400px)]"/>
+    <x-admin.sections.volunteers_card-list :volunteers="$volunteers" class="grid grid-cols-[repeat(4,350px)] gap-5 overflow-x-scroll py-2.5"/>
 </main>
 
 
