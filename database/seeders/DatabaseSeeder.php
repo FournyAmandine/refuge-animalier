@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Animal;
 use App\Models\Availability;
+use App\Models\Task;
 use App\Models\User;
 use App\Models\Volunteer;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -23,5 +24,7 @@ class DatabaseSeeder extends Seeder
         Volunteer::factory(10)->create();
 
         Availability::factory(10)->create();
+
+        Task::factory(10)->create();
     }
 }
