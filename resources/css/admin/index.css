@@ -1,0 +1,4 @@
+.tasks:has(input:checked){
+    opacity: 50%;
+    border-color: green;
+}
