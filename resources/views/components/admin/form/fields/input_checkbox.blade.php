@@ -1,8 +1,11 @@
-@props(['class_div', 'field_name', 'type', 'class_label', 'value', 'required', 'label'])
+@props(['class_div', 'field_name', 'type', 'class_label', 'value', 'required', 'label', 'wire'=>true, 'checked'])
 
 <div  class="{!! $class_div ?? 'flex items-center gap-2' !!}">
     <input  {!! $attributes->merge(['class'=>'w-5 h-5']) !!}
+        @if($wire)
             wire:model.live="form.availabilities.{{ $label }}.active"
+        @endif
+            {!! $checked??'' !!}
             type="{!! $type ?? 'checkbox' !!}"
             name="{!! $field_name !!}"
             id="{!! $field_name !!}"
