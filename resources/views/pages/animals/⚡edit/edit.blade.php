@@ -50,7 +50,7 @@
                 <x-admin.form.fields.textarea wire:model="form.description" field_name="animal_description" label="Entrez une brève description" placeholder="Ce chien est un peu fou mais très amical..."/>
             </x-admin.form.fields.fieldset>
             <div class="flex justify-end">
-                <x-admin.form.buttons.button text="Créer la fiche"/>
+                <x-admin.form.buttons.button text="Modifier la fiche"/>
             </div>
         </form>
         <script>
