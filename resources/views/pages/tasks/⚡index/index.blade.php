@@ -6,14 +6,17 @@
     </div>
     <section>
         <h3 class="title_section pb-5 lg:text-2xl">À réaliser</h3>
-        <x-admin.tasks.article_card label="Valider la fiche de Charly" day="3"/>
-        <x-admin.tasks.article_card label="Valider la fiche de Charly" day="3"/>
-        <x-admin.tasks.article_card label="Valider la fiche de Charly" day="3"/>
+        @foreach($tasks_undone as $task)
+            <x-admin.tasks.article_card  :wire:key="'task-'.$task->id" done="{!! $task->done !!}" class="border-red-600" id="{!! $task->id !!}" label="{!! $task->task_name !!}" day="{!! \Carbon\Carbon::parse($task->created_at)->day !!}"
+                                         field_name="{!! $task->task_name !!}"
+            />
+        @endforeach
     </section>
     <section class="pt-15">
         <h3 class="title_section pb-5 lg:text-2xl">Dejà réalisées</h3>
-        <x-admin.tasks.article_card checked="checked" label="Valider la fiche de Charly" day="3"/>
-        <x-admin.tasks.article_card checked="checked" label="Valider la fiche de Charly" day="3"/>
-        <x-admin.tasks.article_card checked="checked" label="Valider la fiche de Charly" day="3"/>
+        @foreach($tasks_done as $task)
+            <x-admin.tasks.article_card :wire:key="'task-'.$task->id" done="{!! $task->done !!}" class="opacity-50 border-green-600" id="{!! $task->id !!}" label="{!! $task->task_name !!}" day="{!! \Carbon\Carbon::parse($task->created_at)->day !!}" field_name="{!! $task->task_name !!}"
+            />
+        @endforeach
     </section>
 </main>
