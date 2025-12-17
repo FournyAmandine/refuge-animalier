@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->string('first_name');
             $table->date('birth_date');
             $table->string('telephone');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('profil_path');
             $table->string('link_animal')->nullable();
             $table->timestamps();
