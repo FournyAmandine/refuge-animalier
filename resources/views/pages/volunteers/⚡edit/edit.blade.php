@@ -31,14 +31,13 @@
                 </x-slot:legend>
                 <p class="text-xl pb-2">Entrez les disponibilités</p>
                 <div class="flex flex-wrap justify-between gap-y-4">
-                    <x-admin.form.fields.availability label="Lundi" field_name="monday"/>
-                    <x-admin.form.fields.availability label="Mardi" field_name="tuesday"/>
-                    <x-admin.form.fields.availability label="Mercredi" field_name="wednesday"/>
-                    <x-admin.form.fields.availability label="Jeudi" field_name="thursday"/>
-                    <x-admin.form.fields.availability label="Vendredi" field_name="friday"/>
-                    <x-admin.form.fields.availability label="Samedi" field_name="saturday"/>
-                    <x-admin.form.fields.availability label="Dimanche" field_name="sunday"/>
-
+                    <x-admin.form.fields.availability label="Lundi" field_name="monday" :form="$form" key="monday"/>
+                    <x-admin.form.fields.availability label="Mardi" field_name="tuesday" :form="$form" key="tuesday"/>
+                    <x-admin.form.fields.availability label="Mercredi" field_name="wednesday" :form="$form" key="wednesday"/>
+                    <x-admin.form.fields.availability label="Jeudi" field_name="thursday" :form="$form" key="thursday"/>
+                    <x-admin.form.fields.availability label="Vendredi" field_name="friday" :form="$form" key="friday"/>
+                    <x-admin.form.fields.availability label="Samedi" field_name="saturday" :form="$form" key="saturday"/>
+                    <x-admin.form.fields.availability label="Dimanche" field_name="sunday" :form="$form" key="sunday"/>
                 </div>
 
             </x-admin.form.fields.fieldset>
