@@ -22,6 +22,12 @@
     background-position: left;
 }
 
+.validate{
+    background-image: url("../../images/icones/validate.svg");
+    background-repeat: no-repeat;
+    background-position: 8%;
+}
+
 @media (min-width: 640px) {
     .modify{
         background-position: 30%;

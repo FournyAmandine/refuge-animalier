@@ -10,7 +10,7 @@ new class extends Component
     public function render()
     {
         return view('pages.animals.⚡index.index', [
-            'animals' => Animal::orderBy('arrival_date')->paginate(8),
+            'animals' => Animal::orderBy('created_at')->paginate(8),
         ]);
     }
 };
