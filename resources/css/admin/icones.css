@@ -16,6 +16,12 @@
     background-position: 90%;
 }
 
+.answer{
+    background-image: url("../../images/icones/answer.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
 @media (min-width: 640px) {
     .modify{
         background-position: 30%;
