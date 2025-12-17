@@ -8,6 +8,7 @@
 @import "./general.css";
 @import "./admin/links.css";
 @import "./admin/icones.css";
+@import "./admin/index.css";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
