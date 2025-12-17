@@ -26,3 +26,5 @@ Route::livewire('/admin/volunteers/{volunteer}', 'pages::volunteers.show')->name
 Route::livewire('/admin/volunteers', 'pages::volunteers.index')->name('admin.volunteers.index');
 
 Route::livewire('/admin/messages', 'pages::messages.index')->name('admin.messages.index');
+
+Route::livewire('/admin/adoptions', 'pages::adoptions.index')->name('admin.adoptions.index');
