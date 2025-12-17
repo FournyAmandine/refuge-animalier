@@ -33,13 +33,13 @@ class VolunteerEditForm extends Form
 
     #[Validate('array')]
     public array $availability = [
-        'monday' => ['active' => false, 'start' => null, 'end' => null],
-        'tuesday' => ['active' => false, 'start' => null, 'end' => null],
-        'wednesday' => ['active' => false, 'start' => null, 'end' => null],
-        'thursday' => ['active' => false, 'start' => null, 'end' => null],
-        'friday' => ['active' => false, 'start' => null, 'end' => null],
-        'saturday' => ['active' => false, 'start' => null, 'end' => null],
-        'sunday' => ['active' => false, 'start' => null, 'end' => null],
+        'Lundi' => ['active' => false, 'start' => null, 'end' => null],
+        'Mardi' => ['active' => false, 'start' => null, 'end' => null],
+        'Mercredi' => ['active' => false, 'start' => null, 'end' => null],
+        'Jeudi' => ['active' => false, 'start' => null, 'end' => null],
+        'Vendredi' => ['active' => false, 'start' => null, 'end' => null],
+        'Samedi' => ['active' => false, 'start' => null, 'end' => null],
+        'Dimanche' => ['active' => false, 'start' => null, 'end' => null],
     ];
 
     public function setVolunteer(Volunteer $volunteer)
