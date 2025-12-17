@@ -1,12 +1,12 @@
 @props(['model'])
 
-<div class="hours flex text-xl font-medium gap-6 disabled:opacity-40">
+<div class="flex text-xl font-medium gap-6 disabled:opacity-40">
     <div class="flex gap-1">
         <label for="start">de</label>
-        <input {!! $attributes->merge(['class'=>'disabled:opacity-40']) !!} wire:model="{{ $model }}.start" type="time" name="start" id="start" :disabled="!active">
+        <input {!! $attributes->merge(['class'=>'disabled:opacity-40 hours']) !!} wire:model="form.availabilities.{{ $model }}.start" type="time" name="start" id="start">
     </div>
     <div class="flex gap-1">
         <label for="end">à</label>
-        <input  {!! $attributes->merge(['class'=>'disabled:opacity-40']) !!} wire:model="{{ $model }}.end"  type="time" name="end" id="end" :disabled="!active">
+        <input  {!! $attributes->merge(['class'=>'disabled:opacity-40 hours']) !!} wire:model="form.availabilities.{{ $model }}.end"  type="time" name="end" id="end">
     </div>
 </div>

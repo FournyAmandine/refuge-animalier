@@ -48,3 +48,25 @@
         </form>
     </section>
 </main>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const checkboxes = document.querySelectorAll('.check');
+
+
+        checkboxes.forEach(checkbox => {
+        const inputs = document.querySelectorAll(' .hours');
+            inputs.forEach(input=>{
+                checkbox.checked ? input.disabled = false : input.disabled = true;
+
+                checkbox.addEventListener('change', () => {
+                    checkbox.checked ? input.disabled = false : input.disabled = true;
+                });
+            });
+        });
+    });
+</script>
+

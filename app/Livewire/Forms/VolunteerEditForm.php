@@ -32,7 +32,7 @@ class VolunteerEditForm extends Form
     public $profil_path = 'assets/img/icones/profil_volunteer.png';
 
     #[Validate('array')]
-    public array $availability = [
+    public array $availabilities = [
         'Lundi' => ['active' => false, 'start' => null, 'end' => null],
         'Mardi' => ['active' => false, 'start' => null, 'end' => null],
         'Mercredi' => ['active' => false, 'start' => null, 'end' => null],
@@ -52,8 +52,8 @@ class VolunteerEditForm extends Form
         $this->telephone = $volunteer->telephone;
         $this->profil_path = $volunteer->profil_path;
         $this->link_animal = $volunteer->link_animal;
-        foreach ($volunteer->availability??[] as $availability) {
-            $this->availability[$availability->day] = [
+        foreach ($volunteer->availabilities??[] as $availability) {
+            $this->availabilities[$availability->day] = [
                 'active' => true,
                 'start' => $availability->start,
                 'end' => $availability->end
@@ -76,7 +76,7 @@ class VolunteerEditForm extends Form
             ])
         );
 
-        foreach ($this->availability as $day => $data) {
+        foreach ($this->availabilities as $day => $data) {
             if ($data['active']) {
                 $volunteer->availabilities()->create([
                     'day' => $day,
@@ -106,7 +106,7 @@ class VolunteerEditForm extends Form
         );
         $this->volunteer->availabilities()->delete();
 
-        foreach ($this->availability as $day => $data) {
+        foreach ($this->availabilities as $day => $data) {
             if ($data['active']) {
                 $this->volunteer->availabilities()->create([
                     'day' => $day,
