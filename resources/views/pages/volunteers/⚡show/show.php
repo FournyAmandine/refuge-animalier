@@ -9,16 +9,12 @@ new class extends Component
     public VolunteerEditForm $form;
 
     public $volunteer;
+    public $availabilities;
 
-    public function mount(string $volunteer): void
+    public function mount($volunteer): void
     {
         $this->volunteer = Volunteer::findOrFail($volunteer);
+        $this->availabilities = $this->volunteer->availabilities;
         $this->form->setVolunteer($this->volunteer);
     }
-    public function save()
-    {
-        $this->form->update();
-        return $this->redirect(route('admin.volunteers.index'));
-    }
-
 };

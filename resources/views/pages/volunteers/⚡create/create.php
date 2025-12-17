@@ -11,7 +11,7 @@ new class extends Component
     public function store()
     {
         $this->form->store();
-        return $this->redirect('/admin/volunteers', navigate: true);
+        return $this->redirect(route('admin.volunteers.index'));
     }
 
     public function render()

@@ -23,6 +23,6 @@
     </section>
     <div class="pt-4 flex flex-col sm:flex-row gap-2 lg:justify-end px-4 min-[1400px]:px-20 min-[1700px]:px-30 min-[1920px]:max-w-[1280px] min-[1920px]:px-0 min-[1920px]:m-auto">
         <x-admin.button class="w-1/1 text-center modify lg:w-1/3 2xl:w-1/5" href="{!! route('admin.animals.edit',$animal->id) !!}" label="Modifier" title="Aller vers la page de modification de l'animal"/>
-        <x-admin.button wire:click="delete({!! $this->animal->id !!})" class="w-1/1 text-center delete lg:w-1/3 2xl:w-1/5" href="#" label="Supprimer" title="Supprimer votre animal"/>
+        <x-admin.button wire:click="delete({!! $animal->id !!})" class="w-1/1 text-center delete lg:w-1/3 2xl:w-1/5" href="#" label="Supprimer" title="Supprimer votre animal"/>
     </div>
 </main>

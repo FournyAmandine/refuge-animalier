@@ -1,7 +1,7 @@
 <main class="lg:flex-1 bg-orange-50/30">
     <x-admin.sections.intro ariane="Fiche bénévole" title="Création d’une fiche bénévole"/>
     <section>
-        <form action="#" method="post" class="xl:max-w-10/12 m-auto">
+        <form wire:submit.prevent="save" method="post" class="xl:max-w-10/12 m-auto">
             @csrf
             <x-admin.form.fields.fieldset>
                 <x-slot:legend>
