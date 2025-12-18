@@ -10,5 +10,6 @@
     <body class="lg:flex lg:relative">
         <livewire:admin.structure.header/>
         {{ $slot }}
+        <livewire:widgets::modal />
     </body>
 </html>
