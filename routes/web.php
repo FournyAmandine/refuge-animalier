@@ -30,4 +30,3 @@ Route::livewire('/admin/messages', 'pages::messages.index')->name('admin.message
 Route::livewire('/admin/adoptions', 'pages::adoptions.index')->name('admin.adoptions.index');
 
 Route::livewire('/admin/tasks', 'pages::tasks.index')->name('admin.tasks.index');
-Route::livewire('/admin/tasks{task}edit', 'pages::tasks.index')->name('admin.tasks.index');
