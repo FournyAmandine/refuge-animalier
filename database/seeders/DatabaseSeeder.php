@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Animal;
 use App\Models\Availability;
+use App\Models\Message;
 use App\Models\Task;
 use App\Models\User;
 use App\Models\Volunteer;
@@ -26,5 +27,7 @@ class DatabaseSeeder extends Seeder
         Availability::factory(10)->create();
 
         Task::factory(10)->create();
+
+        Message::factory(10)->create();
     }
 }

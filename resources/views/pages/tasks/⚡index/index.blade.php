@@ -1,7 +1,7 @@
 <main class="lg:flex-1 bg-orange-50/30">
     <x-admin.sections.intro ariane="Tâches" title="Vos tâches"/>
     <div class="flex justify-end px-8 md:px-14 lg:px-24 2xl:px-35">
-        <x-admin.button href="#" wire:click="toggleModal('create')" label="Ajouter une tâche" title="Ajouter une nouvelle tâche" class="px-6"/>
+        <button  wire:click="toggleModal('create')" class="z-1 inline-block py-2.5 lg:text-lg 2xl:text-xl bg-orange-600 rounded-lg text-orange-50 font-semibold hover:scale-110 hover:duration-200 hover:transition-all px-6" type="button">Ajouter une tâche</button>
 
     </div>
     <section class="2xl:mx-10">
@@ -31,7 +31,7 @@
         @endforeach
     </section>
     @if($isOpenCreateModal)
-        <x-admin.modal.general outside="$dispatch('toggleModal', { modal: 'create' })"  class="lg:text-2xl text-orange-600 underline decoration-orange-400 decoration-3 [font-family:Baloo] font-semibold ">
+        <x-admin.modal.general outside="$dispatch('toggleModal', { modal: 'create' })"  class="lg:text-2xl pb-10 text-orange-600 underline decoration-orange-400 decoration-3 [font-family:Baloo] font-semibold ">
             <x-slot:title>
                 Créer une tâche
             </x-slot:title>
@@ -56,7 +56,7 @@
     @endif
     @if($isOpenEditModal)
         <x-admin.modal.general outside="$dispatch('toggleModal', { modal: 'edit' })"
-                               class="lg:text-2xl text-orange-600 underline decoration-orange-400 decoration-3 [font-family:Baloo] font-semibold ">
+                               class="lg:text-2xl pb-10 text-orange-600 underline decoration-orange-400 decoration-3 [font-family:Baloo] font-semibold ">
             <x-slot:title>
                 Modifier votre tâche
             </x-slot:title>
