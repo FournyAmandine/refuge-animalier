@@ -2,6 +2,7 @@
 
 
 <article {!! $attributes->merge(['class'=>'flex flex-wrap items-end justify-between border-2  rounded-lg pb-5 pt-3 px-10 [box-shadow:var(--shadow-xl)] mb-5 min-[1920px]:max-w-[64rem] tasks']) !!}>
+    <h4 class="sro">{!! $label !!}</h4>
     <div class="{!! $class_div ?? 'flex items-center gap-2' !!}">
         <input
             type="checkbox"
@@ -21,11 +22,11 @@
                 ...
             </button>
             <span x-show="open"
-                  class="absolute right-8 bg-orange-50 p-5 rounded-2xl text-xl flex flex-col gap-3 menu border-2 border-orange-600 [box-shadow:var(--shadow-xl)]">
+                  class="absolute z-30 right-8 bg-orange-50 p-5 rounded-2xl text-xl flex flex-col gap-3 menu border-2 border-orange-600 [box-shadow:var(--shadow-xl)]">
                 <div class="border-b-3 border-orange-600 pb-3 text-center">
-                     <a class="p-2 hover:bg-orange-100/40 text-center rounded-lg" href="">Modifier</a>
+                     <button wire:click="modify({!! $id !!})" class="p-2 hover:bg-orange-100/40 text-center rounded-lg" href="">Modifier</button>
                 </div>
-                <button class="hover:bg-orange-100/40 p-2 rounded-lg" href="#" wire:click="delete({!! $id !!})">Supprimer</button>
+                <button class="hover:bg-orange-100/40 p-2 rounded-lg" href="#" wire:click="toggleModal('delete', {{$id}})">Supprimer</button>
             </span>
 
         </div>

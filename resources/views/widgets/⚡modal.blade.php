@@ -11,8 +11,8 @@ new class extends Component {
     #[On('open_modal')]
     public function open(array $payload):void
     {
-        $this->current = $payload['form'];
-        $this->model_id = $payload['model_id'];
+        $this->current = $payload['modal'];
+        $this->model_id = $payload['modal_id'];
     }
 
     #[On('close_modal')]
