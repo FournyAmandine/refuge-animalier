@@ -24,7 +24,7 @@
             <span x-show="open"
                   class="absolute z-30 right-8 bg-orange-50 p-5 rounded-2xl text-xl flex flex-col gap-3 menu border-2 border-orange-600 [box-shadow:var(--shadow-xl)]">
                 <div class="border-b-3 border-orange-600 pb-3 text-center">
-                     <button wire:click="modify({!! $id !!})" class="p-2 hover:bg-orange-100/40 text-center rounded-lg" href="">Modifier</button>
+                     <button wire:click="toggleModal('edit', {{$id}})" class="p-2 hover:bg-orange-100/40 text-center rounded-lg" href="">Modifier</button>
                 </div>
                 <button class="hover:bg-orange-100/40 p-2 rounded-lg" href="#" wire:click="toggleModal('delete', {{$id}})">Supprimer</button>
             </span>

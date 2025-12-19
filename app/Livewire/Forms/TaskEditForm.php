@@ -9,6 +9,7 @@ use Livewire\Form;
 class TaskEditForm extends Form
 {
     public ?Task $task;
+
     #[Validate('required|string')]
     public $task_name = '';
 
@@ -37,7 +38,7 @@ class TaskEditForm extends Form
     {
         $this->validate();
 
-        $this->animal->update(
+        $this->task->update(
             $this->only([
                 'task_name',
                 'done'

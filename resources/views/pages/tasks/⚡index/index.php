@@ -24,8 +24,8 @@ new class extends Component
     public function render()
     {
         return view('pages.tasks.⚡index.index', [
-            'tasks_undone' => Task::orderBy('created_at')->where('tasks.done', 0)->get(),
-            'tasks_done' => Task::orderBy('created_at')->where('tasks.done', 1)->get()
+            'tasks_undone' => Task::orderBy('created_at', 'desc')->where('tasks.done', 0)->get(),
+            'tasks_done' => Task::orderBy('created_at', 'desc')->where('tasks.done', 1)->get()
         ]);
     }
 
@@ -42,6 +42,9 @@ new class extends Component
 
         $this->isOpenCreateModal || $this->isOpenEditModal || $this->isOpenDeleteModal ? $this->dispatch('open-modal') : $this->dispatch('close-modal');
         $this->chosenTask = $id !== '' ? Task::find($id) : '';
+        if ($id !== '' && $modal === 'edit' ) {
+           $this->form->setTask($this->chosenTask);
+        }
     }
 
     public function delete(): void
@@ -58,11 +61,21 @@ new class extends Component
         unset($this->task);
     }
 
-    public function modify(string $id){
-        $this->dispatch('open_modal', [
-            'modal' => 'modals::task_modify',
-            'modal_id' => $id
+    public function save(): void
+    {
+
+        $this->chosenTask->update([
+            'task_name' => $this->form->task_name
         ]);
+
+        $this->dispatch('close-modal');
+        $this->toggleModal('edit');
     }
 
+    public function store()
+    {
+        $this->form->store();
+        $this->form->task_name = '';
+        $this->toggleModal('create');
+    }
 };
