@@ -37,7 +37,7 @@
                                     href="mailto:{!! $openMessage->email !!}"
                                     title="Envoyer un mail vers le contact {!! $openMessage->first_name !!}"
                                     label="Répondre par email" class="pr-3 pl-10 answer"/>
-                    <button wire:click="mark_read()" type="button"
+                    <button wire:click="markRead()" type="button"
                             class="pr-3 pl-10 bg-orange-600 text-orange-50 hover:scale-110 hover:transition-all hover:duration-200 rounded-xl lg:text-lg 2xl:text-xl read">
                         Marquer comme lu
                     </button>

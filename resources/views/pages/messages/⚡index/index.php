@@ -34,7 +34,7 @@ new class extends Component
         $this->openMessage = $id !== '' ? Message::find($id) : '';
     }
 
-    public function mark_read():void
+    public function markRead():void
     {
         $this->toggleReadMessage($this->openMessage);
         $this->dispatch('close-modal');
