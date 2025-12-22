@@ -12,7 +12,7 @@ new class extends Component
     public function render()
     {
         return view('pages.volunteers.⚡index.index', [
-            'volunteers' => Volunteer::paginate(6),
+            'volunteers' => Volunteer::orderBy('created_at', 'desc')->paginate(6),
         ]);
     }
 

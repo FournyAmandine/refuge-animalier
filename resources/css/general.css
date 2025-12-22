@@ -22,6 +22,10 @@ main{
     padding-top: 1.25rem;
 }
 
+button{
+    cursor: pointer;
+}
+
 @media (max-width: 543px) {
     section:not(.slider):not(.show_cards):not(.stats){
         padding-left: 1.25rem;
@@ -57,9 +61,6 @@ main{
         padding-right: 9rem;
     }
 }
-
-
-
 
 h3:not(.title_section), h2:not(.intro){
     font-family: Baloo, sans-serif;

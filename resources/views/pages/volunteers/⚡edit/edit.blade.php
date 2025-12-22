@@ -1,5 +1,5 @@
 <main class="lg:flex-1 bg-orange-50/30">
-    <x-admin.sections.intro ariane="Fiche bénévole" title="Création d’une fiche bénévole"/>
+    <x-admin.sections.intro ariane="Fiche bénévole" title="Modification d’une fiche bénévole"/>
     <section>
         <form wire:submit.prevent="save" method="post" class="xl:max-w-10/12 m-auto">
             @csrf
@@ -30,7 +30,7 @@
                     Disponibilités
                 </x-slot:legend>
                 <p class="text-xl pb-2">Entrez les disponibilités</p>
-                <div class="flex flex-wrap justify-between gap-y-4">
+                <div class="flex flex-wrap flex-col 2xl:flex-row justify-between gap-y-4">
                     <x-admin.form.fields.availability label="Lundi" field_name="monday" :form="$form" key="monday"/>
                     <x-admin.form.fields.availability label="Mardi" field_name="tuesday" :form="$form" key="tuesday"/>
                     <x-admin.form.fields.availability label="Mercredi" field_name="wednesday" :form="$form" key="wednesday"/>
