@@ -1,18 +1,22 @@
 <?php
 
 use App\Models\Volunteer;
+use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
 new class extends Component
 {
 
+    public string $term = '';
     public string|Volunteer $chosenVolunteer = '';
     public bool $isOpenDeleteModal = false;
+
+    #[Computed]
     public function render()
     {
         return view('pages.volunteers.⚡index.index', [
-            'volunteers' => Volunteer::orderBy('created_at', 'desc')->paginate(6),
+            'volunteers' => Volunteer::where('first_name', 'like', '%' . $this->term . '%')->orWhere('last_name', 'like', '%' . $this->term . '%')->orderBy('created_at', 'desc')->paginate(6),
         ]);
     }
 
