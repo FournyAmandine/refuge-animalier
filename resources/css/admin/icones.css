@@ -34,6 +34,12 @@
     background-position: 4%;
 }
 
+.refuse{
+    background-image: url("../../images/icones/close.svg");
+    background-repeat: no-repeat;
+    background-position: 15%;
+}
+
 @media (min-width: 640px) {
     .modify{
         background-position: 30%;
