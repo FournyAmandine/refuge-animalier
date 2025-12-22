@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Adoption;
 use App\Models\Animal;
 use App\Models\Availability;
 use App\Models\Message;
@@ -29,5 +30,7 @@ class DatabaseSeeder extends Seeder
         Task::factory(10)->create();
 
         Message::factory(10)->create();
+
+        Adoption::factory(10)->create();
     }
 }
