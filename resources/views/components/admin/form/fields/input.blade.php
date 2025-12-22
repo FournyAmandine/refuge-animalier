@@ -1,6 +1,6 @@
 @props(['field_name', 'type' => 'text', 'placeholder' => '', 'required' => false, 'label','accept'])
 
-<div class="flex flex-col flex-1 pb-5">
+<div class="flex flex-col flex-1">
     <label class="font-semibold pb-1 lg:text-xl" for="{{ $field_name }}">
         {{ $label }}
         @if($required)

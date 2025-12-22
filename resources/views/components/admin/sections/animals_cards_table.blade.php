@@ -1,4 +1,4 @@
-@props(['animals'])
+@props(['animals', 'state'])
 
 
 <section class="pt-10">
@@ -15,9 +15,9 @@
                                           name="{!! $animal->name !!}"
                                           :dd="[
                                                         $animal->sexe,
-                                                        \Carbon\Carbon::parse($animal->birth_date)->locale('fr')->translatedFormat('d F Y'),
-                                                        $animal->race,
-                                                        $animal->state,
+                                                        \Carbon\Carbon::parse($animal->birth_date)->age.' ans',
+                                                        $animal->type,
+                                                        $this->enumNameToValue($animal->state),
                                                         \Carbon\Carbon::parse($animal->created_at)->locale('fr')->translatedFormat('d F Y')
                                                         ]"
                                           href="{!! route('admin.animals.show',$animal->id) !!}"

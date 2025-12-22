@@ -13,10 +13,11 @@
                     <x-admin.form.fields.inputs_radio/>
                     <x-public.form.fields.select wire:model="form.state" field_name="animal_statut" :required="true" label="Sélectionnez le statut">
                         <x-public.form.fields.option selected="selected" value="none" option_name="--Votre choix--"/>
-                        <x-public.form.fields.option value="adopted" option_name="Adopté"/>
-                        <x-public.form.fields.option value="available" option_name="Disponible"/>
-                        <x-public.form.fields.option value="pending" option_name="En attente d'adoption"/>
-                        <x-public.form.fields.option value="care" option_name="En soin"/>
+                        @foreach($this->getStatus() as $status)
+                            <x-public.form.fields.option
+                                value="{{ $status->name }}"
+                                option_name="{{ $status->value }}"/>
+                        @endforeach
                     </x-public.form.fields.select>
                 </div>
                 <div class="sm:flex sm:flex-wrap gap-6">
@@ -44,7 +45,7 @@
                     Description
                 </x-slot:legend>
                 <div class="sm:flex sm:flex-wrap gap-6">
-                    <x-admin.form.fields.input wire:model="form.img_path" field_name="animal_pictures" :required="true" accept="image/png, image/jpeg" label="Choisissez une/des image(s)" type="file"/>
+                    <x-admin.form.fields.input wire:model="form.photo" field_name="animal_pictures" :required="false" accept="image/png, image/jpeg" label="Choisissez une/des image(s)" type="file"/>
                     <x-admin.form.fields.input wire:model="form.coat" field_name="animal_coat" label="Entrez son pelage" :required="true" placeholder="Poils longs, blancs et noirs..."/>
                 </div>
                 <x-admin.form.fields.textarea wire:model="form.description" field_name="animal_description" label="Entrez une brève description" placeholder="Ce chien est un peu fou mais très amical..."/>
@@ -57,7 +58,7 @@
             const typeSelect = document.getElementById('animal_type');
             const raceSelect = document.getElementById('animal_race');
             typeSelect.addEventListener('change', function(){
-                if(this.value === 'dog'){
+                if(this.value === 'Chien'){
                     raceSelect.disabled = false;
                 } else{
                     raceSelect.value = 'none';

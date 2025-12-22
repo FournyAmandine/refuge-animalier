@@ -8,7 +8,7 @@
     <td class="text-center">{!! \Carbon\Carbon::parse($created_at)->locale('fr')->translatedFormat('d F Y') !!}</td>
     <td class="text-center">
         <div x-data="{open: false}">
-            <button class="text-orange-600 text-3xl text-center" @click="open = !open" @click.outside="open = false" data-test="tasks-index-menu">
+            <button class="text-orange-600 text-3xl text-center" @click="open = !open" @click.outside="open = false">
                 ...
             </button>
             <span x-show="open"

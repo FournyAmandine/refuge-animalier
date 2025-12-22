@@ -37,10 +37,4 @@ new class extends Component
         $this->dispatch('close-modal');
         $this->toggleModal('delete');
     }
-
-    #[On('volunteer_list_changed')]
-    public function reset_volunteer_list()
-    {
-        unset($this->chosenVolunteer);
-    }
 };
