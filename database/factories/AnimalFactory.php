@@ -30,7 +30,7 @@ class AnimalFactory extends Factory
             'coat' => $this->faker->randomElement($coat),
             'type' => $this->faker->randomElement($type),
             'race' => $this->faker->randomElement($race),
-            'state' => AnimalStatus::Available,
+            'state' => 'Available',
             'img_path' => $this->faker->randomElement($img_path),
             'description' => 'Petit chien fou et amitieux',
             'created_at' => Carbon::now(),
