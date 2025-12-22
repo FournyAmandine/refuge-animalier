@@ -1,8 +1,7 @@
 <main class="lg:flex-1 bg-orange-50/30">
     <x-admin.sections.intro ariane="Tâches" title="Vos tâches"/>
     <div class="flex justify-end px-8 md:px-14 lg:px-24 2xl:px-35">
-        <button  wire:click="toggleModal('create')" class="z-1 inline-block py-2.5 lg:text-lg 2xl:text-xl bg-orange-600 rounded-lg text-orange-50 font-semibold hover:scale-110 hover:duration-200 hover:transition-all px-6" type="button">Ajouter une tâche</button>
-
+        <x-admin.modal.button wire:click="toggleModal('create')" class="px-6" title="Ajouter une tâche"/>
     </div>
     <section class="2xl:mx-10">
         <h3 class="title_section pb-5 lg:text-2xl">À réaliser</h3>
