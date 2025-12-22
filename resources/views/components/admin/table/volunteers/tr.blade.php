@@ -8,12 +8,16 @@
     <td class="text-center">{!! \Carbon\Carbon::parse($created_at)->locale('fr')->translatedFormat('d F Y') !!}</td>
     <td class="text-center">
         <div x-data="{open: false}">
-            <button class="text-orange-600 text-3xl" @click="open = !open" data-test="animal-index-menu">...</button>
-            <span x-show="open" class="absolute bg-gray-100 p-5 rounded-2xl flex flex-col">
-                            <a class="border-b-3 border-orange-50" href="">Modifier</a>
-                            <a href="#" wire:click="delete({!! $id !!})">Supprimer</a>
-                        </span>
-
+            <button class="text-orange-600 text-3xl text-center" @click="open = !open" @click.outside="open = false" data-test="tasks-index-menu">
+                ...
+            </button>
+            <span x-show="open"
+                  class="absolute z-30 right-8 bg-orange-50 p-5 rounded-2xl text-xl flex flex-col gap-3 menu border-2 border-orange-600 [box-shadow:var(--shadow-xl)]">
+                <div class="border-b-3 border-orange-600 pb-3 text-center">
+                     <a class="p-2 hover:bg-orange-100/40 text-center rounded-lg" href="{!! route('admin.volunteers.edit', $id) !!}">Modifier</a>
+                </div>
+                <button class="hover:bg-orange-100/40 p-2 rounded-lg" href="#" wire:click="toggleModal('delete', {{$id}})">Supprimer</button>
+            </span>
         </div>
     </td>
 </tr>

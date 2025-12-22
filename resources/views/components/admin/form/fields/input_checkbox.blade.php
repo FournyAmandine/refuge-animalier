@@ -1,4 +1,4 @@
-@props(['class_div', 'field_name', 'type', 'class_label', 'value', 'required', 'label', 'wire'=>true, 'checked', 'id'=>''])
+@props(['class_div', 'field_name', 'type', 'class_label', 'value', 'required', 'label', 'wire'=>true, 'checked'=>'', 'id'=>''])
 
 <div  class="{!! $class_div ?? 'flex items-center gap-2' !!}">
     <input  {!! $attributes->merge(['class'=>'w-5 h-5']) !!}
