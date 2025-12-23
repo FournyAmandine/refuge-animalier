@@ -11,10 +11,13 @@
         <div class="flex flex-row flex-wrap gap-5 flex-1">
             <div class="">
                 <div class="flex pb-5 flex-row flex-wrap flex-1">
-                    <div class="max-w-[240px] xl:max-w-1/3">
-                        <img class="rounded-xl w-1/1" src="{!! asset($volunteer->profil_path) !!}"
+                    @if(\Illuminate\Support\Str::startsWith($volunteer->profil_path, 'assets/img/'))
+                        <img class="rounded-xl w-[240px] h-[240px] mr-6 mb-10" src="{!! asset($volunteer->profil_path) !!}"
                              alt="Image de votre bénévole">
-                    </div>
+                    @else
+                        <img class="rounded-xl w-[240px] h-[240px] mr-6 mb-10" src="{!! asset('storage/photos/volunteers/originals/'.$volunteer->profil_path) !!}"
+                             alt="Image de votre bénévole">
+                    @endif
                     <dl class="border-l-2 border-orange-600 pt-8 pl-6 flex flex-wrap gap-5  md:pt-0 lg:max-w-md xl:max-w-md">
                         <x-admin.dashboard.volunteers.definition class="w-[300px]" dt="Nom&nbsp;:" dd="{!! $volunteer->last_name !!}"/>
                         <x-admin.dashboard.volunteers.definition class="w-[300px]" dt="Prénom&nbsp;:"
@@ -24,6 +27,7 @@
                         <x-admin.dashboard.volunteers.definition class="w-[300px]" dt="Téléphone&nbsp;:"
                                                                  dd="{!! $volunteer->telephone !!}"/>
                         <x-admin.dashboard.volunteers.definition dt="Email&nbsp;:" dd="{!! $volunteer->email !!}"/>
+                        <x-admin.dashboard.volunteers.definition dt="Mot de passe&nbsp;:" dd="{!! $volunteer->password !!}"/>
                     </dl>
                 </div>
                 <dl class="pt-8 border-t-2 border-orange-600 flex flex-wrap">
@@ -61,7 +65,8 @@
         </div>
     </section>
     <div
-        class="pt-4 flex flex-col sm:flex-row gap-2 lg:justify-end px-4 lg:px-10 min-[1700px]:px-30 min-[1920px]:max-w-[1280px] min-[1920px]:px-0 min-[1920px]:m-auto">
+        class="pt-4 flex flex-col sm:flex-row gap-4 lg:justify-end px-4 lg:px-10 min-[1700px]:px-30 min-[1920px]:max-w-[1280px] min-[1920px]:px-0 min-[1920px]:m-auto">
+        <x-admin.button class="w-1/1 text-center lg:w-1/3 2xl:w-1/5" href="{!! route('admin.volunteers.index') !!}" label="Voir tous les bénévoles" title="Aller vers la page des bénévoles"/>
         <x-admin.button class="w-1/1 text-center modify lg:w-1/3 2xl:w-1/5"
                         href="{!! route('admin.volunteers.edit',$volunteer->id) !!}" label="Modifier"
                         title="Aller vers la page de modification du bénévole"/>

@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->string('email')->unique();
             $table->string('profil_path');
             $table->string('link_animal')->nullable();
+            $table->string('password')->unique();
             $table->timestamps();
         });
     }
