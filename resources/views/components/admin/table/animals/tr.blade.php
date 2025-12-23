@@ -2,9 +2,9 @@
 
 <tr class="hover:bg-orange-200/20 border-b border-orange-200/70 ">
     @if(\Illuminate\Support\Str::startsWith($src, 'assets/img/'))
-        <td class="text-center p-4"><a href="{!! route('admin.animals.show', $id) !!}" title="Aller vers la page de {!! $name !!}"><img class="inline-block rounded-xl hover:scale-110 duration-250 transition-all w-[100px] h-[66px] object-cover" width="100" height="66" src="{!! $src_db !!}" alt="Image de notre petit compagnon {!! $name !!}"></a></td>
+        <td class="text-center p-4"><a href="{!! route('admin.animals.show', $id) !!}" title="Aller vers la page de {!! $name !!}"><img class="inline-block rounded-xl hover:scale-110 duration-250 transition-all w-[100px] h-[66px] object-cover object-[50%_30%]" width="100" height="66" src="{!! $src_db !!}" alt="Image de notre petit compagnon {!! $name !!}"></a></td>
     @else
-        <td class="text-center p-4"><a href="{!! route('admin.animals.show', $id) !!}" title="Aller vers la page de {!! $name !!}"><img class="inline-block rounded-xl hover:scale-110 duration-250 transition-all w-[100px] h-[66px] object-cover" width="100" height="66" src="{!! $src_storage !!}" alt="Image de notre petit compagnon {!! $name !!}"></a></td>
+        <td class="text-center p-4"><a href="{!! route('admin.animals.show', $id) !!}" title="Aller vers la page de {!! $name !!}"><img class="inline-block rounded-xl hover:scale-110 duration-250 transition-all w-[100px] h-[66px] object-cover object-[50%_30%]" width="100" height="66" src="{!! $src_storage !!}" alt="Image de notre petit compagnon {!! $name !!}"></a></td>
     @endif
     <td class="text-center"><a class="hover:text-xl hover:text-orange-600" title="Aller vers la page de {!! $name !!}" href="{!! route('admin.animals.show', $id) !!}">{!! $name !!}</a></td>
     <td class="text-center">{!! $type !!}</td>

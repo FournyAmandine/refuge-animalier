@@ -26,7 +26,7 @@
         </dl>
     </section>
     <div class="pt-4 flex flex-col sm:flex-row gap-4 lg:justify-end px-4 min-[1400px]:px-20 min-[1700px]:px-30 min-[1920px]:max-w-[1280px] min-[1920px]:px-0 min-[1920px]:m-auto">
-        <x-admin.button class="w-1/1 text-center lg:w-1/3 2xl:w-1/5" href="{!! route('admin.animals.index') !!}" label="Voir tous les animaux" title="Aller vers la page de modification de l'animal"/>
+        <x-admin.button class="w-1/1 text-center lg:w-1/3 2xl:w-1/5" href="{!! route('admin.animals.index') !!}" label="Voir tous les animaux" title="Aller vers la page des animaux"/>
         <x-admin.button class="w-1/1 text-center modify lg:w-1/3 2xl:w-1/5" href="{!! route('admin.animals.edit',$animal->id) !!}" label="Modifier" title="Aller vers la page de modification de l'animal"/>
         <x-admin.modal.button wire:click="toggleModal('delete', {!! $animal->id !!})" class="w-1/1 text-center delete lg:w-1/3 2xl:w-1/5" href="#" label="Supprimer" title="Supprimer votre animal"/>
     </div>

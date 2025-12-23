@@ -10,7 +10,10 @@
             <x-admin.dashboard.cards.card :link="false"
                                           animal_id="{!! $animal->id !!}"
                                           href_button="{!! route('admin.animals.edit', $animal->id) !!}"
-                                          src="{!! asset($animal->img_path) !!}"
+                                          href_see="{!! route('admin.animals.show', $animal->id) !!}"
+                                          src_db="{!! asset($animal->img_path) !!}"
+                                          src="{!! $animal->img_path !!}"
+                                          src_storage="{!! asset('storage/photos/animals/originals/'.$animal->img_path) !!}"
                                           alt="Photo de {!! $animal->name !!}"
                                           name="{!! $animal->name !!}"
                                           :dd="[

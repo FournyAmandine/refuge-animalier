@@ -14,7 +14,6 @@ new class extends Component
     public function store()
     {
         $animal = $this->form->store();
-
         return redirect()->route('admin.animals.show', $animal->id);
     }
 

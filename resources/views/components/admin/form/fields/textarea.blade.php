@@ -1,7 +1,7 @@
 @props(['field_name', 'placeholder', 'label', 'required'=>false])
 
-<div class="flex flex-col pb-5">
-    <label class="font-semibold pt-1 pb-2.5" for="{!! $field_name !!}">{!! $label !!}
+<div class="flex flex-col pt-5">
+    <label class="font-semibold pt-1 pb-2.5 lg:text-xl" for="{!! $field_name !!}">{!! $label !!}
         @if($required)
             <span class="text-red-600 required">*</span>
         @endif
