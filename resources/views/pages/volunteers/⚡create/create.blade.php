@@ -1,35 +1,41 @@
 <main class="lg:flex-1 bg-orange-50/30">
     <x-admin.sections.intro ariane="Fiche bénévole" title="Création d’une fiche bénévole"/>
     <section>
-        <form wire:submit.prevent="store" method="post" class="xl:max-w-10/12 m-auto">
+        <form wire:submit.prevent="store" method="post" class="xl:max-w-10/12 m-auto" enctype="multipart/form-data">
             @csrf
             <x-admin.form.fields.fieldset>
                 <x-slot:legend>
                     Informations générales
                 </x-slot:legend>
-                <div class="sm:flex sm:flex-wrap gap-6">
+                <div class="sm:flex sm:flex-wrap gap-6 ">
                     <x-admin.form.fields.input wire:model="form.last_name" field_name="volunteer_lastname" label="Entrez son nom" :required="true"
                                                placeholder="Chabroux"/>
                     <x-admin.form.fields.input wire:model="form.first_name" field_name="volunteer_firstname" label="Entrez son prénom"
                                                :required="true" placeholder="Maxime"/>
                 </div>
-                <div class="sm:flex sm:flex-wrap gap-6">
+                <div class="sm:flex sm:flex-wrap gap-6 pt-5">
                     <x-admin.form.fields.input wire:model="form.birth_date" field_name="volunteer_birth" label="Entrez sa date de naissance" :required="true" type="date" placeholder="1"/>
 
                     <x-admin.form.fields.input wire:model="form.email" field_name="volunteer_email" label="Entrez son email" :required="true"
                                                type="email" placeholder="chabroux.maxime@gmail.com"/>
                 </div>
-                <div>
+                <div class="pt-5">
                     <x-admin.form.fields.input wire:model="form.telephone" field_name="volunteer_telephone" label="Entrez son téléphone" :required="true"
                                                type="tel" placeholder="0483 34 21 13"/>
-                    <x-admin.form.fields.textarea wire:model="form.link_animal" field_name="volunteer_link_animal" label="Son lien avec les animaux" placeholder="Elle est douce avec les animaux"/>
+                    <x-admin.form.fields.textarea wire:model="form.link_animal" field_name="volunteer_link_animal" label="Entrez son lien avec les animaux" placeholder="Elle est douce avec les animaux"/>
+                </div>
+                <div class="pt-5 sm:flex sm:flex-wrap gap-6">
+                    <x-admin.form.fields.input wire:model="form.photo" accept="image/png, image/jpeg" field_name="volunteer_profil" label="Choisissez une/des photo(s)" :required="false"
+                                               type="file"/>
+                    <x-admin.form.fields.input wire:model="form.password" field_name="volunteer_password" label="Entrez son mot de passe" :required="true"
+                                               type="password" placeholder="1234567"/>
                 </div>
             </x-admin.form.fields.fieldset>
             <x-admin.form.fields.fieldset>
                 <x-slot:legend>
                     Disponibilités
                 </x-slot:legend>
-                <p class="text-xl pb-2">Entrez les disponibilités</p>
+                <p class="text-xl pb-2 font-semibold">Entrez les disponibilités</p>
                 <div class="flex flex-wrap justify-between gap-y-4">
                     <x-admin.form.fields.availability label="Lundi" field_name="monday" :form="$form" key="monday"/>
                     <x-admin.form.fields.availability label="Mardi" field_name="tuesday" :form="$form" key="tuesday"/>

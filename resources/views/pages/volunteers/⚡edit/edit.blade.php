@@ -24,6 +24,12 @@
                                                type="tel" placeholder="0483 34 21 13"/>
                     <x-admin.form.fields.textarea wire:model="form.link_animal" field_name="volunteer_link_animal" label="Son lien avec les animaux" placeholder="Elle est douce avec les animaux"/>
                 </div>
+                <div class="pt-5 sm:flex sm:flex-wrap gap-6">
+                    <x-admin.form.fields.input wire:model="form.photo" accept="image/png, image/jpeg" field_name="volunteer_profil" label="Choisissez une/des photo(s)" :required="false"
+                                               type="file"/>
+                    <x-admin.form.fields.input wire:model="form.password" field_name="volunteer_password" label="Entrez son mot de passe" :required="true"
+                                               type="password" placeholder="1234567"/>
+                </div>
             </x-admin.form.fields.fieldset>
             <x-admin.form.fields.fieldset>
                 <x-slot:legend>
