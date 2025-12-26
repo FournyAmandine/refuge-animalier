@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('type');
             $table->string('race')->nullable();
             $table->string('state');
-            $table->string('img_path');
+            $table->string('img_path')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();
         });

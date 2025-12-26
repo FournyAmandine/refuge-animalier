@@ -1,4 +1,4 @@
-.admin_burger_link{
+.admin_burger_link a{
     padding: 0.8rem 1.25rem;
     border: 2px solid var(--color-orange-600);
     text-align: center;
@@ -6,6 +6,7 @@
     margin: 0 auto;
     border-radius: 0.625rem;
     background-color: var(--color-orange-200);
+    display: inline-block;
 }
 
 .admin_nav_container{

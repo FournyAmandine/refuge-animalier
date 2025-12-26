@@ -28,6 +28,18 @@
     background-position: 8%;
 }
 
+.read{
+    background-image: url("../../images/icones/mark_read.svg");
+    background-repeat: no-repeat;
+    background-position: 4%;
+}
+
+.refuse{
+    background-image: url("../../images/icones/close.svg");
+    background-repeat: no-repeat;
+    background-position: 15%;
+}
+
 @media (min-width: 640px) {
     .modify{
         background-position: 30%;

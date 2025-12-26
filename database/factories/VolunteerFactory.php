@@ -23,6 +23,7 @@ class VolunteerFactory extends Factory
             'telephone' => '0472 40 78 43',
             'link_animal' => 'Elle est douce avec les animaux',
             'profil_path' => 'assets/img/icones/profil_volunteer.png',
+            'password' => $this->faker->word,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

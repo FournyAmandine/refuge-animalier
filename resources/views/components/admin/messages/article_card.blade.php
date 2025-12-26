@@ -1,12 +1,12 @@
-@props(['name', 'message', 'day', 'email', 'label'])
+@props(['name', 'message', 'day', 'email', 'label', 'href', 'id'])
 
 
-<article {!! $attributes->merge(['class'=>'relative hover:scale-105 hover:duration-200 hover:transition-all flex flex-wrap justify-between items-center border-2  rounded-lg p-2.5 [box-shadow:var(--shadow-xl)] mb-5 min-[1920px]:max-w-[64rem]']) !!}>
-    <a class="absolute inset-0" href="#" title="Voir le message"></a>
-    <div class="pb-2.5">
+<article {!! $attributes->merge(['class'=>'relative hover:scale-105 hover:duration-200 hover:transition-all flex flex-wrap justify-between items-center border-2 rounded-lg p-2.5 [box-shadow:var(--shadow-xl)] mb-5 min-[1920px]:max-w-[64rem]']) !!}>
+    <a class="absolute inset-0" wire:click="toggleModal('show', {{$id}})" href="{!! $href !!}" title="Voir le message"></a>
+    <div class="pb-2.5 pr-2.5">
         <h4 class="lg:text-xl">{!! $name !!}</h4>
         <p class="text-sm">{!! $message !!}</p>
     </div>
     <p class="text-sm">Il y a {!! $day !!} jours</p>
-    <x-admin.button href="mailto:{!! $email !!}" title="Envoyer un mail vers le contact{!! $name !!}" label="{!! $label !!}" class="pr-3 pl-10 answer"/>
+    <x-admin.button wire:click="toggleReadMessage({{$id}})" href="mailto:{!! $email !!}" title="Envoyer un mail vers le contact{!! $name !!}" label="{!! $label !!}" class="pr-3 pl-10 answer"/>
 </article>

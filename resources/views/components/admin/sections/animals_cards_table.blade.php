@@ -1,4 +1,4 @@
-@props(['animals'])
+@props(['animals', 'state'])
 
 
 <section class="pt-10">
@@ -10,14 +10,17 @@
             <x-admin.dashboard.cards.card :link="false"
                                           animal_id="{!! $animal->id !!}"
                                           href_button="{!! route('admin.animals.edit', $animal->id) !!}"
-                                          src="{!! asset($animal->img_path) !!}"
+                                          href_see="{!! route('admin.animals.show', $animal->id) !!}"
+                                          src_db="{!! asset($animal->img_path) !!}"
+                                          src="{!! $animal->img_path !!}"
+                                          src_storage="{!! asset('storage/photos/animals/originals/'.$animal->img_path) !!}"
                                           alt="Photo de {!! $animal->name !!}"
                                           name="{!! $animal->name !!}"
                                           :dd="[
                                                         $animal->sexe,
-                                                        \Carbon\Carbon::parse($animal->birth_date)->locale('fr')->translatedFormat('d F Y'),
-                                                        $animal->race,
-                                                        $animal->state,
+                                                        \Carbon\Carbon::parse($animal->birth_date)->age.' ans',
+                                                        $animal->type,
+                                                        $this->enumNameToValue($animal->state),
                                                         \Carbon\Carbon::parse($animal->created_at)->locale('fr')->translatedFormat('d F Y')
                                                         ]"
                                           href="{!! route('admin.animals.show',$animal->id) !!}"

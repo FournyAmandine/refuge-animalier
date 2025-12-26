@@ -2,12 +2,17 @@
 
 namespace Database\Seeders;
 
+use App\Models\Adoption;
 use App\Models\Animal;
 use App\Models\Availability;
+use App\Models\Message;
+use App\Models\Notes;
+use App\Models\Task;
 use App\Models\User;
 use App\Models\Volunteer;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Laravel\Prompts\Note;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,5 +28,13 @@ class DatabaseSeeder extends Seeder
         Volunteer::factory(10)->create();
 
         Availability::factory(10)->create();
+
+        Task::factory(10)->create();
+
+        Message::factory(10)->create();
+
+        Adoption::factory(10)->create();
+
+        Notes::factory(30)->create();
     }
 }

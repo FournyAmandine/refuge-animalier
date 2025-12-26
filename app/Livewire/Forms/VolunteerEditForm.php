@@ -2,7 +2,9 @@
 
 namespace App\Livewire\Forms;
 
+use App\Jobs\ProcessUploadedVolunteerImage;
 use App\Models\Volunteer;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
@@ -25,8 +27,14 @@ class VolunteerEditForm extends Form
     #[Validate('required|string')]
     public $telephone = '';
 
+    #[Validate('required|string')]
+    public $password = '12345';
+
     #[Validate('string')]
     public $link_animal = '';
+
+    #[Validate('nullable|image')]
+    public $photo;
 
     #[Validate('string')]
     public $profil_path = 'assets/img/icones/profil_volunteer.png';
@@ -52,6 +60,7 @@ class VolunteerEditForm extends Form
         $this->telephone = $volunteer->telephone;
         $this->profil_path = $volunteer->profil_path;
         $this->link_animal = $volunteer->link_animal;
+        $this->password = $volunteer->password;
         foreach ($volunteer->availabilities??[] as $availability) {
             $this->availabilities[$availability->day] = [
                 'active' => true,
@@ -64,44 +73,94 @@ class VolunteerEditForm extends Form
     public function store()
     {
         $this->validate();
-        $volunteer = Volunteer::create(
-            $this->only([
-                'last_name',
-                'first_name',
-                'birth_date',
-                'email',
-                'telephone',
-                'profil_path',
-                'link_animal'
-            ])
-        );
 
-        foreach ($this->availabilities as $day => $data) {
-            if ($data['active']) {
-                $volunteer->availabilities()->create([
-                    'day' => $day,
-                    'start' => $data['start'],
-                    'end' => $data['end'],
-                ]);
+        $profil_path = $this->profil_path;
+
+
+        if ($this->photo) {
+            $new_original_file_name = uniqid() . '.' . config('volunteers.extension');
+            $full_path_to_original = Storage::putFileAs(config('volunteers.original_path'),
+                $this->photo,
+                $new_original_file_name,
+            );
+
+            if ($full_path_to_original) {
+                $profil_path = $new_original_file_name;
+
+                ProcessUploadedVolunteerImage::dispatch($full_path_to_original, $new_original_file_name);
+            } else {
+                $this->photo = '';
             }
         }
-    }
+
+            $volunteer = Volunteer::create(
+                array_merge(
+                    $this->only([
+                        'last_name',
+                        'first_name',
+                        'birth_date',
+                        'email',
+                        'telephone',
+                        'profil_path',
+                        'link_animal',
+                        'password'
+                    ]),
+                    ['profil_path'=>$profil_path]
+                )
+            );
+
+            foreach ($this->availabilities as $day => $data) {
+                if ($data['active']) {
+                    $volunteer->availabilities()->create([
+                        'day' => $day,
+                        'start' => $data['start'],
+                        'end' => $data['end'],
+                    ]);
+                }
+            }
+
+            return $volunteer;
+        }
 
     public function update()
     {
         $this->validate();
 
+
+        $profil_path = $this->profil_path;
+
+
+        if ($this->photo) {
+            $new_original_file_name = uniqid() . '.' . config('volunteers.extension');
+            $full_path_to_original = Storage::putFileAs(config('volunteers.original_path'),
+                $this->photo,
+                $new_original_file_name,
+            );
+
+            if ($full_path_to_original) {
+                $profil_path = $new_original_file_name;
+
+                ProcessUploadedVolunteerImage::dispatch($full_path_to_original, $new_original_file_name);
+            } else {
+                $this->photo = '';
+            }
+        }
+
         $this->volunteer->update(
-            $this->only(
-                [
-                    'last_name',
-                    'first_name',
-                    'birth_date',
-                    'email',
-                    'telephone',
-                    'profil_path',
-                    'link_animal'
-                ]
+            array_merge(
+                $this->only(
+                    [
+                        'last_name',
+                        'first_name',
+                        'birth_date',
+                        'email',
+                        'telephone',
+                        'profil_path',
+                        'link_animal',
+                        'password'
+                    ]
+                ),
+                ['profil_path'=>$profil_path]
             )
         );
         $this->volunteer->availabilities()->delete();

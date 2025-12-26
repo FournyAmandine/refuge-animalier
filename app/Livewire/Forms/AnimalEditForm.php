@@ -2,7 +2,10 @@
 
 namespace App\Livewire\Forms;
 
+use App\Enum\AnimalStatus;
+use App\Jobs\ProcessUploadedAnimalImage;
 use App\Models\Animal;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
@@ -32,8 +35,11 @@ class AnimalEditForm extends Form
     #[Validate('required|string')]
     public $state = '';
 
-    #[Validate('required|string')]
-    public $img_path = 'assets/img/icones/profil_animal.png';
+    #[Validate('nullable|string')]
+    public $img_path = 'assets/img/icones/profil_animal.svg';
+
+    #[Validate('nullable|image')]
+    public $photo;
 
     #[Validate('required|string')]
     public $coat = '';
@@ -56,32 +62,34 @@ class AnimalEditForm extends Form
         $this->coat = $animal->coat;
         $this->description = $animal->description;
     }
+
+
     public function store()
     {
         $this->validate();
-        Animal::create(
-            $this->only([
-                'name',
-                'sexe',
-                'birth_date',
-                'type',
-                'vaccines',
-                'race',
-                'state',
-                'img_path',
-                'coat',
-                'description',
-            ])
-        );
-    }
 
-    public function update()
-    {
-        $this->validate();
+        $img_path = $this->img_path;
 
-        $this->animal->update(
-            $this->only(
-                [
+
+        if ($this->photo) {
+            $new_original_file_name = uniqid() . '.' . config('animals.extension');
+            $full_path_to_original = Storage::putFileAs(config('animals.original_path'),
+                $this->photo,
+                $new_original_file_name,
+            );
+
+            if ($full_path_to_original) {
+                $img_path = $new_original_file_name;
+
+                ProcessUploadedAnimalImage::dispatch($full_path_to_original, $new_original_file_name);
+            } else {
+                $this->photo = '';
+            }
+        }
+
+        return Animal::create(
+            array_merge(
+                $this->only([
                     'name',
                     'sexe',
                     'birth_date',
@@ -92,7 +100,48 @@ class AnimalEditForm extends Form
                     'img_path',
                     'coat',
                     'description',
-                ]
+                ]),
+                ['img_path' => $img_path]
+            )
+        );
+    }
+
+    public function update()
+    {
+        $this->validate();
+
+        $img_path = $this->img_path;
+
+        if ($this->photo) {
+            $new_original_file_name = uniqid() . '.' . config('animals.extension');
+            $full_path_to_original = Storage::putFileAs(config('animals.original_path'),
+                $this->photo,
+                $new_original_file_name,
+            );
+
+            if ($full_path_to_original) {
+                $img_path = $new_original_file_name;
+
+                ProcessUploadedAnimalImage::dispatch($full_path_to_original, $new_original_file_name);
+            } else {
+                $this->photo = '';
+            }
+        }
+
+        $this->animal->update(
+            array_merge(
+                $this->only([
+                    'name',
+                    'sexe',
+                    'birth_date',
+                    'type',
+                    'vaccines',
+                    'race',
+                    'state',
+                    'coat',
+                    'description',
+                ]),
+                ['img_path' => $img_path]
             )
         );
     }

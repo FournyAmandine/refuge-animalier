@@ -1,4 +1,4 @@
-span:not(.ariane):not(.required):not(.return):not(.paginate):not(.animal_name):not(.day):not(.number):not(.action){
+span:not(.ariane):not(.required):not(.return):not(.paginate):not(.animal_name):not(.day):not(.number):not(.action):not(.menu){
     visibility: hidden;
 }
 
