@@ -6,7 +6,7 @@
     <x-admin.sections.intro ariane="Bénévoles/{!! $volunteer->first_name !!}"
                             title="Fiche de {!! $volunteer->first_name !!}"/>
     <section
-        class="m-4 p-4 lg:mx-10 min-[1700px]:mx-30 md:p-8 bg-orange-50/7 [box-shadow:var(--shadow-xl)] rounded-xl md:flex animal md:gap-3 xl:flex-row xl:gap-10 min-[1920px]:max-w-[1280px] min-[1920px]:m-auto lg:flex-col">
+        class="m-4 p-4 lg:mx-10 min-[1700px]:mx-30 md:p-8 bg-orange-50/7 [box-shadow:var(--shadow-xl)] rounded-xl md:flex animal md:gap-3 xl:flex-row xl:gap-10 min-[1920px]:max-w-[1280px] min-[1920px]:mx-100 min-[1920px]:m-auto lg:flex-col">
         <h3 class="sro">{!! $volunteer->first_name !!} {!! $volunteer->last_name !!}</h3>
         <div class="flex flex-row flex-wrap gap-5 flex-1">
             <div class="">
@@ -27,7 +27,11 @@
                         <x-admin.dashboard.volunteers.definition class="w-[300px]" dt="Téléphone&nbsp;:"
                                                                  dd="{!! $volunteer->telephone !!}"/>
                         <x-admin.dashboard.volunteers.definition dt="Email&nbsp;:" dd="{!! $volunteer->email !!}"/>
-                        <x-admin.dashboard.volunteers.definition dt="Mot de passe&nbsp;:" dd="{!! $volunteer->password !!}"/>
+                        <div class="flex gap-4 items-center" x-data="{show:false}">
+                            <p>Mot de passe&nbsp;:</p>
+                            <p class="text-xl font-bold" x-text="show?'{!! $volunteer->password !!}':'*******'"></p>
+                            <img @click="show=!show" class="eye cursor-pointer" src="{!! asset('assets/img/icones/eye.svg') !!}" alt="Oeil brun pour la vue du mot de passe">
+                        </div>
                     </dl>
                 </div>
                 <dl class="pt-8 border-t-2 border-orange-600 flex flex-wrap">
@@ -74,4 +78,21 @@
                         class="w-1/1 text-center delete lg:w-1/3 2xl:w-1/5" href="#" label="Supprimer"
                         title="Supprimer votre bénévole"/>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Ouiiiii');
+            const eyeElement = document.querySelector('.eye');
+            const passwordElement = document.querySelector('.password dd');
+
+            eyeElement.addEventListener('click', () => {
+                if (passwordElement.textContent === '*******') {
+                    passwordElement.textContent = {!! $volunteer->password !!};
+                } else if (passwordElement.textContent === {!! $volunteer->password !!}) {
+                    passwordElement.textContent = '*******';
+                }
+            })
+        });
+    </script>
 </main>
+
+
