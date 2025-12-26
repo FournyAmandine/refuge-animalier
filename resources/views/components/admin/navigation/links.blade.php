@@ -7,7 +7,7 @@
         ['li_class' => $li_class, 'href'=>route('admin.messages.index'), 'label'=>'Vos messages', 'title'=>'Aller vers la page avec vos messages de contacts'],
         ['li_class' => $li_class, 'href'=>route('admin.adoptions.index'), 'label'=>'Vos demandes', 'title'=>'Aller vers la page avec vos demandes d’adoption'],
         ['li_class' => $li_class, 'href'=>route('admin.tasks.index'), 'label'=>'Vos tâches', 'title'=>'Aller vers la page avec vos fiches à valider'],
-        ['li_class' => $li_class, 'href'=>'#', 'label'=>'Votre profil', 'title'=>'Aller vers la page dde votre profil'],
+        ['li_class' => $li_class, 'href'=>route('profil'), 'label'=>'Votre profil', 'title'=>'Aller vers la page dde votre profil'],
     ];
 @endphp
 
