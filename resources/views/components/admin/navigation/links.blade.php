@@ -1,11 +1,11 @@
 @props(['nav_class', 'li_class'])
 @php
     $links = [
-        ['li_class' => $li_class, 'href'=>'#', 'label'=>'Votre tableau de bord', 'title'=>'Aller vers la page de votre tableau de bord'],
-        ['li_class' => $li_class, 'href'=>'#', 'label'=>'Vos animaux', 'title'=>'Aller vers la page des vos animaux'],
-        ['li_class' => $li_class, 'href'=>'#', 'label'=>'Vos bénévoles', 'title'=>'Aller vers la page de vos bénévoles'],
-        ['li_class' => $li_class, 'href'=>'#', 'label'=>'Vos messages', 'title'=>'Aller vers la page avec vos messages de contacts'],
-        ['li_class' => $li_class, 'href'=>'#', 'label'=>'Vos demandes', 'title'=>'Aller vers la page avec vos demandes d’adoption'],
+        ['li_class' => $li_class, 'href'=>route('dashboard'), 'label'=>'Votre tableau de bord', 'title'=>'Aller vers la page de votre tableau de bord'],
+        ['li_class' => $li_class, 'href'=>route('admin.animals.index'), 'label'=>'Vos animaux', 'title'=>'Aller vers la page des vos animaux'],
+        ['li_class' => $li_class, 'href'=>route('admin.volunteers.index'), 'label'=>'Vos bénévoles', 'title'=>'Aller vers la page de vos bénévoles'],
+        ['li_class' => $li_class, 'href'=>route('admin.messages.index'), 'label'=>'Vos messages', 'title'=>'Aller vers la page avec vos messages de contacts'],
+        ['li_class' => $li_class, 'href'=>route('admin.adoptions.index'), 'label'=>'Vos demandes', 'title'=>'Aller vers la page avec vos demandes d’adoption'],
         ['li_class' => $li_class, 'href'=>'#', 'label'=>'Vos fiches à valider', 'title'=>'Aller vers la page avec vos fiches à valider'],
         ['li_class' => $li_class, 'href'=>'#', 'label'=>'Votre profil', 'title'=>'Aller vers la page dde votre profil'],
     ];
