@@ -2,12 +2,12 @@
 
 @if(\Illuminate\Support\Str::startsWith($src, 'assets/img/'))
     <figure>
-        <img class="rounded-t-lg w-[346px] h-[217px] object-cover object-[50%_30%]" src="{!! $src_db !!}" alt="{!! $alt !!}" width="346"
+        <img class="rounded-t-lg w-[345px] h-[217px] object-cover object-[50%_30%]" src="{!! $src_db !!}" alt="{!! $alt !!}" width="346"
              height="217">
     </figure>
 @else
     <figure>
-        <img class="rounded-t-lg w-[346px] h-[217px] object-cover object-[50%_30%]" src="{!! $src_storage !!}" alt="{!! $alt !!}" width="346"
+        <img class="rounded-t-lg w-[345px] h-[217px] object-cover object-[50%_30%]" src="{!! $src_storage !!}" alt="{!! $alt !!}" width="346"
              height="217">
     </figure>
 @endif

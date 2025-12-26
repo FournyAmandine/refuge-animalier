@@ -141,7 +141,7 @@ class VolunteerEditForm extends Form
             if ($full_path_to_original) {
                 $profil_path = $new_original_file_name;
 
-                ProcessUploadedVolunteerImage::dispatch($full_path_to_original, $new_original_file_name);
+                ProcessUploadedImage::dispatch($full_path_to_original, $new_original_file_name);
             } else {
                 $this->photo = '';
             }

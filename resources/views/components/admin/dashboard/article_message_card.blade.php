@@ -1,6 +1,6 @@
 @props(['day', 'animal', 'contact', 'message'])
 
-<article class="flex justify-between items-end border-b border-orange-600 mb-2">
+<article class="flex flex-wrap justify-between items-end border-b border-orange-600 mb-2 py-2">
     <div>
         <h4>{!! $contact !!}</h4>
         <p class="text-sm">{!! $message !!} <span class="animal_name text-[1rem]">{!! $animal??'' !!}</span></p>

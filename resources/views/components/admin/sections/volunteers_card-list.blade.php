@@ -9,7 +9,10 @@
         Vos bénévoles</h3>
     <div {{ $attributes->class(['pb-5 flex flex-col gap-5 items-center slider']) }}>
         @foreach($volunteers as $volunteer)
-            <x-admin.dashboard.volunteers.card src="{!! asset($volunteer->profil_path) !!}"
+            <x-admin.dashboard.volunteers.card
+                                               src_db="{!! asset($volunteer->profil_path) !!}"
+                                               src="{!! $volunteer->profil_path !!}"
+                                               src_storage="{!! asset('storage/photos/volunteers/originals/'.$volunteer->profil_path) !!}"
                                                id="{!! $volunteer->id !!}"
                                                alt="Photo de {!! $volunteer->first_name !!}"
                                                name="{!! $volunteer->first_name !!} {!! $volunteer->last_name !!}"
@@ -20,7 +23,7 @@
                                                />
         @endforeach
     </div>
-    <div class="flex gap-2.5">
+    <div class="flex gap-4">
         <x-admin.button class="px-1" label="Voir tous les bénévoles" title="Aller sur la page avec les bénévoles"
                         href="#"/>
         <x-admin.button class="px-1" label="Ajouter un bénévole" title="Aller sur la page pour ajouter un bénévole"
