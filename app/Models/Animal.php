@@ -12,8 +12,12 @@ class Animal extends Model
 
     protected $fillable = ['name', 'sexe', 'race', 'type', 'coat', 'vaccines', 'birth_date', 'state', 'img_path', 'description'];
 
-    public function animals():HasMany
+    public function adoptions():HasMany
     {
         return $this->hasMany(Adoption::class);
+    }
+    public function notes():HasMany
+    {
+        return $this->hasMany(Notes::class);
     }
 }

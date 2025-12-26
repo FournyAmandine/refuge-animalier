@@ -78,7 +78,7 @@
                         class="w-1/1 text-center delete lg:w-1/3 2xl:w-1/5" href="#" label="Supprimer"
                         title="Supprimer votre bénévole"/>
     </div>
-    <script>
+   {{-- <script>
         document.addEventListener('DOMContentLoaded', () => {
             console.log('Ouiiiii');
             const eyeElement = document.querySelector('.eye');
@@ -92,7 +92,7 @@
                 }
             })
         });
-    </script>
+    </script>--}}
 </main>
 
 
