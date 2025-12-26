@@ -13,7 +13,8 @@ Route::get('/adoption', [AdoptionFormController::class, 'index'])->name('public.
 Route::get('/animals', [AnimalController::class, 'index'])->name('public.animals.index');
 Route::get('/animals{animal}', [AnimalController::class, 'show'])->name('public.animals.show');
 
-Route::livewire('/dashboard', 'pages::dashboard')->name('dashboard');
+Route::livewire('/admin/dashboard', 'pages::dashboard')->name('dashboard');
+Route::livewire('/admin/profil', 'pages::profil')->name('profil');
 
 Route::livewire('/admin/animals/create', 'pages::animals.create')->name('admin.animals.create');
 Route::livewire('/admin/animals/{animal}/edit', 'pages::animals.edit')->name('admin.animals.edit');
