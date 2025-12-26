@@ -3,7 +3,7 @@
 namespace App\Livewire\Forms;
 
 use App\Enum\AnimalStatus;
-use App\Jobs\ProcessUploadedAnimalImage;
+use App\Jobs\ProcessUploadedImage;
 use App\Models\Animal;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Validate;
@@ -81,7 +81,7 @@ class AnimalEditForm extends Form
             if ($full_path_to_original) {
                 $img_path = $new_original_file_name;
 
-                ProcessUploadedAnimalImage::dispatch($full_path_to_original, $new_original_file_name);
+                ProcessUploadedImage::dispatch($full_path_to_original, $new_original_file_name);
             } else {
                 $this->photo = '';
             }
@@ -122,7 +122,7 @@ class AnimalEditForm extends Form
             if ($full_path_to_original) {
                 $img_path = $new_original_file_name;
 
-                ProcessUploadedAnimalImage::dispatch($full_path_to_original, $new_original_file_name);
+                ProcessUploadedImage::dispatch($full_path_to_original, $new_original_file_name);
             } else {
                 $this->photo = '';
             }

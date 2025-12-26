@@ -23,6 +23,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::create([
+            'email' => 'amandine@fourny.com',
+            'name' => 'Amandine Fourny',
+            'password' => 'azerty'
+        ]);
+
         Animal::factory(30)->create();
 
         Volunteer::factory(10)->create();

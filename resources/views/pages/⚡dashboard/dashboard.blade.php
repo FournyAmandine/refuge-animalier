@@ -1,4 +1,4 @@
-<main class="admin lg:flex-1">
+<main class="admin lg:flex-1 bg-orange-50/30">
     <h2 class="pb-15 [font-size:var(--text-3xl)] md:[font-size:var(--text-4xl)] lg:[font-size:var(--text-6xl)] text-orange-600 text-center underline decoration-orange-400 decoration-3">Les pattes heureuses</h2>
     <div class="flex flex-col min-[922px]:flex-row min-[922px]:flex-wrap px-5 sm:px-8 md:px-14 md:justify-between lg:px-24 xl:px-36">
         <x-admin.sections.card_dashboard>
