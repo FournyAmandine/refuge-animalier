@@ -6,7 +6,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Laravel\Facades\Image;
-class ProcessUploadedAnimalImage implements ShouldQueue
+class ProcessUploadedImage implements ShouldQueue
 {
     use Queueable;
 

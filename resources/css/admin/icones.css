@@ -40,6 +40,41 @@
     background-position: 15%;
 }
 
+.add, .task, .message, .adoptions, .paw, .volunteers{
+    background-repeat: no-repeat;
+    background-position: 3%;
+}
+
+.profil{
+    background-image: url("../../images/icones/arrow_right_light.svg");
+    background-repeat: no-repeat;
+    background-position: 95%;
+}
+
+.add{
+    background-image: url("../../images/icones/add.svg");
+}
+
+.task{
+    background-image: url("../../images/icones/folder_check_fill.svg");
+}
+
+.message{
+    background-image: url("../../images/icones/message.svg");
+}
+
+.adoptions{
+    background-image: url("../../images/icones/file_dock_fill.svg");
+}
+
+.paw{
+    background-image: url("../../images/icones/paw_light.svg");
+}
+
+.volunteers{
+    background-image: url("../../images/icones/group.svg");
+}
+
 @media (min-width: 640px) {
     .modify{
         background-position: 30%;
