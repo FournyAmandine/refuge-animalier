@@ -30,6 +30,10 @@ new class extends Component
 
     public bool $isOpenNoteDeleteModal = false;
 
+    public function render()
+    {
+        return view('pages.animals.⚡show.show')->title($this->animal->name);
+    }
     public function mount($animal): void
     {
         $this->animal = Animal::with('notes')->findOrFail($animal);

@@ -5,10 +5,12 @@ use App\Models\Animal;
 use App\Models\Message;
 use App\Models\Task;
 use App\Models\Volunteer;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 new class extends Component
 {
+    #[Title('Dashboard')]
     public function render()
     {
         return view('pages.⚡dashboard.dashboard', [

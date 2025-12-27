@@ -13,6 +13,11 @@ new class extends Component
 
     public $animal;
 
+    public function render()
+    {
+        return view('pages.animals.⚡edit.edit')->title('Modifier ' . $this->animal->name);
+    }
+
     public function mount($animal): void
     {
         $this->animal = Animal::findOrFail($animal);

@@ -4,7 +4,7 @@
 
 <main class="lg:flex-1 bg-orange-50/30">
     <x-admin.sections.intro ariane="Bénévoles/{!! $volunteer->first_name !!}"
-                            title="Fiche de {!! $volunteer->first_name !!}"/>
+                            title="Fiche de {!! $volunteer->first_name !!} {!! $volunteer->last_name !!}"/>
     <section
         class="m-4 p-4 lg:mx-10 min-[1700px]:mx-30 md:p-8 bg-orange-50/7 [box-shadow:var(--shadow-xl)] rounded-xl md:flex animal md:gap-3 xl:flex-row xl:gap-10 min-[1920px]:max-w-[1280px] min-[1920px]:mx-100 min-[1920px]:m-auto lg:flex-col">
         <h3 class="sro">{!! $volunteer->first_name !!} {!! $volunteer->last_name !!}</h3>

@@ -2,6 +2,7 @@
 
 use App\Models\Adoption;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 new class extends Component
@@ -10,6 +11,7 @@ new class extends Component
 
     public string|Adoption $openAdoption = '';
 
+    #[Title('Vos demandes d’adoptions')]
     public function toggleValidateAdoption(Adoption $adoptions){
         $adoptions->update([
             'validate'=> !$adoptions->validate,
