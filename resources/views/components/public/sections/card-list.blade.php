@@ -13,7 +13,7 @@
                                      alt="Photo de {!! $animal->name !!}"
                                      title="{!! $animal->name !!}"
                                      href="{!! route('public.animals.show', $animal->id) !!}"
-                                     name="{!! $animal->name !!}" :dd="[$animal->sexe,$animal->age . 'ans',$animal->race]"/>
+                                     name="{!! $animal->name !!}" :dd="[$animal->sexe, \Carbon\Carbon::parse($animal->birth_date)->age . ' ans',$animal->race]"/>
             @endforeach
         </div>
 </section>
