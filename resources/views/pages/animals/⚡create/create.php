@@ -1,5 +1,7 @@
 <?php
 
+use App\Enums\AnimalStatus;
+use App\Enums\AnimalVaccines;
 use App\Livewire\Forms\AnimalEditForm;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -22,7 +24,12 @@ new class extends Component
 
     public function getStatus()
     {
-        return \App\Enum\AnimalStatus::cases();
+        return AnimalStatus::cases();
+    }
+
+    public function getVaccines()
+    {
+        return AnimalVaccines::cases();
     }
 
 };

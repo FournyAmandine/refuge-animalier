@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Enum\AnimalStatus;
+use App\Enums\AnimalStatus;
 use App\Models\Animal;
 
 class AnimalController extends Controller

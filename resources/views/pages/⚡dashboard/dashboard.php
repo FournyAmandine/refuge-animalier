@@ -1,6 +1,6 @@
 <?php
 
-use App\Enum\AnimalStatus;
+use App\Enums\AnimalStatus;
 use App\Models\Adoption;
 use App\Models\Animal;
 use App\Models\Message;

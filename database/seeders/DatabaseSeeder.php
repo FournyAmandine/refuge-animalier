@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Enum\UserRole;
+use App\Enums\UserRole;
 use App\Models\Adoption;
 use App\Models\Animal;
 use App\Models\Availability;
@@ -13,7 +13,6 @@ use App\Models\User;
 use App\Models\Volunteer;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Laravel\Prompts\Note;
 
 class DatabaseSeeder extends Seeder
 {

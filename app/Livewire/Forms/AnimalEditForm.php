@@ -2,7 +2,6 @@
 
 namespace App\Livewire\Forms;
 
-use App\Enum\AnimalStatus;
 use App\Jobs\ProcessUploadedImage;
 use App\Models\Animal;
 use Illuminate\Support\Facades\Storage;

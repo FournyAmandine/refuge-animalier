@@ -1,9 +1,7 @@
 <?php
 
-use App\Enum\AnimalStatus;
+use App\Enums\AnimalStatus;
 use App\Models\Animal;
-use Illuminate\Pagination\LengthAwarePaginator;
-use LaravelIdea\Helper\App\Models\_IH_Animal_C;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Title;
 use Livewire\Component;

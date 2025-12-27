@@ -36,7 +36,12 @@
                     </div>
                     <div class="sm:flex sm:flex-wrap gap-6">
                         <x-admin.form.fields.input wire:model="form.birth_date"  field_name="animal_birth" label="Entrez sa date de naissance" :required="true" type="date" placeholder="1"/>
-                        <x-admin.form.fields.input wire:model="form.vaccines" field_name="animal_vaccines" label="Entrez ses vaccins" placeholder="Tétanos, rage"/>
+                        <x-admin.form.fields.input wire:model="form.vaccines" :list="true" id_list="vaccines" field_name="animal_vaccines" label="Entrez ses vaccins" placeholder="Tétanos, rage"/>
+                        <datalist id="vaccines">
+                            @foreach($this->getVaccines() as $vaccin)
+                                <option value="{{$vaccin->value}}"></option>
+                            @endforeach
+                        </datalist>
                     </div>
                 </x-admin.form.fields.fieldset>
             <x-admin.form.fields.fieldset>
