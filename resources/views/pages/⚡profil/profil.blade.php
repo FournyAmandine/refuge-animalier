@@ -32,7 +32,7 @@
             <x-admin.button class="w-1/1 sm:w-[48%] lg:w-1/1 xl:w-[48%] p-3 pl-11 volunteers mb-5" label="Gérer vos bénévoles" title="Aller vers la page des bénévoles" href="{!! route('admin.volunteers.index') !!}"/>
         </div>
     </section>
-    <x-admin.sections.stats_cards/>
+    <x-admin.sections.stats_cards :welcome="$welcome" :adopted="$adopted" :in="$in" :care="$care" :pending="$pending" :draft="$draft"/>
     @if($isOpenEditModal)
         <x-admin.modal.general outside="$dispatch('toggleModal', { modal: 'edit' })" class="lg:text-2xl pb-10 text-orange-600 underline decoration-orange-400 decoration-3 [font-family:Baloo] font-semibold ">>
             <x-slot:title>

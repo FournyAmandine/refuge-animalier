@@ -15,7 +15,7 @@
                         <x-public.form.fields.option selected="selected" value="none" option_name="--Votre choix--"/>
                         @foreach($this->getStatus() as $status)
                             <x-public.form.fields.option
-                                value="{{ $status->name }}"
+                                value="{{ $status->value }}"
                                 option_name="{{ $status->value }}"/>
                         @endforeach
                     </x-public.form.fields.select>

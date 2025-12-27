@@ -7,7 +7,7 @@
         <x-admin.dashboard.notifications.messages :messages="$messages" />
         <x-admin.dashboard.notifications.tasks :tasks="$tasks"/>
     </section>
-    <x-admin.sections.stats_cards/>
+    <x-admin.sections.stats_cards :welcome="$welcome" :adopted="$adopted" :in="$in" :care="$care" :pending="$pending" :draft="$draft"/>
     <section class="pt-30">
         <h3 class="title_section text-xl md:text-2xl font-medium underline decoration-orange-400 decoration-2 pb-2.5">
             Vos derniers arrivants</h3>
