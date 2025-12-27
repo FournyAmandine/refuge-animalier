@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enum\UserRole;
 use App\Models\Adoption;
 use App\Models\Animal;
 use App\Models\Availability;
@@ -26,7 +27,15 @@ class DatabaseSeeder extends Seeder
         User::create([
             'email' => 'amandine@fourny.com',
             'name' => 'Amandine Fourny',
-            'password' => 'azerty'
+            'password' => password_hash('azerty', PASSWORD_BCRYPT),
+            'role' => UserRole::Administrator
+        ]);
+
+        User::create([
+            'email' => 'loic@mozin.com',
+            'name' => 'Loïc Mozin',
+            'password' => password_hash('12345', PASSWORD_BCRYPT),
+            'role' => UserRole::Volunteer
         ]);
 
         Animal::factory(30)->create();

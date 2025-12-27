@@ -3,7 +3,6 @@
 namespace App\Livewire\Forms;
 
 use App\Jobs\ProcessUploadedImage;
-use App\Jobs\ProcessUploadedVolunteerImage;
 use App\Models\Volunteer;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Validate;
