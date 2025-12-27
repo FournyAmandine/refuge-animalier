@@ -6,28 +6,32 @@
     <section class="2xl:mx-10">
         <h3 class="title_section pb-5 lg:text-2xl">À réaliser</h3>
         @if($tasks_undone)
-            @foreach($tasks_undone as $task)
+            @forelse($tasks_undone as $task)
                 <x-admin.tasks.article_card :wire:key="'task-'.$task->id" done="{!! $task->done !!}"
                                             class="border-red-600" id="{!! $task->id !!}"
                                             label="{!! $task->task_name !!}"
                                             day="{!! \Carbon\Carbon::parse($task->created_at)->day !!}"
                                             field_name="{!! $task->task_name !!}"
                 />
-            @endforeach
+            @empty
+                    <p class="text-center text-xl">Toutes les tâches ont été faites&nbsp;!</p>
+            @endforelse
         @else
             <p>Vous avez fait toutes vos tâches ! </p>
         @endif
     </section>
     <section class="pt-15 2xl:mx-10">
         <h3 class="title_section pb-5 lg:text-2xl">Dejà réalisées</h3>
-        @foreach($tasks_done as $task)
+        @forelse($tasks_done as $task)
             <x-admin.tasks.article_card :wire:key="'task-'.$task->id" done="{!! $task->done !!}"
                                         class="border-green-600" id="{!! $task->id !!}"
                                         label="{!! $task->task_name !!}"
                                         day="{!! \Carbon\Carbon::parse($task->created_at)->day !!}"
                                         field_name="{!! $task->task_name !!}"
             />
-        @endforeach
+        @empty
+            <p class="text-center text-xl">Aucune tâche n'a encore été faite&nbsp;! </p>
+        @endforelse
     </section>
     @if($isOpenCreateModal)
         <x-admin.modal.general outside="$dispatch('toggleModal', { modal: 'create' })"  class="lg:text-2xl pb-10 text-orange-600 underline decoration-orange-400 decoration-3 [font-family:Baloo] font-semibold ">
@@ -42,7 +46,7 @@
                                                    placeholder="Valider la fiche..." :required="true"
                                                    label="Entrez le nom"/>
                         <x-admin.form.buttons.button
-                            class="text-orange-50 lg:text-xl bg-orange-600 border-2 rounded-lg px-10 py-2 hover:scale-110 duration-300 transition-all"
+                            class="mt-4 text-orange-50 lg:text-xl bg-orange-600 border-2 rounded-lg px-10 py-2 hover:scale-110 duration-300 transition-all"
                             text="Ajouter la tâche"/>
                     </form>
                     <button

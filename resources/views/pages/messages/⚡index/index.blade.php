@@ -2,21 +2,25 @@
     <x-admin.sections.intro ariane="Messages" title="Vos messages de contact"/>
     <section>
         <h3 class="title_section pb-5 lg:text-2xl">Non-lus</h3>
-            @foreach($messages_unread as $message)
-                <x-admin.messages.article_card href="#" id="{!! $message->id !!}" message="{!! $message->message !!}"
-                                               name="{!! $message->first_name !!} {!! $message->last_name !!}"
-                                               day="{!! \Carbon\Carbon::parse($message->created_at)->day !!}"
-                                               email="{!! $message->email !!}" class="border-red-600" label="Répondre"/>
-            @endforeach
+        @forelse($messages_unread as $message)
+            <x-admin.messages.article_card href="#" id="{!! $message->id !!}" message="{!! $message->message !!}"
+                                           name="{!! $message->first_name !!} {!! $message->last_name !!}"
+                                           day="{!! \Carbon\Carbon::parse($message->created_at)->day !!}"
+                                           email="{!! $message->email !!}" class="border-red-600" label="Répondre"/>
+        @empty
+            <p class="text-center text-xl">Toutes les messages sont lus&nbsp;!</p>
+        @endforelse
     </section>
     <section class="pt-20">
         <h3 class="title_section pb-5 lg:text-2xl">Lus</h3>
-        @foreach($messages_read as $message)
+        @forelse($messages_read as $message)
             <x-admin.messages.article_card id="{!! $message->id !!}" href="#" message="{!! $message->message !!}"
                                            name="{!! $message->first_name !!} {!! $message->last_name !!}"
                                            day="{!! \Carbon\Carbon::parse($message->created_at)->day !!}"
                                            email="{!! $message->email !!}" class="border-green-600" label="Répondre"/>
-        @endforeach
+        @empty
+            <p class="text-center text-xl">Aucun message n'a encore été lu&nbsp;!</p>
+        @endforelse
     </section>
     @if($isOpenShowModal)
         <x-admin.modal.general outside="$dispatch('toggleModal', { modal: 'show' })"
