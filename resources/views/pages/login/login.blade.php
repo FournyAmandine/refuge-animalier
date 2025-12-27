@@ -1,8 +1,8 @@
 <x-login.app>
     <main class="w-full h-[100vh] flex justify-center items-center">
-        <section class="max-w-150 shadow-[var(--shadow-xl)] rounded-2xl login py-20 px-14 flex flex-col">
+        <section class="max-w-[80%] md:max-w-150 shadow-[var(--shadow-xl)] rounded-2xl login py-15 px-7 md:py-20 md:px-14 flex flex-col">
             <h2 class="text-orange-600 text-3xl text-center">Bienvenue chez</h2>
-            <img class="w-110" src="{!! asset('assets/img/logo-medium.svg') !!}"
+            <img class="w-60 md:w-110" src="{!! asset('assets/img/logo-medium.svg') !!}"
                  alt="Logo les Pattes Heureuses avec une pattes de chat dans une maison">
             <p class="font-semibold text-2xl py-2.5">Connectez-vous à votre refuge</p>
             <span class="text-red-500 text-sm required pb-8">Les champs * sont obligatoires</span>
@@ -12,7 +12,7 @@
                                :required="true"/>
                 <x-login.input field_name="password" type="password" placeholder="*****"
                                label="Entrez votre mot de passe" :required="true"/>
-                <div class="flex justify-between">
+                <div class="flex justify-between flex-wrap gap-2">
                     <x-login.input_checkbox field_name="remember" label="Se souvenir de moi" class_label="text-md"/>
                     <a href="#" title="Aller vers la page de modification du mot de passe" class="text-orange-600">Mot de passe oublié?</a>
                 </div>

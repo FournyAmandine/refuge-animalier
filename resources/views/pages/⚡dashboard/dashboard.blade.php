@@ -11,7 +11,7 @@
     <section class="pt-30">
         <h3 class="title_section text-xl md:text-2xl font-medium underline decoration-orange-400 decoration-2 pb-2.5">
             Vos derniers arrivants</h3>
-        <div class="pb-5 flex flex-wrap gap-18 items-center slider">
+        <div class="pb-5 flex flex-wrap gap-28 items-center slider">
             @foreach($animals as $animal)
                 <x-admin.dashboard.cards.card src_db="{!! asset($animal->img_path) !!}"
                                               src="{!! $animal->img_path !!}"
@@ -23,7 +23,7 @@
                                               name="{!! $animal->name !!}"
                                               href_see="{!! route('admin.animals.show', $animal->id) !!}"
                                               :dd="[$animal->sexe, \Carbon\Carbon::parse($animal->birth_date)->locale('fr')->translatedFormat('d F Y'), $animal->race, $animal->state, \Carbon\Carbon::parse($animal->created_at)->locale('fr')->translatedFormat('d F Y')]" href="{!! route('admin.animals.show', $animal->id) !!}"
-                                              title="Voir la fiche de {!! $animal->name !!}" class="w-[349px]"/>
+                                              title="Voir la fiche de {!! $animal->name !!}" class="w-[348px]"/>
             @endforeach
         </div>
         <div class="flex gap-4">
@@ -35,7 +35,7 @@
     <section class="pt-30">
         <h3 class="title_section text-xl md:text-2xl font-medium underline decoration-orange-400 decoration-2 pb-2.5">
             Vos derniers bénévoles</h3>
-        <div class="pb-5 flex flex-wrap gap-20 items-center slider">
+        <div class="pb-5 flex flex-wrap gap-30 items-center slider">
             @foreach($volunteers as $volunteer)
                 <x-admin.dashboard.volunteers.card
                     src_db="{!! asset($volunteer->profil_path) !!}"
