@@ -1,6 +1,6 @@
 <?php
 
-use App\Enum\AnimalStatus;
+use App\Enums\AnimalStatus;
 use App\Livewire\Forms\AnimalEditForm;
 use App\Livewire\Forms\NoteEditForm;
 use App\Models\Animal;

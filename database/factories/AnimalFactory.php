@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Enum\AnimalStatus;
+use App\Enums\AnimalStatus;
 use App\Models\Animal;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;

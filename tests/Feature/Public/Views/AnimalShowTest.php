@@ -1,10 +1,9 @@
 <?php
 
-use App\Enum\AnimalStatus;
+use App\Enums\AnimalStatus;
 use App\Models\Animal;
-
-
 use Illuminate\Foundation\Testing\RefreshDatabase;
+
 
 uses(RefreshDatabase::class);
 

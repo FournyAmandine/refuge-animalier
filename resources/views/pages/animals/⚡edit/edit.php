@@ -31,6 +31,6 @@ new class extends Component
 
     public function getStatus()
     {
-        return \App\Enum\AnimalStatus::cases();
+        return \App\Enums\AnimalStatus::cases();
     }
 };
