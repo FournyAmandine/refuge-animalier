@@ -3,16 +3,28 @@
 
     <section>
         <h3 class="title_section pb-5 lg:text-2xl">Non-validées</h3>
-        @foreach($adoptions_non_validate as $adoption)
-            <x-admin.adoptions.article_card animal="{!! $adoption->animal->name !!}" name="{!! $adoption->first_name !!} {!! $adoption->last_name !!}" day="{!! \Carbon\Carbon::parse($adoption->created_at)->day !!}" email="{!! $adoption->email !!}" class="border-red-600" label="Valider" id="{!! $adoption->id !!}"/>
-        @endforeach
+        @forelse($adoptions_non_validate as $adoption)
+            <x-admin.adoptions.article_card animal="{!! $adoption->animal->name !!}"
+                                            name="{!! $adoption->first_name !!} {!! $adoption->last_name !!}"
+                                            day="{!! \Carbon\Carbon::parse($adoption->created_at)->day !!}"
+                                            email="{!! $adoption->email !!}" class="border-red-600" label="Valider"
+                                            id="{!! $adoption->id !!}"/>
+        @empty
+            <p class="text-center text-xl">Toutes les demandes sont validées pour le moment&nbsp;!</p>
+        @endforelse
     </section>
 
     <section class="pt-20">
         <h3 class="title_section pb-5 lg:text-2xl">Validées</h3>
-        @foreach($adoptions_validate as $adoption)
-            <x-admin.adoptions.article_card animal="{!! $adoption->animal->name !!}" name="{!! $adoption->first_name !!} {!! $adoption->last_name !!}" day="{!! \Carbon\Carbon::parse($adoption->created_at)->day !!}" email="{!! $adoption->email !!}" class="border-green-600" label="Annuler la validation" id="{!! $adoption->id !!}"/>
-        @endforeach
+        @forelse($adoptions_validate as $adoption)
+            <x-admin.adoptions.article_card animal="{!! $adoption->animal->name !!}"
+                                            name="{!! $adoption->first_name !!} {!! $adoption->last_name !!}"
+                                            day="{!! \Carbon\Carbon::parse($adoption->created_at)->day !!}"
+                                            email="{!! $adoption->email !!}" class="border-green-600"
+                                            label="Annuler la validation" id="{!! $adoption->id !!}"/>
+        @empty
+            <p class="text-center text-xl">Aucune demande est validées pour le moment&nbsp;!</p>
+        @endforelse
     </section>
 
     @if($isOpenShowModal)
@@ -29,7 +41,8 @@
                     </div>
                     <div class="flex flex-col gap-2 border-l-2 border-orange-600 pl-2">
                         <p>{!! $openAdoption->civile_state !!}</p>
-                        <p>{!! $openAdoption->street !!}, {!! $openAdoption->number !!}, {!! $openAdoption->postal_code !!} {!! $openAdoption->locality !!}</p>
+                        <p>{!! $openAdoption->street !!}, {!! $openAdoption->number !!}
+                            , {!! $openAdoption->postal_code !!} {!! $openAdoption->locality !!}</p>
                     </div>
                 </div>
                 <p class="pt-5">{!! $openAdoption->description_place !!}</p>
@@ -40,10 +53,13 @@
                     <img src="{!! asset('assets/img/small_paw.svg') !!}" alt="Petite patte de chat orange">
                     <p class="text-xl">{!! \Carbon\Carbon::parse($openAdoption->animal->birth_date)->age.' ans' !!}</p>
                 </div>
-                <p class="border-t-2 border-orange-600 pt-3 text-sm">La validation ou le refus de l’adoption envoye une notification à l’adoptant</p>
+                <p class="border-t-2 border-orange-600 pt-3 text-sm">La validation ou le refus de l’adoption envoye une
+                    notification à l’adoptant</p>
                 <div class="flex gap-5 justify-end pt-9">
-                    <x-admin.modal.button wire:click="toggleModal('show')" label="Refuser" title="Refuser la demande d'adoption" class="refuse pr-5 pl-12 lg:text-xl"/>
-                    <x-admin.modal.button wire:click="markValidate()" label="Valider" title="Refuser la demande d'adoption" class="validate pr-5 pl-16 lg:text-xl"/>
+                    <x-admin.modal.button wire:click="toggleModal('show')" label="Refuser"
+                                          title="Refuser la demande d'adoption" class="refuse pr-5 pl-12 lg:text-xl"/>
+                    <x-admin.modal.button wire:click="markValidate()" label="Valider"
+                                          title="Refuser la demande d'adoption" class="validate pr-5 pl-16 lg:text-xl"/>
                 </div>
             </x-slot:content>
         </x-admin.modal.general>
