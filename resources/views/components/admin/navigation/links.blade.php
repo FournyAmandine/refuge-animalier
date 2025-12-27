@@ -25,8 +25,9 @@
         <x-admin.navigation.link li_class="{!! $li_class !!}" :href="$link['href']" :label="$link['label']" :title="$link['title']"/>
     @endforeach
     <li class="pt-10 lg:pt-15">
-        <div class="border-t-2 border-orange-600 py-8 flex justify-center">
-            <x-admin.button href="#" title="Se déconnecter de votre compte" label="Déconnexion" class="px-7"/>
-        </div>
+        <form method="POST" action="{{ route('logout') }}" class="border-t-2 border-orange-600 py-8 flex justify-center">
+            @csrf
+            <x-login.button text="Déconnexion"/>
+        </form>
     </li>
 </ul>

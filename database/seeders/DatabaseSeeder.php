@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'email' => 'amandine@fourny.com',
             'name' => 'Amandine Fourny',
-            'password' => 'azerty'
+            'password' => password_hash('azerty', PASSWORD_BCRYPT),
         ]);
 
         Animal::factory(30)->create();
