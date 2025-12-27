@@ -1,4 +1,4 @@
-<x-login.app>
+<x-login.app title="Connectez-vous">
     <main class="w-full h-[100vh] flex justify-center items-center">
         <section class="max-w-[80%] md:max-w-150 shadow-[var(--shadow-xl)] rounded-2xl login py-15 px-7 md:py-20 md:px-14 flex flex-col">
             <h2 class="text-orange-600 text-3xl text-center">Bienvenue chez</h2>

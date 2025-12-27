@@ -2,6 +2,7 @@
 
 use App\Models\Message;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 new class extends Component
@@ -10,6 +11,7 @@ new class extends Component
 
     public string|Message $openMessage = '';
 
+    #[Title('Vos messages')]
     public function toggleReadMessage(Message $message){
         $message->update([
             'read'=> !$message->done,

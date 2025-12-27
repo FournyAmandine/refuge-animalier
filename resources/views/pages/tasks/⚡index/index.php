@@ -3,6 +3,7 @@
 use App\Livewire\Forms\TaskEditForm;
 use App\Models\Task;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 new class extends Component
@@ -14,6 +15,8 @@ new class extends Component
     public bool $isOpenDeleteModal = false;
     public bool $isOpenCreateModal = false;
     public bool $isOpenEditModal = false;
+
+    #[Title('Vos tâches')]
 
     public function toggleDoneTask(Task $task){
         $task->update([

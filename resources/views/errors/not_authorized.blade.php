@@ -1,4 +1,4 @@
-<x-errors.app>
+<x-errors.app title="Accès non-autorisé">
     <main class="w-full h-[100vh] flex items-center justify-center">
         <div class="text-center bg-white p-10 rounded shadow">
             <h2 class="text-3xl font-bold mb-4 text-orange-600 underline decoration-2 decoration-orange-400">Accès refusé</h2>

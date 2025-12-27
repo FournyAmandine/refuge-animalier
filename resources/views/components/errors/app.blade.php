@@ -6,7 +6,7 @@
     <meta name="author" content="Amandine Fourny">
     <meta name="keywords" content="Refuge animalier, animaux, refuge, adoption, adopter">
     <meta name="description" content="Site web pour le refuge animalier&nbsp;: Les Pattes Heureuses">
-    <title>{{ $title ?? config('app.name') }}</title>
+    <title>{{ $title . ' - Pattes Heureuses' }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="lg:flex lg:relative">

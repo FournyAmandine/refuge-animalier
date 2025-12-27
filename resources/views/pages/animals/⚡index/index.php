@@ -5,6 +5,7 @@ use App\Models\Animal;
 use Illuminate\Pagination\LengthAwarePaginator;
 use LaravelIdea\Helper\App\Models\_IH_Animal_C;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -15,6 +16,8 @@ new class extends Component
     public string|Animal $chosenAnimal = '';
 
     public bool $isOpenDeleteModal = false;
+
+    #[Title('Vos animaux')]
     public function render()
     {
         return view('pages.animals.⚡index.index', [

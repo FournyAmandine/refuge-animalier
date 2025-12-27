@@ -3,6 +3,7 @@
 use App\Livewire\Forms\UserEditForm;
 use App\Models\User;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -19,6 +20,7 @@ new class extends Component
         $this->user = User::first();
         $this->form->setUser($this->user);
     }
+    #[Title('Profil')]
 
     #[On ('toggleModal')]
     public function toggleModal(string $modal, $id = ''): void

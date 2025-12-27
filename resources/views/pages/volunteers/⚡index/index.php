@@ -3,6 +3,7 @@
 use App\Models\Volunteer;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 new class extends Component
@@ -11,6 +12,7 @@ new class extends Component
     public string $term = '';
     public string|Volunteer $chosenVolunteer = '';
     public bool $isOpenDeleteModal = false;
+    #[Title('Vos bénévoles')]
 
     #[Computed]
     public function render()
