@@ -62,7 +62,7 @@
                  src="{!! asset("assets/img/chien_3.png") !!}"
                  alt="Illustration d'un petit chien beige qui rit" width="108" height="127">
             <x-public.sections.card-list :animals="$animals"
-                                         class="grid grid-cols-[repeat(4,300px)] gap-5 overflow-x-scroll py-4"/>
+                                         class="grid grid-cols-[repeat(5,300px)] gap-6 overflow-x-scroll py-4"/>
             <img class="absolute z-1 left-6 bottom-[-0.5rem]" src="{!! asset("assets/img/lapin_2.png") !!}"
                  alt="Illustration d'un petit lapin roux" width="108" height="128">
         </section>

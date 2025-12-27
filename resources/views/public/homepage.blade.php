@@ -23,7 +23,7 @@
     <main>
         <x-public.sections.introduction/>
         <x-public.sections.card-list :animals="$animals"
-                                     class="grid grid-cols-[repeat(5,300px)] gap-5 overflow-x-scroll py-4"/>
+                                     class="grid grid-cols-[repeat(5,300px)] gap-6 overflow-x-scroll py-4"/>
         <x-public.sections.text-media
             class_section="pb-20 pt-26 lg:pb-40"
             class_div="md:flex-row-reverse md:gap-3 lg:gap-40 2xl:gap-80 md:pl-10 justify-between items-center"
