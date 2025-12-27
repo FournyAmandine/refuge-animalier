@@ -67,6 +67,9 @@ class FortifyServiceProvider extends ServiceProvider
 
             {
 
+                if (auth()->user()->role === 'Bénévole'){
+                    return redirect('/admin/animals');
+                }
                 return redirect('/admin/dashboard');
 
             }
