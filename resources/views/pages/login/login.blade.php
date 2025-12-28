@@ -14,7 +14,7 @@
                                label="Entrez votre mot de passe" :required="true"/>
                 <div class="flex justify-between flex-wrap gap-2">
                     <x-login.input_checkbox field_name="remember" label="Se souvenir de moi" class_label="text-md"/>
-                    <a href="#" title="Aller vers la page de modification du mot de passe" class="text-orange-600">Mot de passe oublié?</a>
+                    <a href="{!! route('password.request') !!}" title="Aller vers la page de modification du mot de passe" class="text-orange-600">Mot de passe oublié?</a>
                 </div>
                 <x-login.button text="Se connecter"
                                 class="w-1/1 text-orange-50 lg:text-xl bg-orange-600 border-2 rounded-lg px-5 py-2 hover:scale-110 duration-300 transition-all"/>
