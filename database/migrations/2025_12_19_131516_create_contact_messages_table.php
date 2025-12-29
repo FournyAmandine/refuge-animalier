@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('contact_messages', function (Blueprint $table) {
             $table->id();
             $table->string('last_name');
             $table->string('first_name');
             $table->string('email');
             $table->tinyText('message');
-            $table->boolean('read');
+            $table->boolean('read')->default(0);
             $table->timestamps();
         });
     }

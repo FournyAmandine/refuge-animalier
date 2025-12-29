@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Message;
+use App\Models\ContactMessage;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -9,10 +9,10 @@ new class extends Component
 {
     public bool $isOpenShowModal = false;
 
-    public string|Message $openMessage = '';
+    public string|ContactMessage $openMessage = '';
 
     #[Title('Vos messages')]
-    public function toggleReadMessage(Message $message){
+    public function toggleReadMessage(ContactMessage $message){
         $message->update([
             'read'=> !$message->done,
         ]);
@@ -20,8 +20,8 @@ new class extends Component
     public function render()
     {
         return view('pages.messages.⚡index.index', [
-            'messages_unread' => Message::orderBy('created_at', 'desc')->where('messages.read', 0)->get(),
-            'messages_read' => Message::orderBy('created_at', 'desc')->where('messages.read', 1)->get(),
+            'messages_unread' => ContactMessage::orderBy('created_at', 'desc')->where('messages.read', 0)->get(),
+            'messages_read' => ContactMessage::orderBy('created_at', 'desc')->where('messages.read', 1)->get(),
         ]);
     }
 
@@ -33,7 +33,7 @@ new class extends Component
         }
 
         $this->isOpenShowModal? $this->dispatch('open-modal') : $this->dispatch('close-modal');
-        $this->openMessage = $id !== '' ? Message::find($id) : '';
+        $this->openMessage = $id !== '' ? ContactMessage::find($id) : '';
     }
 
     public function markRead():void

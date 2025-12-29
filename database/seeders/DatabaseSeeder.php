@@ -6,7 +6,7 @@ use App\Enums\UserRole;
 use App\Models\Adoption;
 use App\Models\Animal;
 use App\Models\Availability;
-use App\Models\Message;
+use App\Models\ContactMessage;
 use App\Models\Notes;
 use App\Models\Task;
 use App\Models\User;
@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
 
         Task::factory(10)->create();
 
-        Message::factory(10)->create();
+        ContactMessage::factory(10)->create();
 
         Adoption::factory(10)->create();
 

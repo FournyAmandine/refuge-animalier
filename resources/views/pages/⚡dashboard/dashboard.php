@@ -3,7 +3,7 @@
 use App\Enums\AnimalStatus;
 use App\Models\Adoption;
 use App\Models\Animal;
-use App\Models\Message;
+use App\Models\ContactMessage;
 use App\Models\Task;
 use App\Models\Volunteer;
 use Livewire\Attributes\Title;
@@ -18,7 +18,7 @@ new class extends Component
             'volunteers' => Volunteer::paginate(3),
             'animals'=> Animal::paginate(3),
             'adoptions'=> Adoption::with('animal')->paginate(3),
-            'messages'=> Message::paginate(3),
+            'messages'=> ContactMessage::paginate(3),
             'tasks'=> Task::paginate(3),
             'welcome' => Animal::count(),
             'adopted' => Animal::where('state', '=', AnimalStatus::Adopted)->count(),
