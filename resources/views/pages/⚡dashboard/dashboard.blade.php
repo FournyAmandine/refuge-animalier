@@ -1,10 +1,14 @@
 <main class="admin lg:flex-1 bg-orange-50/30">
-    <h2 class="pb-15 [font-size:var(--text-3xl)] md:[font-size:var(--text-4xl)] lg:[font-size:var(--text-6xl)] text-orange-600 text-center underline decoration-orange-400 decoration-3">Les pattes heureuses</h2>
-
+    <h2 class="pt-10 pb-5 [font-size:var(--text-3xl)] md:[font-size:var(--text-4xl)] lg:[font-size:var(--text-6xl)] text-orange-600 text-center underline decoration-orange-400 decoration-3">Les pattes heureuses</h2>
+    <div class="flex justify-end pr-15 xl:pr-50 relative">
+        <x-admin.modal.button_action class="pb-15" wire:click="toggleModal('notif')" src="{!! asset('assets/img/icones/notification.svg') !!}" alt="Voir les notifications" title="Voir les notifications"/>
+        <span class="number text-orange-50 bg-red-600 p-y-1 px-2 absolute rounded-4xl top-0 right-13 xl:right-48">{!! $notifications->count() !!}</span>
+    </div>
     <section class="md:flex md:flex-wrap gap-4">
         <h3 class="sro">A faire</h3>
         <x-admin.dashboard.notifications.adoptions :adoptions="$adoptions"/>
-        <x-admin.dashboard.notifications.messages :messages="$messages" />
+        <x-admin.dashboard.notifications.messages :messages="$contact_messages" title="Vos messages de contact"/>
+        <x-admin.dashboard.notifications.messages :messages="$volunteer_messages" title="Vos messages de bénévole"/>
         <x-admin.dashboard.notifications.tasks :tasks="$tasks"/>
     </section>
     <x-admin.sections.stats_cards :welcome="$welcome" :adopted="$adopted" :in="$in" :care="$care" :pending="$pending" :draft="$draft"/>
@@ -58,14 +62,23 @@
                             href="{!! route('admin.volunteers.create') !!}"/>
         </div>
     </section>
+    @if($isOpenShowModal)
+        <x-admin.modal.general outside="$dispatch('toggleModal', { modal: 'notif' })"
+                               class="lg:text-2xl text-center text-orange-600 underline decoration-orange-400 decoration-3 [font-family:Baloo] font-semibold">
+            <x-slot:title>
+              Vos notifications
+            </x-slot:title>
+            <x-slot:content>
+                @foreach($notifications as $notification)
+                    <div>
+                        <a class="pt-10 inline-block border-b-2 border-orange-500 text-xl" href="{!! $notification->data['route'] !!}">{!! $notification->data['message'] !!}</a>
+                    </div>
+                @endforeach
+                    <div class="flex gap-5 justify-center pt-9">
+                        <x-admin.modal.button wire:click="toggleModal('notif')" label="Quitter"
+                                              title="Quitter les notifications" class="refuse pr-5 pl-12 lg:text-xl"/>
+                    </div>
+            </x-slot:content>
+        </x-admin.modal.general>
+    @endif
 </main>
-
-{{--
-<main class="admin lg:flex-1 bg-orange-50/30">
-    <x-admin.sections.animals_card-list :animals="$animals" class_section="pt-30" class="grid grid-cols-[repeat(4,350px)] gap-5 overflow-x-scroll py-2.5"/>
-    <x-admin.sections.volunteers_card-list :volunteers="$volunteers" class="grid grid-cols-[repeat(4,350px)] gap-5 overflow-x-scroll py-2.5"/>
-</main>
-
-
-
---}}
