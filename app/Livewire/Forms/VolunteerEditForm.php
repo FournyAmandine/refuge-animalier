@@ -2,11 +2,14 @@
 
 namespace App\Livewire\Forms;
 
+use App\Enums\UserRole;
 use App\Jobs\ProcessUploadedImage;
+use App\Models\User;
 use App\Models\Volunteer;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
+use Illuminate\Support\Facades\Auth;
 
 class VolunteerEditForm extends Form
 {
@@ -93,7 +96,11 @@ class VolunteerEditForm extends Form
             }
         }
 
-            $volunteer = Volunteer::create(
+
+        $user = User::where('role', UserRole::Administrator)->firstOrFail();
+
+
+            $volunteer = $user->volunteers()->create(
                 array_merge(
                     $this->only([
                         'last_name',
@@ -105,7 +112,7 @@ class VolunteerEditForm extends Form
                         'link_animal',
                         'password'
                     ]),
-                    ['profil_path'=>$profil_path]
+                    ['profil_path'=>$profil_path],
                 )
             );
 
@@ -118,7 +125,6 @@ class VolunteerEditForm extends Form
                     ]);
                 }
             }
-
             return $volunteer;
         }
 
@@ -160,7 +166,7 @@ class VolunteerEditForm extends Form
                         'password'
                     ]
                 ),
-                ['profil_path'=>$profil_path]
+                ['profil_path'=>$profil_path],
             )
         );
         $this->volunteer->availabilities()->delete();

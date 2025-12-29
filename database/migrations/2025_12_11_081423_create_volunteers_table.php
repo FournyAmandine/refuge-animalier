@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->string('profil_path');
             $table->string('link_animal')->nullable();
             $table->string('password')->unique();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -1,6 +1,6 @@
 @props(['welcome', 'adopted', 'in', 'care', 'pending', 'draft'])
 
-<section class="pt-30">
+<section class="pt-20">
     <h3 class="title_section text-xl md:text-2xl font-medium underline decoration-orange-400 decoration-2 pb-2.5">Statistiques&nbsp;:</h3>
     <div class="flex gap-2 flex-wrap pb-5 sm:gap-5 lg:gap-4 xl:gap-6 text-center">
         <x-admin.dashboard.article_stats_card stat="Animaux accueillis" :number="$welcome"/>

@@ -1,5 +1,5 @@
 <main class="lg:flex-1 bg-orange-50/30">
-    <x-admin.sections.intro ariane="Messages" title="Vos messages de contact"/>
+    <x-admin.sections.intro ariane="Demande de bénévolat" title="Vos demandes de bénévolat"/>
     <section>
         <h3 class="title_section pb-5 lg:text-2xl">Non-lus</h3>
         @forelse($messages_unread as $message)

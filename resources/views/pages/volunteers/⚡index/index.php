@@ -18,7 +18,7 @@ new class extends Component
     public function render()
     {
         return view('pages.volunteers.⚡index.index', [
-            'volunteers' => Volunteer::where('first_name', 'like', '%' . $this->term . '%')->orWhere('last_name', 'like', '%' . $this->term . '%')->orderBy('created_at', 'desc')->paginate(6),
+            'volunteers' => auth()->user()->volunteers()->where('first_name', 'like', '%' . $this->term . '%')->orWhere('last_name', 'like', '%' . $this->term . '%')->orderBy('created_at', 'desc')->paginate(6),
         ]);
     }
 

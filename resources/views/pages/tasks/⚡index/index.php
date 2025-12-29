@@ -27,8 +27,8 @@ new class extends Component
     public function render()
     {
         return view('pages.tasks.⚡index.index', [
-            'tasks_undone' => Task::orderBy('created_at', 'desc')->where('tasks.done', 0)->get(),
-            'tasks_done' => Task::orderBy('created_at', 'desc')->where('tasks.done', 1)->get()
+            'tasks_undone' => auth()->user()->task()->orderBy('created_at', 'desc')->where('tasks.done', 0)->get(),
+            'tasks_done' => auth()->user()->task()->orderBy('created_at', 'desc')->where('tasks.done', 1)->get()
         ]);
     }
 

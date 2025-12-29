@@ -6,11 +6,12 @@ use App\Enums\UserRole;
 use App\Models\Adoption;
 use App\Models\Animal;
 use App\Models\Availability;
-use App\Models\Message;
+use App\Models\ContactMessage;
 use App\Models\Notes;
 use App\Models\Task;
 use App\Models\User;
 use App\Models\Volunteer;
+use App\Models\VolunteerMessage;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -23,7 +24,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
+        $user = User::create([
             'email' => 'amandine@fourny.com',
             'name' => 'Amandine Fourny',
             'password' => password_hash('azerty', PASSWORD_BCRYPT),
@@ -39,15 +40,17 @@ class DatabaseSeeder extends Seeder
 
         Animal::factory(30)->create();
 
-        Volunteer::factory(10)->create();
+        Volunteer::factory(10)->for($user)->create();
 
         Availability::factory(10)->create();
 
-        Task::factory(10)->create();
+        Task::factory(10)->for($user)->create();
 
-        Message::factory(10)->create();
+        ContactMessage::factory(10)->for($user)->create();
 
-        Adoption::factory(10)->create();
+        VolunteerMessage::factory(10)->for($user)->create();
+
+        Adoption::factory(10)->for($user)->create();
 
         Notes::factory(30)->create();
     }

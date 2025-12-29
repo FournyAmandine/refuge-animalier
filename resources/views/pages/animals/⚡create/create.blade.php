@@ -21,14 +21,14 @@
                         </x-admin.form.fields.select>
                     </div>
                     <div class="sm:flex sm:flex-wrap gap-6">
-                        <x-admin.form.fields.select wire:model="form.type" field_name="animal_type" :required="true" label="Sélectionnez le type">
-                            <x-admin.form.fields.option selected="selected" value="none" option_name="--Votre choix--"/>
+                        <x-admin.form.fields.select wire:model="form.type" field_name="type" :required="true" label="Sélectionnez le type">
+                            <x-admin.form.fields.option selected="selected" value="" option_name="--Votre choix--"/>
                             <x-admin.form.fields.option value="Chien" option_name="Chien"/>
                             <x-admin.form.fields.option value="Lapin" option_name="Lapin"/>
                             <x-admin.form.fields.option value="Chat" option_name="Chat"/>
                         </x-admin.form.fields.select>
-                        <x-admin.form.fields.select field_name="animal_race" wire:model="form.race" label="Sélectionnez la race" disabled="disabled">
-                            <x-admin.form.fields.option selected="selected" value="none" option_name="--Votre choix--"/>
+                        <x-admin.form.fields.select field_name="race" wire:model="form.race" :required="false" label="Sélectionnez la race" disabled="disabled">
+                            <x-admin.form.fields.option selected="selected" value="" option_name="--Votre choix--"/>
                             <x-admin.form.fields.option value="American Staff" option_name="American Staff"/>
                             <x-admin.form.fields.option value="Golden Retrieve" option_name="Golden Retriever"/>
                             <x-admin.form.fields.option value="Caniche" option_name="Caniche"/>

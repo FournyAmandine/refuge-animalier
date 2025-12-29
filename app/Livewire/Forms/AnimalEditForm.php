@@ -86,7 +86,7 @@ class AnimalEditForm extends Form
             }
         }
 
-        return Animal::create(
+        $animal = Animal::create(
             array_merge(
                 $this->only([
                     'name',
@@ -100,9 +100,13 @@ class AnimalEditForm extends Form
                     'coat',
                     'description',
                 ]),
-                ['img_path' => $img_path]
+                ['img_path' => $img_path],
             )
         );
+        $creator = \App\Models\User::pluck('id');
+        $animal->users()->attach($creator);
+        $animal->users()->attach(auth()->id());
+        return $animal;
     }
 
     public function update()
@@ -140,7 +144,7 @@ class AnimalEditForm extends Form
                     'coat',
                     'description',
                 ]),
-                ['img_path' => $img_path]
+                ['img_path' => $img_path],
             )
         );
     }

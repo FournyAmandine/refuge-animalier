@@ -13,7 +13,7 @@ class TaskFactory extends Factory
         $tasks = ['Valider la fiche de Charly', 'Répondre à Sarah', 'Valider la demande d’adoption de Casquette'];
         return [
             'task_name' => $this->faker->randomElement($tasks),
-            'done' => $this->faker->boolean()
+            'done' => $this->faker->boolean(),
         ];
     }
 }

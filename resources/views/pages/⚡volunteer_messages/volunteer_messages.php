@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Message;
+use App\Models\ContactMessage;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -9,19 +9,19 @@ new class extends Component
 {
     public bool $isOpenShowModal = false;
 
-    public string|Message $openMessage = '';
+    public string|\App\Models\VolunteerMessage $openMessage = '';
 
-    #[Title('Vos messages')]
-    public function toggleReadMessage(Message $message){
+    #[Title('Vos contact_messages')]
+    public function toggleReadMessage(\App\Models\VolunteerMessage $message){
         $message->update([
             'read'=> !$message->done,
         ]);
     }
     public function render()
     {
-        return view('pages.messages.⚡index.index', [
-            'messages_unread' => Message::orderBy('created_at', 'desc')->where('messages.read', 0)->get(),
-            'messages_read' => Message::orderBy('created_at', 'desc')->where('messages.read', 1)->get(),
+        return view('pages.⚡volunteer_messages.volunteer_messages', [
+            'messages_unread' => auth()->user()->volunteer_messages()->orderBy('created_at', 'desc')->where('read', 0)->get(),
+            'messages_read' => auth()->user()->volunteer_messages()->orderBy('created_at', 'desc')->where('read', 1)->get(),
         ]);
     }
 
@@ -33,7 +33,7 @@ new class extends Component
         }
 
         $this->isOpenShowModal? $this->dispatch('open-modal') : $this->dispatch('close-modal');
-        $this->openMessage = $id !== '' ? Message::find($id) : '';
+        $this->openMessage = $id !== '' ? auth()->user()->volunteer_messages()->find($id) : '';
     }
 
     public function markRead():void

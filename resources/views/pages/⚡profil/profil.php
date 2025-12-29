@@ -32,7 +32,7 @@ new class extends Component
 
     public function mount(): void
     {
-        $this->user = User::first();
+        $this->user = auth()->user()->first();
         $this->form->setUser($this->user);
     }
 

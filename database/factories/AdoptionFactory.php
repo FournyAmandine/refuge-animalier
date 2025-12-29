@@ -18,7 +18,7 @@ class AdoptionFactory extends Factory
             'last_name' => $this->faker->lastName(),
             'first_name' => $this->faker->firstName(),
             'email' => $this->faker->unique()->safeEmail(),
-            'civile_state' => $this->faker->randomElement($civile_state),
+            'civil_state' => $this->faker->randomElement($civile_state),
             'street' => $this->faker->streetName(),
             'number' => $this->faker->randomNumber(),
             'postal_code' => $this->faker->postcode(),

@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Message;
+use App\Models\ContactMessage;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class MessageFactory extends Factory
+class ContactMessageFactory extends Factory
 {
-    protected $model = Message::class;
+    protected $model = ContactMessage::class;
 
     public function definition(): array
     {
@@ -19,7 +19,7 @@ class MessageFactory extends Factory
             'last_name' => $this->faker->randomElement($last_name),
             'email' => $this->faker->email(),
             'message' => 'Bonjour, je voudrais voir Moka mais je n’ai pas de nouvelles, pouvez-vous me contacter après 17h?',
-            'read' => $this->faker->boolean()
+            'read' => $this->faker->boolean(),
         ];
     }
 }

@@ -20,7 +20,7 @@ new class extends Component
 
     public function mount($volunteer): void
     {
-        $this->volunteer = Volunteer::findOrFail($volunteer);
+        $this->volunteer = auth()->user()->volunteers()->findOrFail($volunteer);
         $this->availabilities = $this->volunteer->availabilities;
         $this->form->setVolunteer($this->volunteer);
     }

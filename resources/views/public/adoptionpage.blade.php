@@ -4,12 +4,17 @@
     </x-slot:title_page>
     <main class="contact_form pb-11 relative md:w-4/5 md:m-auto">
         <x-public.sections.intro title="Adoptez un de nos compagnons&nbsp;!" ariane="Adoption"/>
-        <x-public.sections.form>
+        @if(session('success'))
+            <div class="text-center py-5 text-2xl">
+                {{ session('success') }}
+            </div>
+        @endif
+        <x-public.sections.form route="{!! route('public.adoptionpage.store') !!}">
             <x-public.form.adoption-form>
                 <x-slot:options>
                     @foreach($animals as $animal)
                         <x-public.form.fields.option
-                            value="{!! $animal->name !!}"
+                            value="{!! $animal->id !!}"
                             option_name="{!! $animal->name !!} - {!! $animal->race !!}"
                         />
                     @endforeach
