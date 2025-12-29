@@ -11,7 +11,7 @@
     <section class="pt-30">
         <h3 class="title_section text-xl md:text-2xl font-medium underline decoration-orange-400 decoration-2 pb-2.5">
             Vos derniers arrivants</h3>
-        <div class="pb-5 flex flex-wrap gap-28 items-center slider">
+        <div class="pb-5 flex flex-wrap gap-x-28 gap-y-5 items-center slider">
             @foreach($animals as $animal)
                 <x-admin.dashboard.cards.card src_db="{!! asset($animal->img_path) !!}"
                                               src="{!! $animal->img_path !!}"
@@ -22,7 +22,7 @@
                                               alt="Photo de {!! $animal->name !!}"
                                               name="{!! $animal->name !!}"
                                               href_see="{!! route('admin.animals.show', $animal->id) !!}"
-                                              :dd="[$animal->sexe, \Carbon\Carbon::parse($animal->birth_date)->locale('fr')->translatedFormat('d F Y'), $animal->race, $animal->state, \Carbon\Carbon::parse($animal->created_at)->locale('fr')->translatedFormat('d F Y')]" href="{!! route('admin.animals.show', $animal->id) !!}"
+                                              :dd="[$animal->sexe, \Carbon\Carbon::parse($animal->birth_date)->age . ' ans', $animal->race, $animal->state, \Carbon\Carbon::parse($animal->created_at)->locale('fr')->translatedFormat('d F Y')]" href="{!! route('admin.animals.show', $animal->id) !!}"
                                               title="Voir la fiche de {!! $animal->name !!}" class="w-[348px]"/>
             @endforeach
         </div>
@@ -35,7 +35,7 @@
     <section class="pt-30">
         <h3 class="title_section text-xl md:text-2xl font-medium underline decoration-orange-400 decoration-2 pb-2.5">
             Vos derniers bénévoles</h3>
-        <div class="pb-5 flex flex-wrap gap-30 items-center slider">
+        <div class="pb-5 flex flex-wrap gap-x-30 gap-y-5 items-center slider">
             @foreach($volunteers as $volunteer)
                 <x-admin.dashboard.volunteers.card
                     src_db="{!! asset($volunteer->profil_path) !!}"
@@ -45,7 +45,7 @@
                     alt="Photo de {!! $volunteer->first_name !!}"
                     name="{!! $volunteer->first_name !!} {!! $volunteer->last_name !!}"
                     href="#"
-                    :dd="[\Carbon\Carbon::parse($volunteer->birth_date)->age.'ans', \Carbon\Carbon::parse($volunteer->created_at)->locale('fr')->translatedFormat('d F Y')]"
+                    :dd="[\Carbon\Carbon::parse($volunteer->birth_date)->age.' ans', \Carbon\Carbon::parse($volunteer->created_at)->locale('fr')->translatedFormat('d F Y')]"
                     title="{!! $volunteer->first_name !!}"
                     :link="false"
                 />

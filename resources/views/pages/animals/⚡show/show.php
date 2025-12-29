@@ -98,7 +98,7 @@ new class extends Component
     public function save(): void
     {
         $this->chosenNote->update([
-            'name' => $this->note_form->note_name,
+            'note_name' => $this->note_form->note_name,
             'visit_date' => $this->note_form->visit_date,
             'content' => $this->note_form->content
         ]);

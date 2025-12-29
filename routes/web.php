@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdoptionFormController;
 use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Middleware\IsAdministrator;
 use Illuminate\Support\Facades\Route;
@@ -9,8 +10,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomePageController::class, 'index'])->name('public.homepage');
 Route::get('/about', function (){ return view('public.aboutpage'); })->name('public.aboutpage');
 Route::get('/contact', function (){ return view('public.contactpage'); })->name('public.contactpage');
+Route::post('/contact', [ContactController::class, 'store'])->name('public.contactpage.store');
 Route::get('/benevoles', function (){ return view('public.volunteerpage'); })->name('public.volunteerpage');
 Route::get('/adoption', [AdoptionFormController::class, 'index'])->name('public.adoptionpage');
+Route::post('/adoption', [AdoptionFormController::class, 'store'])->name('public.adoptionpage.store');
 Route::get('/animals', [AnimalController::class, 'index'])->name('public.animals.index');
 Route::get('/animals{animal}', [AnimalController::class, 'show'])->name('public.animals.show');
 
