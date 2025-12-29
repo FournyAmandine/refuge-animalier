@@ -7,7 +7,7 @@
             <x-admin.adoptions.article_card animal="{!! $adoption->animal->name !!}"
                                             name="{!! $adoption->first_name !!} {!! $adoption->last_name !!}"
                                             day="{!! \Carbon\Carbon::parse($adoption->created_at)->day !!}"
-                                            email="{!! $adoption->email !!}" class="border-red-600" label="Valider"
+                                            email="{!! $adoption->email !!}" class="border-red-600" label="Voir la demande"
                                             id="{!! $adoption->id !!}"/>
         @empty
             <p class="text-center text-xl">Toutes les demandes sont validées pour le moment&nbsp;!</p>
@@ -21,7 +21,7 @@
                                             name="{!! $adoption->first_name !!} {!! $adoption->last_name !!}"
                                             day="{!! \Carbon\Carbon::parse($adoption->created_at)->day !!}"
                                             email="{!! $adoption->email !!}" class="border-green-600"
-                                            label="Annuler la validation" id="{!! $adoption->id !!}"/>
+                                            label="Voir la demande" id="{!! $adoption->id !!}"/>
         @empty
             <p class="text-center text-xl">Aucune demande est validées pour le moment&nbsp;!</p>
         @endforelse
@@ -56,8 +56,8 @@
                 <p class="border-t-2 border-orange-600 pt-3 text-sm">La validation ou le refus de l’adoption envoye une
                     notification à l’adoptant</p>
                 <div class="flex gap-5 justify-end pt-9">
-                    <x-admin.modal.button wire:click="toggleModal('show')" label="Refuser"
-                                          title="Refuser la demande d'adoption" class="refuse pr-5 pl-12 lg:text-xl"/>
+                    <x-admin.modal.button wire:click="markNoValidate()" label="Refuser"
+                                          title="Valider la demande d'adoption" class="refuse pr-5 pl-12 lg:text-xl"/>
                     <x-admin.modal.button wire:click="markValidate()" label="Valider"
                                           title="Refuser la demande d'adoption" class="validate pr-5 pl-16 lg:text-xl"/>
                 </div>

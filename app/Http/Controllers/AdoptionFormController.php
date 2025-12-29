@@ -29,6 +29,6 @@ class AdoptionFormController extends Controller
 
         Notification::send($admin, new NewAdoptionRequest($adoption));
 
-        return redirect()->back()->with('success', 'La demande a bien été envoyée !');
+        return redirect()->back()->with('success', 'Merci pour votre demande, on vous recontacte dans les plus bref délais !');
     }
 }

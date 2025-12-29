@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Adoption;
+use App\Notifications\AdoptionResponse;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -39,7 +40,20 @@ new class extends Component
     public function markValidate():void
     {
         $this->toggleValidateAdoption($this->openAdoption);
+        $this->openAdoption->notify(
+            new AdoptionResponse($this->openAdoption, 'accepted')
+        );
         $this->dispatch('close-modal');
         $this->toggleModal('show');
     }
+
+    public function markNoValidate():void
+    {
+        $this->openAdoption->notify(
+            new AdoptionResponse($this->openAdoption, 'refused')
+        );
+        $this->dispatch('close-modal');
+        $this->toggleModal('show');
+    }
+
 };

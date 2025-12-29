@@ -5,10 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Notifications\Notifiable;
 
 class Adoption extends Model
 {
     use HasFactory;
+
+    use Notifiable;
 
     protected $fillable = [
         'last_name',
@@ -27,5 +30,10 @@ class Adoption extends Model
     public function animal(): BelongsTo
     {
         return $this->belongsTo(Animal::class);
+    }
+
+    public function routeNotificationFor($driver, $notification = null)
+    {
+        return $this->email;
     }
 }

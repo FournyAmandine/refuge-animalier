@@ -5,7 +5,7 @@
     <main class="contact_form pb-11 relative md:w-4/5 md:m-auto">
         <x-public.sections.intro title="Adoptez un de nos compagnons&nbsp;!" ariane="Adoption"/>
         @if(session('success'))
-            <div class="text-center py-5 text-xl">
+            <div class="text-center py-5 text-2xl">
                 {{ session('success') }}
             </div>
         @endif
