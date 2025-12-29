@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
+        $user = User::create([
             'email' => 'amandine@fourny.com',
             'name' => 'Amandine Fourny',
             'password' => password_hash('azerty', PASSWORD_BCRYPT),
@@ -40,17 +40,17 @@ class DatabaseSeeder extends Seeder
 
         Animal::factory(30)->create();
 
-        Volunteer::factory(10)->create();
+        Volunteer::factory(10)->for($user)->create();
 
         Availability::factory(10)->create();
 
-        Task::factory(10)->create();
+        Task::factory(10)->for($user)->create();
 
-        ContactMessage::factory(10)->create();
+        ContactMessage::factory(10)->for($user)->create();
 
-        VolunteerMessage::factory(10)->create();
+        VolunteerMessage::factory(10)->for($user)->create();
 
-        Adoption::factory(10)->create();
+        Adoption::factory(10)->for($user)->create();
 
         Notes::factory(30)->create();
     }

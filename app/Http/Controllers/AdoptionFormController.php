@@ -15,7 +15,7 @@ class AdoptionFormController extends Controller
 {
     public function index()
     {
-        $animals = Animal::where('state', AnimalStatus::Available)->get();
+        $animals = auth()->user()->animals->where('state', AnimalStatus::Available);
         return view('public.adoptionpage', compact('animals'));
     }
 
@@ -23,7 +23,7 @@ class AdoptionFormController extends Controller
 
         $validated = $request->validated();
 
-        $adoption = Adoption::create($validated);
+        $adoption = auth()->user()->create($validated);
 
         $admin = User::where('role', '=', UserRole::Administrator)->get();
 

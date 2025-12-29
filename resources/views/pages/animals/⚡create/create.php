@@ -23,11 +23,8 @@ new class extends Component
     public function store()
     {
 
-        logger('store() appelé');
 
         $animal = $this->form->store();
-
-        logger($animal);
 
         $admin = User::where('role', UserRole::Administrator)->get();
 

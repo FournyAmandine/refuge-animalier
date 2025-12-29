@@ -12,7 +12,7 @@ class Animal extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'sexe', 'race', 'type', 'coat', 'vaccines', 'birth_date', 'state', 'img_path', 'description', 'user_id'];
+    protected $fillable = ['name', 'sexe', 'race', 'type', 'coat', 'vaccines', 'birth_date', 'state', 'img_path', 'description'];
 
     public function adoptions():HasMany
     {
@@ -23,8 +23,9 @@ class Animal extends Model
         return $this->hasMany(Notes::class);
     }
 
-/*    public function user():BelongsTo
+
+    public function users(): BelongsToMany
     {
-        return $this->belongsTo(User::class);
-    }*/
+        return $this->belongsToMany(User::class, 'animal_user');
+    }
 }

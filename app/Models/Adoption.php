@@ -24,16 +24,22 @@ class Adoption extends Model
         'animal_id',
         'locality',
         'description_place',
-        'validate'
+        'validate',
     ];
+
+    public function routeNotificationFor($driver, $notification = null)
+    {
+        return $this->email;
+    }
 
     public function animal(): BelongsTo
     {
         return $this->belongsTo(Animal::class);
     }
 
-    public function routeNotificationFor($driver, $notification = null)
+    public function user(): BelongsTo
     {
-        return $this->email;
+        return $this->belongsTo(User::class);
     }
+
 }

@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->string('email');
             $table->tinyText('message');
             $table->boolean('read')->default(0);
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

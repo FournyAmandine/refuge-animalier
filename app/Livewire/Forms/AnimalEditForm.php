@@ -65,12 +65,7 @@ class AnimalEditForm extends Form
 
     public function store()
     {
-        try {
-            $this->validate();
-        } catch (\Illuminate\Validation\ValidationException $e) {
-            logger($e->errors()); // log les erreurs
-            throw $e; // ou gérer
-        }
+        $this->validate();
 
         $img_path = $this->img_path;
 
@@ -105,10 +100,12 @@ class AnimalEditForm extends Form
                     'coat',
                     'description',
                 ]),
-                ['img_path' => $img_path]
+                ['img_path' => $img_path],
             )
         );
-        logger($animal);
+        $creator = \App\Models\User::pluck('id');
+        $animal->users()->attach($creator);
+        $animal->users()->attach(auth()->id());
         return $animal;
     }
 
@@ -147,7 +144,7 @@ class AnimalEditForm extends Form
                     'coat',
                     'description',
                 ]),
-                ['img_path' => $img_path]
+                ['img_path' => $img_path],
             )
         );
     }

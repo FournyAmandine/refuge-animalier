@@ -19,7 +19,7 @@ class ContactMessageFactory extends Factory
             'last_name' => $this->faker->randomElement($last_name),
             'email' => $this->faker->email(),
             'message' => 'Bonjour, je voudrais voir Moka mais je n’ai pas de nouvelles, pouvez-vous me contacter après 17h?',
-            'read' => $this->faker->boolean()
+            'read' => $this->faker->boolean(),
         ];
     }
 }

@@ -20,8 +20,8 @@ new class extends Component
     public function render()
     {
         return view('pages.⚡volunteer_messages.volunteer_messages', [
-            'messages_unread' => \App\Models\VolunteerMessage::orderBy('created_at', 'desc')->where('read', 0)->get(),
-            'messages_read' => \App\Models\VolunteerMessage::orderBy('created_at', 'desc')->where('read', 1)->get(),
+            'messages_unread' => auth()->user()->volunteer_messages()->orderBy('created_at', 'desc')->where('read', 0)->get(),
+            'messages_read' => auth()->user()->volunteer_messages()->orderBy('created_at', 'desc')->where('read', 1)->get(),
         ]);
     }
 
@@ -33,7 +33,7 @@ new class extends Component
         }
 
         $this->isOpenShowModal? $this->dispatch('open-modal') : $this->dispatch('close-modal');
-        $this->openMessage = $id !== '' ? \App\Models\VolunteerMessage::find($id) : '';
+        $this->openMessage = $id !== '' ? auth()->user()->volunteer_messages()->find($id) : '';
     }
 
     public function markRead():void

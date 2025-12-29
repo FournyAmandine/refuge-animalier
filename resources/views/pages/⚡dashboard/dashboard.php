@@ -21,12 +21,12 @@ new class extends Component
     public function render()
     {
         return view('pages.⚡dashboard.dashboard', [
-            'volunteers' => Volunteer::paginate(3),
+            'volunteers' => auth()->user()->volunteers()->paginate(3),
             'animals'=> Animal::paginate(3),
-            'adoptions'=> Adoption::with('animal')->paginate(3),
-            'contact_messages'=> ContactMessage::paginate(3),
-            'volunteer_messages'=> VolunteerMessage::paginate(3),
-            'tasks'=> Task::paginate(3),
+            'adoptions'=> auth()->user()->adoptions()->with('animal')->paginate(3),
+            'contact_messages'=> auth()->user()->contact_messages()->paginate(3),
+            'volunteer_messages'=> auth()->user()->volunteer_messages()->paginate(3),
+            'tasks'=> auth()->user()->task()->paginate(3),
             'welcome' => Animal::count(),
             'adopted' => Animal::where('state', '=', AnimalStatus::Adopted)->count(),
             'in' => Animal::whereIn('state', [AnimalStatus::Available, AnimalStatus::Care, AnimalStatus::Pending, AnimalStatus::Draft])->count(),

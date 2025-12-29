@@ -20,8 +20,8 @@ new class extends Component
     public function render()
     {
         return view('pages.contact_messages.⚡index.index', [
-            'messages_unread' => ContactMessage::orderBy('created_at', 'desc')->where('contact_messages.read', 0)->get(),
-            'messages_read' => ContactMessage::orderBy('created_at', 'desc')->where('contact_messages.read', 1)->get(),
+            'messages_unread' => auth()->user()->contact_messages()->orderBy('created_at', 'desc')->where('contact_messages.read', 0)->get(),
+            'messages_read' => auth()->user()->contact_messages()->orderBy('created_at', 'desc')->where('contact_messages.read', 1)->get(),
         ]);
     }
 
@@ -33,7 +33,7 @@ new class extends Component
         }
 
         $this->isOpenShowModal? $this->dispatch('open-modal') : $this->dispatch('close-modal');
-        $this->openMessage = $id !== '' ? ContactMessage::find($id) : '';
+        $this->openMessage = $id !== '' ? auth()->user()->contact_messages()->find($id) : '';
     }
 
     public function markRead():void

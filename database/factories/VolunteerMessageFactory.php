@@ -19,7 +19,7 @@ class VolunteerMessageFactory extends Factory
             'last_name' => $this->faker->randomElement($last_name),
             'email' => $this->faker->email(),
             'message' => 'Je suis attentioné, calin et doux avec les animaux',
-            'read' => $this->faker->boolean()
+            'read' => $this->faker->boolean(),
         ];
     }
 }
