@@ -2,7 +2,10 @@
 
 use App\Enums\AnimalStatus;
 use App\Enums\AnimalVaccines;
+use App\Enums\UserRole;
 use App\Livewire\Forms\AnimalEditForm;
+use App\Models\User;
+use App\Notifications\NewAnimalCreated;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -16,9 +19,20 @@ new class extends Component
     public AnimalEditForm $form;
 
     #[Title('Créer un animal')]
+
     public function store()
     {
+
+        logger('store() appelé');
+
         $animal = $this->form->store();
+
+        logger($animal);
+
+        $admin = User::where('role', UserRole::Administrator)->get();
+
+        Notification::send($admin, new NewAnimalCreated($animal));
+
         return redirect()->route('admin.animals.show', $animal->id);
     }
 

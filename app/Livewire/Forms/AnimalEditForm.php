@@ -65,7 +65,12 @@ class AnimalEditForm extends Form
 
     public function store()
     {
-        $this->validate();
+        try {
+            $this->validate();
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            logger($e->errors()); // log les erreurs
+            throw $e; // ou gérer
+        }
 
         $img_path = $this->img_path;
 
@@ -86,7 +91,7 @@ class AnimalEditForm extends Form
             }
         }
 
-        return Animal::create(
+        $animal = Animal::create(
             array_merge(
                 $this->only([
                     'name',
@@ -103,6 +108,8 @@ class AnimalEditForm extends Form
                 ['img_path' => $img_path]
             )
         );
+        logger($animal);
+        return $animal;
     }
 
     public function update()

@@ -20,7 +20,6 @@ new class extends Component
     #[Title('Dashboard')]
     public function render()
     {
-        $user = auth()->user();
         return view('pages.⚡dashboard.dashboard', [
             'volunteers' => Volunteer::paginate(3),
             'animals'=> Animal::paginate(3),
@@ -34,7 +33,7 @@ new class extends Component
             'care' => Animal::where('state', '=', AnimalStatus::Care)->count(),
             'pending' => Animal::where('state', '=', AnimalStatus::Pending)->count(),
             'draft' => Animal::where('state', '=', AnimalStatus::Draft)->count(),
-            'notifications' => $user->unreadNotifications
+            'notifications' => auth()->user()->unreadNotifications
         ]);
     }
 
@@ -46,5 +45,10 @@ new class extends Component
 
         $this->isOpenShowModal? $this->dispatch('open-modal') : $this->dispatch('close-modal');
         $this->openNotification = $id !== '' ? Notification::find($id) : '';
+    }
+
+    public function markAsRead(){
+        auth()->user()->unreadNotifications->markAsRead();
+        $this->dispatch('close-modal');
     }
 };

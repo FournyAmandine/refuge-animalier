@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->string('state');
             $table->string('img_path')->nullable();
             $table->string('description')->nullable();
+            //$table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

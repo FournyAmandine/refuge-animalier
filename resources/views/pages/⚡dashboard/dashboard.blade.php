@@ -75,6 +75,8 @@
                     </div>
                 @endforeach
                     <div class="flex gap-5 justify-center pt-9">
+                        <x-admin.modal.button wire:click="markAsRead()" label="Marquer tout comme lu"
+                                              title="Marquer comme lu" class="px-5 lg:text-xl"/>
                         <x-admin.modal.button wire:click="toggleModal('notif')" label="Quitter"
                                               title="Quitter les notifications" class="refuse pr-5 pl-12 lg:text-xl"/>
                     </div>

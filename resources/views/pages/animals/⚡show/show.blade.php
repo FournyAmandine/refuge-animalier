@@ -21,8 +21,12 @@
             <x-admin.dashboard.cards.definition class="w-90" dt="Date d'arrivée&nbsp;:" dd="{{ Carbon::parse($animal->created_at) ->locale('fr')->translatedFormat('d F Y') }}"/>
             <x-admin.dashboard.cards.definition class="w-90" dt="Statut&nbsp;:" dd="{{ $this->enumNameToValue($animal->state) }}"/>
             <x-admin.dashboard.cards.definition class="w-90" dt="Pelage&nbsp;:" dd="{!! $animal->coat !!}"/>
+            @if($animal->vaccines)
             <x-admin.dashboard.cards.definition class="w-90" dt="Vaccins&nbsp;:" dd="{!! $animal->vaccines !!}"/>
+            @endif
+            @if($animal->description)
             <x-admin.dashboard.cards.definition class="flex-wrap w-90" dt="Caractère&nbsp;:" dd="{!! $animal->description !!}"/>
+            @endif
         </dl>
     </section>
     <div class="pt-4 flex flex-col sm:flex-row gap-4 lg:justify-end px-4 min-[1400px]:px-20 min-[1700px]:px-30 min-[1920px]:max-w-[1280px] min-[1920px]:px-0 min-[1920px]:m-auto">
