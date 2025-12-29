@@ -7,7 +7,7 @@ use App\Http\Requests\ContactFormRequest;
 use App\Models\ContactMessage;
 use App\Models\User;
 use App\Notifications\NewAdoptionRequest;
-use App\Notifications\NewMessage;
+use App\Notifications\NewContactMessage;
 use http\Message;
 use Illuminate\Support\Facades\Notification;
 
@@ -24,8 +24,8 @@ class ContactController extends Controller
 
         $admin = User::where('role', '=', UserRole::Administrator)->get();
 
-        Notification::send($admin, new NewMessage($message));
+        Notification::send($admin, new NewContactMessage($message));
 
-        return redirect()->back()->with('success', 'Le message a bien été envoyé !');
+        return redirect()->back()->with('success', 'Merci, le message a bien été envoyé ! On vous recontacte dans les plus bref délais');
     }
 }

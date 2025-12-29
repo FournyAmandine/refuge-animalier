@@ -11,6 +11,7 @@ use App\Models\Notes;
 use App\Models\Task;
 use App\Models\User;
 use App\Models\Volunteer;
+use App\Models\VolunteerMessage;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -46,6 +47,8 @@ class DatabaseSeeder extends Seeder
         Task::factory(10)->create();
 
         ContactMessage::factory(10)->create();
+
+        VolunteerMessage::factory(10)->create();
 
         Adoption::factory(10)->create();
 

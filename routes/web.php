@@ -4,6 +4,7 @@ use App\Http\Controllers\AdoptionFormController;
 use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\VolunteerFormController;
 use App\Http\Middleware\IsAdministrator;
 use Illuminate\Support\Facades\Route;
 
@@ -11,7 +12,8 @@ Route::get('/', [HomePageController::class, 'index'])->name('public.homepage');
 Route::get('/about', function (){ return view('public.aboutpage'); })->name('public.aboutpage');
 Route::get('/contact', function (){ return view('public.contactpage'); })->name('public.contactpage');
 Route::post('/contact', [ContactController::class, 'store'])->name('public.contactpage.store');
-Route::get('/benevoles', function (){ return view('public.volunteerpage'); })->name('public.volunteerpage');
+Route::get('/benevoles', [VolunteerFormController::class, 'index'])->name('public.volunteerpage');
+Route::post('/benevoles', [VolunteerFormController::class, 'store'])->name('public.volunteerpage.store');
 Route::get('/adoption', [AdoptionFormController::class, 'index'])->name('public.adoptionpage');
 Route::post('/adoption', [AdoptionFormController::class, 'store'])->name('public.adoptionpage.store');
 Route::get('/animals', [AnimalController::class, 'index'])->name('public.animals.index');
@@ -30,7 +32,9 @@ Route::livewire('/admin/volunteers/{volunteer}/edit', 'pages::volunteers.edit')-
 Route::livewire('/admin/volunteers/{volunteer}', 'pages::volunteers.show')->name('admin.volunteers.show')->middleware('auth', IsAdministrator::class);
 Route::livewire('/admin/volunteers', 'pages::volunteers.index')->name('admin.volunteers.index')->middleware('auth', IsAdministrator::class);
 
-Route::livewire('/admin/messages', 'pages::messages.index')->name('admin.messages.index')->middleware('auth', IsAdministrator::class);
+Route::livewire('/admin/contact_messages', 'pages::contact_messages.index')->name('admin.contact_messages.index')->middleware('auth', IsAdministrator::class);
+
+Route::livewire('/admin/volunteer_messages', 'pages::volunteer_messages')->name('admin.volunteer_messages')->middleware('auth', IsAdministrator::class);
 
 Route::livewire('/admin/adoptions', 'pages::adoptions.index')->name('admin.adoptions.index')->middleware('auth', IsAdministrator::class);
 

@@ -3,7 +3,7 @@
     <section>
         <h3 class="title_section pb-5 lg:text-2xl">Non-lus</h3>
         @forelse($messages_unread as $message)
-            <x-admin.messages.article_card href="#" id="{!! $message->id !!}" message="{!! $message->message !!}"
+            <x-admin.messages.article_card id="{!! $message->id !!}" message="{!! $message->message !!}"
                                            name="{!! $message->first_name !!} {!! $message->last_name !!}"
                                            day="{!! \Carbon\Carbon::parse($message->created_at)->day !!}"
                                            email="{!! $message->email !!}" class="border-red-600" label="Répondre"/>
@@ -14,7 +14,7 @@
     <section class="pt-20">
         <h3 class="title_section pb-5 lg:text-2xl">Lus</h3>
         @forelse($messages_read as $message)
-            <x-admin.messages.article_card id="{!! $message->id !!}" href="#" message="{!! $message->message !!}"
+            <x-admin.messages.article_card id="{!! $message->id !!}" message="{!! $message->message !!}"
                                            name="{!! $message->first_name !!} {!! $message->last_name !!}"
                                            day="{!! \Carbon\Carbon::parse($message->created_at)->day !!}"
                                            email="{!! $message->email !!}" class="border-green-600" label="Répondre"/>

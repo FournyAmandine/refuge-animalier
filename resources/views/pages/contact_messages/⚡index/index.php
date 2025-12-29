@@ -11,7 +11,7 @@ new class extends Component
 
     public string|ContactMessage $openMessage = '';
 
-    #[Title('Vos messages')]
+    #[Title('Vos contact_messages')]
     public function toggleReadMessage(ContactMessage $message){
         $message->update([
             'read'=> !$message->done,
@@ -19,9 +19,9 @@ new class extends Component
     }
     public function render()
     {
-        return view('pages.messages.⚡index.index', [
-            'messages_unread' => ContactMessage::orderBy('created_at', 'desc')->where('messages.read', 0)->get(),
-            'messages_read' => ContactMessage::orderBy('created_at', 'desc')->where('messages.read', 1)->get(),
+        return view('pages.contact_messages.⚡index.index', [
+            'messages_unread' => ContactMessage::orderBy('created_at', 'desc')->where('contact_messages.read', 0)->get(),
+            'messages_read' => ContactMessage::orderBy('created_at', 'desc')->where('contact_messages.read', 1)->get(),
         ]);
     }
 

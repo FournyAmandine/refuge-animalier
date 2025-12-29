@@ -26,7 +26,7 @@
             <x-admin.button class="w-1/1 sm:w-[48%] lg:w-1/1 xl:w-[48%] p-3 pl-11 add mb-5" label="Ajouter un animal" title="Aller vers la page d'ajout d'un animal" href="{!! route('admin.animals.create') !!}"/>
             <x-admin.button class="w-1/1 sm:w-[48%] lg:w-1/1 xl:w-[48%] p-3 pl-11 add mb-5" label="Ajouter un bénévole" title="Aller vers la page d'ajout d'un bénévole" href="{!! route('admin.volunteers.create') !!}"/>
             <x-admin.button class="w-1/1 sm:w-[48%] lg:w-1/1 xl:w-[48%] p-3 pl-11 task mb-5" label="Voir vos tâches" title="Aller vers la page des tâches" href="{!! route('admin.tasks.index') !!}"/>
-            <x-admin.button class="w-1/1 sm:w-[48%] lg:w-1/1 xl:w-[48%] p-3 pl-11 message mb-5" label="Consulter vos messages" title="Aller vers la page des messages" href="{!! route('admin.messages.index') !!}"/>
+            <x-admin.button class="w-1/1 sm:w-[48%] lg:w-1/1 xl:w-[48%] p-3 pl-11 message mb-5" label="Consulter vos messages" title="Aller vers la page des messages" href="{!! route('admin.contact_messages.index') !!}"/>
             <x-admin.button class="w-1/1 sm:w-[48%] lg:w-1/1 xl:w-[48%] p-3 pl-11 adoptions mb-5" label="Gérer les demandes d'adoptions" title="Aller vers la page des demandes d'adoptions" href="{!! route('admin.adoptions.index') !!}"/>
             <x-admin.button class="w-1/1 sm:w-[48%] lg:w-1/1 xl:w-[48%] p-3 pl-11 adoptions mb-5" label="Gérer vos animaux" title="Aller vers la page des animaux" href="{!! route('admin.animals.index') !!}"/>
             <x-admin.button class="w-1/1 sm:w-[48%] lg:w-1/1 xl:w-[48%] p-3 pl-11 volunteers mb-5" label="Gérer vos bénévoles" title="Aller vers la page des bénévoles" href="{!! route('admin.volunteers.index') !!}"/>

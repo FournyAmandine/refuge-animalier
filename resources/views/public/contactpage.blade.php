@@ -5,7 +5,7 @@
     <main class="contact_form pb-11 relative sm:w-4/5 sm:m-auto">
         <x-public.sections.intro title="Contactez-nous&nbsp;!" ariane="Contact"/>
         @if(session('success'))
-            <div class="text-center py-5 text-xl">
+            <div class="text-center py-5 text-2xl">
                 {{ session('success') }}
             </div>
         @endif
