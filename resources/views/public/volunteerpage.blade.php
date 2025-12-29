@@ -2,9 +2,14 @@
     <x-slot:title_page>
         Devenir bénévole
     </x-slot:title_page>
-    <main class="contact_form pb-11 relative">
+    <main class="contact_form pb-11 relative sm:w-4/5 sm:m-auto">
         <x-public.sections.intro title="Devenez bénévole&nbsp;!" ariane="Refuge/Bénévole"/>
-        <x-public.sections.form>
+        @if(session('success'))
+            <div class="text-center py-5 text-2xl">
+                {{ session('success') }}
+            </div>
+        @endif
+        <x-public.sections.form route="{!! route('public.volunteerpage.store') !!}">
             <div class="md:flex md:gap-5 flex-wrap">
                 <x-public.form.fields.input field_name="last_name" required="required" placeholder="Doe" label="Entrez votre nom"/>
                 <x-public.form.fields.input field_name="first_name" required="required" placeholder="John" label="Entrez votre prénom"/>
