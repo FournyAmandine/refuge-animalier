@@ -26,7 +26,7 @@ class NewAdoptionRequest extends Notification
      */
     public function via(object $notifiable): array
     {
-        return ['database'];
+        return ['database', 'mail'];
     }
 
     /**
@@ -35,9 +35,10 @@ class NewAdoptionRequest extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->line('The introduction to the notification.')
-            ->action('Notification Action', url('/'))
-            ->line('Thank you for using our application!');
+            ->subject('Nouvelle demande d’adoption reçue')
+            ->greeting('Bonjour' . $notifiable->first_name . ',')
+            ->line('Vous avez reçu une demande d’adoption pour votre animal ' . $this->adoption->animal->name)
+            ->action('Voir la demande', route('admin.adoptions.index'));
     }
 
     /**
@@ -48,9 +49,11 @@ class NewAdoptionRequest extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            'adoption' => [$this->adoption->first_name,  $this->adoption->last_name],
+            'adoption' =>  $this->adoption->first_name . ' ' . $this->adoption->last_name,
             'animal' => $this->adoption->animal->name,
-            'message' => 'Vous avez reçu une nouvelle demande d’adoption'
+            'message' => 'Vous avez reçu une nouvelle demande d’adoption pour ' . $this->adoption->animal->name,
+            'message_id' => $this->adoption->id,
+            'route' => route('admin.adoptions.index')
         ];
     }
 

@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class NewMessage extends Notification
+class NewContactMessage extends Notification
 {
     use Queueable;
 
@@ -27,7 +27,7 @@ class NewMessage extends Notification
      */
     public function via(object $notifiable): array
     {
-        return ['database'];
+        return ['database', 'mail'];
     }
 
     /**
@@ -36,9 +36,11 @@ class NewMessage extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->line('The introduction to the notification.')
-            ->action('Notification Action', url('/'))
-            ->line('Thank you for using our application!');
+            ->subject('Nouveau message de contact')
+            ->greeting('Bonjour' . $notifiable->first_name . ',')
+            ->line('Vous avez reçu un nouveau message envoyé par ' . $this->message->first_name . ' ' . $this->message->last_name)
+            ->line('Message : ' . $this->message->message)
+            ->action('Voir le message', route('admin.contact_messages.index'));
     }
 
     /**
@@ -49,9 +51,11 @@ class NewMessage extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            'contact' => [$this->message->first_name,  $this->message->last_name],
+            'contact' => $this->message->first_name . ' ' . $this->message->last_name,
             'email' => $this->message->email,
-            'message' => 'Vous avez reçu un nouveau message'
+            'message' => 'Vous avez reçu un nouveau message de ' . $this->message->first_name,
+            'message_id' => $this->message->id,
+            'route' => route('admin.contact_messages.index')
         ];
     }
 }
