@@ -12,14 +12,14 @@ return new class extends Migration {
             $table->string('last_name');
             $table->string('first_name');
             $table->string('email');
-            $table->string('civile_state');
+            $table->string('civil_state');
             $table->string('street');
             $table->integer('number');
             $table->string('postal_code');
             $table->foreignId('animal_id')->constrained()->cascadeOnDelete();
             $table->string('locality');
             $table->text('description_place');
-            $table->boolean('validate');
+            $table->boolean('validate')->default(0);
             $table->timestamps();
         });
     }

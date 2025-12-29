@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Enums\AnimalStatus;
+use App\Enums\UserRole;
+use App\Http\Requests\AdoptionFormRequest;
+use App\Models\Adoption;
 use App\Models\Animal;
+use App\Models\User;
+use App\Notifications\NewAdoptionRequest;
+use Illuminate\Support\Facades\Notification;
 
 class AdoptionFormController extends Controller
 {
@@ -11,5 +17,18 @@ class AdoptionFormController extends Controller
     {
         $animals = Animal::where('state', AnimalStatus::Available)->get();
         return view('public.adoptionpage', compact('animals'));
+    }
+
+    public function store(AdoptionFormRequest $request){
+
+        $validated = $request->validated();
+
+        $adoption = Adoption::create($validated);
+
+        $admin = User::where('role', '=', UserRole::Administrator)->get();
+
+        Notification::send($admin, new NewAdoptionRequest($adoption));
+
+        return redirect()->back()->with('success', 'La demande a bien été envoyée !');
     }
 }

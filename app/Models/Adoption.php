@@ -14,7 +14,7 @@ class Adoption extends Model
         'last_name',
         'first_name',
         'email',
-        'civile_state',
+        'civil_state',
         'street',
         'number',
         'postal_code',
