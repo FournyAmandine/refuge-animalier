@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'breadcrumb' => 'Fiche bénévole',
+    'title_edit' => 'Modification d’une fiche bénévole',
+    'general_info' => 'Informations générales',
+    'last_name' => 'Entrez son nom',
+    'last_name_placeholder' => 'Chabroux',
+    'first_name' => 'Entrez son prénom',
+    'first_name_placeholder' => 'Maxime',
+    'birth_date' => 'Entrez sa date de naissance',
+    'email' => 'Entrez son email',
+    'telephone' => 'Entrez son téléphone',
+    'link_animal' => 'Son lien avec les animaux',
+    'link_animal_placeholder' => 'Elle est douce avec les animaux',
+    'photo' => 'Choisissez une/des photo(s)',
+    'password' => 'Entrez son mot de passe',
+    'availability_title' => 'Disponibilités',
+    'availability_label' => 'Entrez les disponibilités',
+    'monday' => 'Lundi',
+    'tuesday' => 'Mardi',
+    'wednesday' => 'Mercredi',
+    'thursday' => 'Jeudi',
+    'friday' => 'Vendredi',
+    'saturday' => 'Samedi',
+    'sunday' => 'Dimanche',
+    'update_profile' => 'Modifier la fiche',
+];

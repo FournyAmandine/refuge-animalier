@@ -1,34 +1,36 @@
 @props(['nav_class', 'li_class'])
 @php
     $links = [
-        ['li_class' => $li_class, 'href'=>route('dashboard'), 'label'=>'Votre tableau de bord', 'title'=>'Aller vers la page de votre tableau de bord'],
-        ['li_class' => $li_class, 'href'=>route('admin.animals.index'), 'label'=>'Animaux', 'title'=>'Aller vers la page des vos animaux'],
-        ['li_class' => $li_class, 'href'=>route('admin.volunteers.index'), 'label'=>'Bénévoles', 'title'=>'Aller vers la page de vos bénévoles'],
-        ['li_class' => $li_class, 'href'=>route('admin.contact_messages.index'), 'label'=>'Messages de contact', 'title'=>'Aller vers la page avec vos messages de contacts'],
-        ['li_class' => $li_class, 'href'=>route('admin.volunteer_messages'), 'label'=>'Demandes de bénévolat', 'title'=>'Aller vers la page avec vos contact_messages de contacts'],
-        ['li_class' => $li_class, 'href'=>route('admin.adoptions.index'), 'label'=>'Adoptions', 'title'=>'Aller vers la page avec vos demandes d’adoption'],
-        ['li_class' => $li_class, 'href'=>route('admin.tasks.index'), 'label'=>'Tâches', 'title'=>'Aller vers la page avec vos fiches à valider'],
-        ['li_class' => $li_class, 'href'=>route('profil'), 'label'=>'Votre profil', 'title'=>'Aller vers la page dde votre profil'],
+        ['li_class' => $li_class, 'href'=>route('dashboard'), 'label'=>__('header.dashboard'), 'title'=>__('header.go_to_header')],
+        ['li_class' => $li_class, 'href'=>route('admin.animals.index'), 'label'=>__('header.animals'), 'title'=>__('header.go_to_animals')],
+        ['li_class' => $li_class, 'href'=>route('admin.volunteers.index'), 'label'=>__('header.volunteers'), 'title'=>__('header.go_to_volunteers')],
+        ['li_class' => $li_class, 'href'=>route('admin.contact_messages.index'), 'label'=>__('header.contact_messages'), 'title'=>__('header.go_to_contact_messages')],
+        ['li_class' => $li_class, 'href'=>route('admin.volunteer_messages'), 'label'=>__('header.volunteer_requests'), 'title'=>__('header.go_to_volunteer_requests')],
+        ['li_class' => $li_class, 'href'=>route('admin.adoptions.index'), 'label'=>__('header.adoptions'), 'title'=>__('header.go_to_adoptions')],
+        ['li_class' => $li_class, 'href'=>route('admin.tasks.index'), 'label'=>__('header.tasks'), 'title'=>__('header.go_to_tasks')],
+        ['li_class' => $li_class, 'href'=>route('profil'), 'label'=>__('header.your_profile'), 'title'=>__('header.go_to_your_profile')],
     ];
 @endphp
 
-<ul class="{!! $nav_class !!} z-2 h-screen">
+<ul class="{{ $nav_class }} z-2 h-screen">
     <li>
-        <a wire:navigate href="{!! route('public.homepage') !!}" title="Revenir à la page d'accueil">
-            <img class="hidden lg:block" width="320" height="120" src="{!! asset('assets/img/logo-tel.svg') !!}"
-                 alt="Logo Les Pattes Heureuses avec une patte de chat dans une maison">
+        <a wire:navigate href="{{ route('public.homepage') }}" title="{{ __('header.go_home') }}">
+            <img class="hidden lg:block" width="320" height="120" src="{{ asset('assets/img/logo-tel.svg') }}"
+                 alt="{{ __('header.logo_alt') }}">
         </a>
     </li>
     <li class="lg:pb-5">
-        <p class="border-b-2 border-orange-600 text-2xl lg:text-3xl text-orange-600 font-[Baloo] font-bold">Bonjour Elise,</p>
+        <p class="border-b-2 border-orange-600 text-2xl lg:text-3xl text-orange-600 font-[Baloo] font-bold">
+            {{ __('header.hello_name', ['name' => 'Elise']) }}
+        </p>
     </li>
     @foreach($links as $link)
-        <x-admin.navigation.link li_class="{!! $li_class !!}" :href="$link['href']" :label="$link['label']" :title="$link['title']"/>
+        <x-admin.navigation.link li_class="{{ $li_class }}" :href="$link['href']" :label="$link['label']" :title="$link['title']"/>
     @endforeach
     <li class="pt-10 lg:pt-5">
         <form method="POST" action="{{ route('logout') }}" class="border-t-2 border-orange-600 py-8 flex justify-center">
             @csrf
-            <x-login.button text="Déconnexion"/>
+            <x-login.button text="{{ __('header.logout') }}"/>
         </form>
     </li>
 </ul>
