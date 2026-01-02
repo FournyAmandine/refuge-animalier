@@ -23,6 +23,10 @@ class AdoptionFormController extends Controller
 
         $validated = $request->validated();
 
+        if (auth()->check()) {
+            $validated['user_id'] = auth()->id();
+        }
+
         $adoption = Adoption::create($validated);
 
         $admin = User::where('role', '=', UserRole::Administrator)->get();

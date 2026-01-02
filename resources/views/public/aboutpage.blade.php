@@ -1,33 +1,43 @@
 @php
-    $history=[
-        'Sensibiliser le public à la cause animale,', 'Encourager l’adoption responsable,', 'Promouvoir la stérilisation et la vaccination,', 'Offrir un accompagnement bienveillant aux familles adoptantes.'
+    $history = [
+        __('public_about.history_1'),
+        __('public_about.history_2'),
+        __('public_about.history_3'),
+        __('public_about.history_4')
     ];
 
     $actions = [
-        'Accueillons les animaux abandonnés ou signalés,', 'Leur apportons soins, nourriture et attention,', 'Gérons les demandes d’adoption,', 'Organisons des rencontres entre adoptants et animaux,', 'Maintenons un contact régulier avec les nouvelles familles pour assurer le suivi.'
-    ]
+        __('public_about.actions_1'),
+        __('public_about.actions_2'),
+        __('public_about.actions_3'),
+        __('public_about.actions_4'),
+        __('public_about.actions_5')
+    ];
 @endphp
-
 
 <x-public.app>
     <x-slot:title_page>
-        Notre refuge
+        {{ __('public_about.title_page') }}
     </x-slot:title_page>
+
     <main>
-        <x-public.sections.intro title="Découvrez notre refuge" ariane="Refuge"/>
+        <x-public.sections.intro
+            title="{{ __('public_about.intro_title') }}"
+            ariane="{{ __('public_about.intro_ariane') }}"
+        />
 
         <x-public.sections.text-media-list
             :has_main_title="true"
-            section_title="Notre histoire"
-            content="Notre objectif est simple : protéger, soigner et replacer chaque animal dans un foyer adapté et aimant. Mais au-delà de l’adoption, nous croyons en une mission plus large&nbsp;:"
+            section_title="{{ __('public_about.history_title') }}"
+            content="{{ __('public_about.history_content') }}"
             class_button="px-3 hover:scale-110 duration-300 transition-all"
             class_div="md:flex-row justify-between md:gap-3 lg:gap-40 2xl:gap-80 md:pl-10"
             href="{!! route('public.adoptionpage') !!}"
-            title="Allez vers la page d'adoption'"
-            label="Devenir un foyer accueillant"
+            title="{{ __('public_about.history_button_title') }}"
+            label="{{ __('public_about.history_button_label') }}"
             :button="true"
             :src="asset('assets/img/chat_1.png')"
-            alt="illustration d'un chat chat blanc, gris, brun assis"
+            alt="{{ __('public_about.history_img_alt') }}"
             width_img="170"
             heigth_img="223"
             :src_patte="asset('assets/img/patte-right_medium.svg')"
@@ -37,17 +47,17 @@
 
         <x-public.sections.text-media
             :has_main_title="true"
-            section_title="Notre équipe"
+            section_title="{{ __('public_about.team_title') }}"
             class_div="md:flex-row-reverse md:gap-3 lg:items-center justify-between lg:gap-40 2xl:gap-80 md:pl-10"
-            content="Le refuge vit grâce à une petite équipe passionnée&nbsp;:&nbsp;des bénévoles dévoués, des familles d’accueil, et bien sûr Élise, la fondatrice, qui supervise les soins, les adoptions et la gestion quotidienne.Chaque membre apporte son énergie, son amour et ses compétences pour garantir le bien-être de nos pensionnaires."
+            content="{{ __('public_about.team_content') }}"
             class_button="px-5 hover:scale-110 duration-300 transition-all"
             class="flex-row-reverse"
             :button="true"
             href="{!! route('public.volunteerpage') !!}"
-            title="Allez vers la page bénévole"
-            label="Devenir bénévole"
+            title="{{ __('public_about.team_button_title') }}"
+            label="{{ __('public_about.team_button_label') }}"
             :src="asset('assets/img/chat_2.png')"
-            alt="illustration d'un chat gris, roux et brun assis et nous regarde"
+            alt="{{ __('public_about.team_img_alt') }}"
             width_img="160"
             heigth_img="185"
             class_img="absolute left-2 top-[-4rem] md:top-[-1rem] lg:top-10 lg:left-25"
@@ -56,12 +66,12 @@
 
         <x-public.sections.text-media-list
             :has_main_title="true"
-            section_title="Nos actions au quotidien"
-            content="Chaque jour, nous&nbsp;:"
+            section_title="{{ __('public_about.actions_title') }}"
+            content="{{ __('public_about.actions_content') }}"
             class_div="md:flex-row justify-between 2xl:items-center md:gap-3 lg:gap-40 2xl:gap-80 md:pl-10"
             :button="false"
             :src="asset('assets/img/chat_3.png')"
-            alt="illustration d'un chat gris"
+            alt="{{ __('public_about.actions_img_alt') }}"
             width_img="170"
             heigth_img="170"
             :src_patte="asset('assets/img/patte-right_medium.svg')"
@@ -71,17 +81,17 @@
 
         <x-public.sections.text-media
             :has_main_title="true"
-            section_title="Notre philosophie"
-            content="Nous croyons que chaque animal mérite une vie douce et respectueuse. Chaque adoption est une rencontre unique, une histoire qui commence. Aux Pattes Heureuses, nous prenons le temps de connaître nos compagnons pour leur offrir la famille qui leur correspond vraiment."
+            section_title="{{ __('public_about.philosophy_title') }}"
+            content="{{ __('public_about.philosophy_content') }}"
             class_button="px-4.5 hover:scale-110 duration-300 transition-all"
             class_div="md:flex-row-reverse md:gap-3 lg:items-center justify-between lg:gap-40 2xl:gap-80 md:pl-10"
             class="flex-row-reverse"
             :button="true"
             href="{!! route('public.animals.index') !!}"
-            title="Allez vers la page animaux"
-            label="Voir nos compagnons"
+            title="{{ __('public_about.philosophy_button_title') }}"
+            label="{{ __('public_about.philosophy_button_label') }}"
             :src="asset('assets/img/chat_4.png')"
-            alt="illustration d'un chat gris, roux et brun assis et nous regarde"
+            alt="{{ __('public_about.philosophy_img_alt') }}"
             width_img="140"
             heigth_img="190"
             class_img="absolute left-2 top-[-4rem] md:top-[-2rem] lg:top-5 lg:left-20"
