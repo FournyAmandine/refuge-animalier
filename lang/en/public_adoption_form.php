@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'placeholder_last_name' => 'Doe',
+    'label_last_name' => 'Enter your last name',
+    'placeholder_first_name' => 'John',
+    'label_first_name' => 'Enter your first name',
+    'placeholder_email' => 'John@doe.com',
+    'label_email' => 'Enter your email',
+    'label_civil_state' => 'Select your civil status',
+    'option_none' => '--Your choice--',
+    'option_married' => 'Married',
+    'option_single' => 'Single',
+    'option_couple' => 'Couple (living together)',
+    'option_family' => 'Parents',
+    'placeholder_street' => 'Rue du Spi',
+    'label_street' => 'Enter your street',
+    'placeholder_number' => '52',
+    'label_number' => 'Enter your number',
+    'placeholder_postal_code' => '6976',
+    'label_postal_code' => 'Enter your postal code',
+    'placeholder_locality' => 'Bartogne',
+    'label_locality' => 'Enter your locality',
+    'label_select_animal' => 'Select your companion',
+    'label_description_place' => 'Describe your living place',
+    'placeholder_description_place' => "I live in the countryside with a large garden...",
+];

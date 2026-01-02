@@ -6,7 +6,6 @@
         'class_button',
         'src',
         'alt',
-        'src_patte',
         'flex',
         'position_x',
         'position_top',
@@ -36,7 +35,7 @@
                 <img class="lg:w-1/1" src="{!! $src !!}" alt="{!! $alt !!}">
             </figure>
             <figure class="{!! $class_img !!} paw">
-                <img src="{!! $src_patte !!}" alt="Illustration d'une patte d'un chat orange">
+                <img src="{!! asset('assets/img/patte-left_medium.svg') !!}" alt="{!! __('public_animals_index.paw_icon_alt') !!}">
             </figure>
         </div>
     </div>
