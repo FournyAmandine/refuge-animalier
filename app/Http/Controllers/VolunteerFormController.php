@@ -22,7 +22,7 @@ class VolunteerFormController extends Controller
     {
         $validated = $request->validated();
 
-        $message = auth()->user()->volunteer_messages()->create($validated);
+        $message = VolunteerMessage::create($validated);
 
         $admin = User::where('role', '=', UserRole::Administrator)->get();
 
