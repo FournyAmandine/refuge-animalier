@@ -18,6 +18,8 @@ new class extends Component
 
     public AnimalEditForm $form;
 
+    public $name;
+
     #[Title('Créer un animal')]
 
     public function store()

@@ -37,4 +37,43 @@ class AnimalFactory extends Factory
             'updated_at' => Carbon::now(),
         ];
     }
+
+    public function withoutName(): AnimalFactory
+    {
+        return $this->state(function (array $attributes) {
+
+            return [
+
+                'name' => null,
+
+            ];
+
+        });
+    }
+
+    public function withoutType(): AnimalFactory
+    {
+        return $this->state(function (array $attributes) {
+
+            return [
+
+                'type' => null,
+
+            ];
+
+        });
+    }
+
+    public function withWrongDate(): AnimalFactory
+    {
+        return $this->state(function (array $attributes) {
+
+            return [
+
+                'birth_date' => 'bonjour',
+
+            ];
+
+        });
+    }
 }
