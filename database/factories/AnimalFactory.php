@@ -23,15 +23,15 @@ class AnimalFactory extends Factory
         $img_path = ['assets/img/bunny.png', 'assets/img/bouboule.png', 'assets/img/charly.png', 'assets/img/folette.png', 'assets/img/happy.png', 'assets/img/simba.png', 'assets/img/moka.png', 'assets/img/panpan.png'];
 
         return [
-            'name' => $this->faker->randomElement($name),
-            'sexe' => $this->faker->randomElement($sexe),
+            'name' => $this->faker->randomElement(['Charly', 'Frimousse', 'Happy', 'Panpan', 'Moka', 'Simba', 'Bouboule', 'Bunny', 'Folette']),
+            'sexe' => $this->faker->randomElement(['Mâle', 'Femelle']),
             'birth_date' => $this->faker->date(),
             'vaccines' => 'Tétanos, rage',
-            'coat' => $this->faker->randomElement($coat),
-            'type' => $this->faker->randomElement($type),
-            'race' => $this->faker->randomElement($race),
+            'coat' => $this->faker->randomElement(['Brun', 'Noir', 'Poils longs bruns et blancs', 'Poils longs noirs et blancs', 'Poils courts blancs']),
+            'type' => $this->faker->randomElement(['Chat', 'Lapin', 'Chien']),
+            'race' => $this->faker->randomElement(['Border Collie', 'American Staff', 'Caniche', 'Golden Retriever']),
             'state' => $this->faker->randomElement(AnimalStatus::cases()),
-            'img_path' => $this->faker->randomElement($img_path),
+            'img_path' => $this->faker->randomElement(['assets/img/bunny.png', 'assets/img/bouboule.png', 'assets/img/charly.png', 'assets/img/folette.png', 'assets/img/happy.png', 'assets/img/simba.png', 'assets/img/moka.png', 'assets/img/panpan.png']),
             'description' => 'Petit chien fou et amitieux',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
