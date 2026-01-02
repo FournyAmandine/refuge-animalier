@@ -20,7 +20,7 @@ class ContactController extends Controller
     public function store(ContactFormRequest $request){
         $validated = $request->validated();
 
-        $message = auth()->user()->contact_messages()->create($validated);
+        $message = ContactMessage::create($validated);
 
         $admin = User::where('role', '=', UserRole::Administrator)->get();
 
