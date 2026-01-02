@@ -25,16 +25,16 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $user = User::create([
-            'email' => 'amandine@fourny.com',
-            'name' => 'Amandine Fourny',
-            'password' => password_hash('azerty', PASSWORD_BCRYPT),
+            'email' => 'elise@patteheureuses.com',
+            'name' => 'Elise Cohen',
+            'password' => password_hash('admin', PASSWORD_BCRYPT),
             'role' => UserRole::Administrator
         ]);
 
         User::create([
-            'email' => 'loic@mozin.com',
-            'name' => 'Loïc Mozin',
-            'password' => password_hash('12345', PASSWORD_BCRYPT),
+            'email' => 'thomas@pattesheureuses.com',
+            'name' => 'Thomas Braquet',
+            'password' => password_hash('volunteer', PASSWORD_BCRYPT),
             'role' => UserRole::Volunteer
         ]);
 
