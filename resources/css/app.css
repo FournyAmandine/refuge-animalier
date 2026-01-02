@@ -5,7 +5,9 @@
 @import "./public/burger-menu.css";
 @import "./public/icones.css";
 @import "./public/navigation.css";
-@import "./public/general.css";
+@import "./general.css";
+@import "./admin/links.css";
+@import "./admin/icones.css";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -15,6 +17,5 @@
 @theme {
     --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
-/*    --font-heading: 'Baloo', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji'*/
+    --breakpoint-xs: 34rem;
 }

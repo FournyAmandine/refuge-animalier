@@ -1,12 +1,7 @@
-span:not(.ariane){
+span:not(.ariane):not(.required):not(.return):not(.paginate):not(.animal_name):not(.day):not(.number):not(.action):not(.menu){
     visibility: hidden;
 }
 
-.go_back{
-    background: url("../../images/icones/back.svg") center no-repeat;
-    width: 1.5rem;
-    display: inline-block;
-}
 
 .header_animaux{
     background: url("../../images/icones/pattes-small.svg") center no-repeat;
@@ -40,4 +35,12 @@ span:not(.ariane){
 .item_list{
     background: url("../../images/icones/pattes-small.svg") left no-repeat;
     padding: 0.5rem 2rem;
+}
+
+.search{
+    background-image: url("../../images/icones/search.svg");
+    background-position: right 1.5rem center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 1.5rem;
 }

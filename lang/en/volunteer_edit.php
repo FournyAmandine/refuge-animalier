@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'breadcrumb' => 'Volunteer Profile',
+    'title_edit' => 'Edit Volunteer Profile',
+    'general_info' => 'General Information',
+    'last_name' => 'Enter last name',
+    'last_name_placeholder' => 'Chabroux',
+    'first_name' => 'Enter first name',
+    'first_name_placeholder' => 'Maxime',
+    'birth_date' => 'Enter birth date',
+    'email' => 'Enter email',
+    'telephone' => 'Enter phone number',
+    'link_animal' => 'Relationship with animals',
+    'link_animal_placeholder' => 'She is gentle with animals',
+    'photo' => 'Choose photo(s)',
+    'password' => 'Enter password',
+    'availability_title' => 'Availability',
+    'availability_label' => 'Enter availability',
+    'monday' => 'Monday',
+    'tuesday' => 'Tuesday',
+    'wednesday' => 'Wednesday',
+    'thursday' => 'Thursday',
+    'friday' => 'Friday',
+    'saturday' => 'Saturday',
+    'sunday' => 'Sunday',
+    'update_profile' => 'Update Profile',
+];

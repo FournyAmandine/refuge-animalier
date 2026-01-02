@@ -1,0 +1,110 @@
+<main class="lg:flex-1 bg-orange-50/30">
+    <x-admin.sections.intro
+        ariane="{{ __('adoption.breadcrumb') }}"
+        title="{{ __('adoption.page_title') }}"
+    />
+
+    <section>
+        <h3 class="title_section pb-5 lg:text-2xl">{{ __('adoption.not_validated') }}</h3>
+
+        @forelse($adoptions_non_validate as $adoption)
+            <x-admin.adoptions.article_card
+                animal="{{ $adoption->animal->name }}"
+                name="{{ $adoption->first_name }} {{ $adoption->last_name }}"
+                day="{{ \Carbon\Carbon::parse($adoption->created_at)->day }}"
+                email="{{ $adoption->email }}"
+                class="border-red-600"
+                label="{{ __('adoption.view_request') }}"
+                id="{{ $adoption->id }}"
+            />
+        @empty
+            <p class="text-center text-xl">{{ __('adoption.all_validated') }}</p>
+        @endforelse
+    </section>
+
+    <section class="pt-20">
+        <h3 class="title_section pb-5 lg:text-2xl">{{ __('adoption.validated') }}</h3>
+
+        @forelse($adoptions_validate as $adoption)
+            <x-admin.adoptions.article_card
+                animal="{{ $adoption->animal->name }}"
+                name="{{ $adoption->first_name }} {{ $adoption->last_name }}"
+                day="{{ \Carbon\Carbon::parse($adoption->created_at)->day }}"
+                email="{{ $adoption->email }}"
+                class="border-green-600"
+                label="{{ __('adoption.view_request') }}"
+                id="{{ $adoption->id }}"
+            />
+        @empty
+            <p class="text-center text-xl">{{ __('adoption.none_validated') }}</p>
+        @endforelse
+    </section>
+
+    @if($isOpenShowModal)
+        <x-admin.modal.general
+            outside="$dispatch('toggleModal', { modal: 'show' })"
+            class="lg:text-2xl text-left text-orange-600 underline decoration-orange-400 decoration-3 [font-family:Baloo] font-semibold"
+        >
+            <x-slot:title>
+                {{ __('adoption.request_from') }}
+                {{ $openAdoption->first_name }} {{ $openAdoption->last_name }}
+            </x-slot:title>
+
+            <x-slot:content>
+                <div class="pt-5 flex gap-2 text-xl">
+                    <div class="flex flex-col gap-2.5">
+                        <p>{{ $openAdoption->email }}</p>
+                        <p>
+                            {{ \Carbon\Carbon::parse($openAdoption->created_at)
+                                ->locale(app()->getLocale())
+                                ->translatedFormat(__('adoption.date_format')) }}
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col gap-2 border-l-2 border-orange-600 pl-2">
+                        <p>{{ $openAdoption->civile_state }}</p>
+                        <p>
+                            {{ $openAdoption->street }}, {{ $openAdoption->number }},
+                            {{ $openAdoption->postal_code }} {{ $openAdoption->locality }}
+                        </p>
+                    </div>
+                </div>
+
+                <p class="pt-5">{{ $openAdoption->description_place }}</p>
+
+                <div class="flex gap-2 pt-5 pb-6 flex-wrap">
+                    <p class="text-xl">
+                        {{ __('adoption.wants_to_adopt') }} : {{ $openAdoption->animal->name }}
+                    </p>
+                    <img src="{{ asset('assets/img/small_paw.svg') }}" alt="">
+                    <p class="text-xl">{{ $openAdoption->animal->type }}</p>
+                    <img src="{{ asset('assets/img/small_paw.svg') }}" alt="">
+                    <p class="text-xl">
+                        {{ \Carbon\Carbon::parse($openAdoption->animal->birth_date)->age }}
+                        {{ __('adoption.years') }}
+                    </p>
+                </div>
+
+                <p class="border-t-2 border-orange-600 pt-3 text-sm">
+                    {{ __('adoption.notification_info') }}
+                </p>
+
+                <div class="flex gap-5 justify-end pt-9">
+                    <x-admin.modal.button
+                        wire:click="markNoValidate()"
+                        label="{{ __('adoption.refuse') }}"
+                        title="{{ __('adoption.refuse_title') }}"
+                        class="refuse pr-5 pl-12 lg:text-xl"
+                    />
+
+                    <x-admin.modal.button
+                        wire:click="markValidate()"
+                        label="{{ __('adoption.validate') }}"
+                        title="{{ __('adoption.validate_title') }}"
+                        class="validate pr-5 pl-16 lg:text-xl"
+                    />
+                </div>
+            </x-slot:content>
+        </x-admin.modal.general>
+    @endif
+</main>
