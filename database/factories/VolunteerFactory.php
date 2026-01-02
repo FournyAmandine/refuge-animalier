@@ -28,4 +28,43 @@ class VolunteerFactory extends Factory
             'updated_at' => Carbon::now(),
         ];
     }
+
+    public function withoutFirstName(): VolunteerFactory
+    {
+        return $this->state(function (array $attributes) {
+
+            return [
+
+                'first_name' => null,
+
+            ];
+
+        });
+    }
+
+    public function withoutLastName(): VolunteerFactory
+    {
+        return $this->state(function (array $attributes) {
+
+            return [
+
+                'last_name' => null,
+
+            ];
+
+        });
+    }
+
+    public function withWrongDate(): VolunteerFactory
+    {
+        return $this->state(function (array $attributes) {
+
+            return [
+
+                'birth_date' => 'bonjour',
+
+            ];
+
+        });
+    }
 }

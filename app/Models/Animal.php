@@ -23,7 +23,6 @@ class Animal extends Model
         return $this->hasMany(Notes::class);
     }
 
-
     public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'animal_user');

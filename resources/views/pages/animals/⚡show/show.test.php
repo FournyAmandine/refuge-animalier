@@ -1,9 +1,17 @@
 <?php
 
+use App\Models\Animal;
+use App\Models\User;
 use Livewire\Livewire;
+use function Pest\Laravel\actingAs;
 
 it('renders successfully', function () {
-    Livewire::test('pages::animals.show')
-        ->assertStatus(200)
-        ->assertSeeLivewire('pages::animals.show');
+    $user = User::factory()->create(['role' => \App\Enums\UserRole::Administrator]);
+    actingAs($user);
+
+    $animal = Animal::factory()->create();
+
+    Livewire::test('pages::animals.show', ['animal' => $animal->id])
+        ->assertStatus(200);
+
 });

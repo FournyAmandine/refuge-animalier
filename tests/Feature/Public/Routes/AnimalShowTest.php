@@ -10,7 +10,7 @@ $animal = \App\Models\Animal::factory()->create(
     ['state' => \App\Enums\AnimalStatus::Available]
 )->toArray();
 
-$response = \Pest\Laravel\get(route('public.animals.show', $animal['id']));
+$response = \Pest\Laravel\get(route('public.animals.show', $animal['id'], ['locale' => app()->getLocale()]));
 
 $response->assertStatus(200);
 });

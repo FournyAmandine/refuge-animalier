@@ -16,7 +16,7 @@ it('Verify that the user can access the animal’s details page correctly and th
         ['state' => AnimalStatus::Available]
     )->toArray();
 
-    $response = $this->get(route('public.animals.show', $animal['id']));
+    $response = $this->get(route('public.animals.show', $animal['id'], ['locale' => app()->getLocale()]));
 
     $response->assertStatus(200);
 

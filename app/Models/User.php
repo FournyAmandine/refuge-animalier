@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Enums\UserRole;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -52,9 +53,13 @@ class User extends Authenticatable
         ];
     }
 
+    protected $casts = [
+        'role' => UserRole::class,
+    ];
+
     public function animals(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'animal_user');
+        return $this->belongsToMany(Animal::class, 'animal_user');
     }
 
     public function volunteers(): hasMany

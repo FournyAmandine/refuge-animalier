@@ -18,7 +18,7 @@ it('Check if the animals we see have the correct ’available’ status', functi
         }
     }
 
-    $response = $this->get(route('public.animals.index'));
+    $response = $this->get(route('public.animals.index', ['locale' => app()->getLocale()]));
 
     $response->assertStatus(200);
 
