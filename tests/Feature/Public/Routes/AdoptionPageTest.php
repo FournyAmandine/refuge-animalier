@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Adoption;
 use App\Models\Animal;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -16,26 +17,20 @@ it('verifies if the public.adoptionpage dislays correctly the adoptionpage view 
 
 it('creates an adoption request from animal page', function () {
 
-        $animal = Animal::factory()->create();
+    $animal = Animal::factory()->create();
 
-        $this->post(route('public.adoptionpage.store',['locale' => app()->getLocale()]), [
-            'animal_id'   => $animal->id,
-            'first_name'  => 'Loic',
-            'last_name'   => 'Mozin',
-            'email'       => 'loic.mozin@gmail.com',
-            'civil_state' => 'marié',
-            'phone'       => '0458 96 78 96',
-            'street'     => 'Rue du Spit',
-            'number' => '52',
-            'locality'        => 'Betagne',
-            'postal_code' => '6687',
-            'description_place' => 'Grand, jardin...',
-            'user_id' =>1
-        ])->assertRedirect();
+    $payload = Adoption::factory()->make([
+        'animal_id' => $animal->id,
+    ])->toArray();
 
-        $this->assertDatabaseHas('adoptions', [
-            'email' => 'loic.mozin@gmail.com',
-            'animal_id' => $animal->id,
-        ]);
-    }
+    $this->post(
+        route('public.adoptionpage.store', ['locale' => app()->getLocale()]),
+        $payload
+    )->assertRedirect();
+
+    $this->assertDatabaseHas('adoptions', [
+        'email' => $payload['email'],
+        'animal_id' => $animal->id,
+    ]);
+}
 );

@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->string('locality');
             $table->text('description_place');
             $table->boolean('validate')->default(0);
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -1,18 +1,18 @@
 <?php
 
-it('load about page in english', function () {
+it('verifies if a page is display in french and english', function (string $locale, string $main_heading) {
+    App::setLocale($locale);
 
-    $this->get('en/about')->assertStatus(200);
+    $response = $this->get(route('public.aboutpage'));
 
-    expect(app()->getLocale())->toBe('en');
+    $response->assertStatus(200);
 
-});
+    $response->assertSee($main_heading);
+
+})->with([
+        ['fr', 'Découvrez notre refuge'],
+        ['en', 'Discover our shelter'],
+]);
 
 
-it('load about page in french', function () {
 
-    $this->get('fr/about')->assertStatus(200);
-
-    expect(app()->getLocale())->toBe('fr');
-
-});
