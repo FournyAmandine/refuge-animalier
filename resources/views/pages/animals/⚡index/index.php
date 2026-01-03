@@ -11,6 +11,8 @@ new class extends Component
 {
     use WithFileUploads;
     public string $term = '';
+    public $sortField = 'created_at';
+    public $sortOrder = 'asc';
     public string|Animal $chosenAnimal = '';
 
     public bool $isOpenDeleteModal = false;
@@ -19,8 +21,17 @@ new class extends Component
     public function render()
     {
         return view('pages.animals.⚡index.index', [
-            'animals' => Animal::where('name', 'like', '%' . $this->term . '%')->orderBy('created_at', 'desc')->paginate(8),
+            'animals' => Animal::where('name', 'like', '%' . $this->term . '%')->orderBy($this->sortField, $this->sortOrder)->paginate(8),
         ]);
+    }
+
+    public function sortBy($field){
+        if ($this->sortField === $field){
+            $this->sortOrder= $this->sortOrder === 'asc' ? 'desc' : 'asc';
+        } else{
+            $this->sortField = $field;
+            $this->sortOrder = 'asc';
+        }
     }
 
     #[On ('toggleModal')]
