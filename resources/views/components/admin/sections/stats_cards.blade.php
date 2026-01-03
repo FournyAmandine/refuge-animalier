@@ -13,6 +13,7 @@
         <x-admin.dashboard.article_stats_card stat="{{ __('dashboard.animals_pending_validation') }}" :number="$draft"/>
     </div>
     <x-admin.button
+        wire:click="exportToPdf()"
         label="{{ __('dashboard.export_pdf') }}"
         href="#"
         title="{{ __('dashboard.export_statistics_pdf') }}"
