@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'search_fields' => 'Search fields',
+    'search_fields' => 'Search',
     'placeholder' => 'Search your companion',
 ];

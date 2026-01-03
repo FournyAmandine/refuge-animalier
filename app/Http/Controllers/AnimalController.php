@@ -4,13 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Enums\AnimalStatus;
 use App\Models\Animal;
+use Illuminate\Http\Request;
 
 class AnimalController extends Controller
 {
-    public function index()
+    public $term = '';
+
+    public function index(Request $request)
     {
-        $animals = Animal::where('state', AnimalStatus::Available)->paginate(8);
-        return view('public.animals.index', compact('animals'));
+        $term = $request->query('term');
+
+        $animals = Animal::where('state', AnimalStatus::Available)->when($term, function($query) use ($term) {
+            $query->where('name', 'like', '%' . $term . '%');
+        })->paginate(8)->withQueryString();
+        return view('public.animals.index', compact('animals', 'term'));
     }
 
     public function show(Animal $animal)
