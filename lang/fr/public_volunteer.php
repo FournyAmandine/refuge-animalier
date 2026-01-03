@@ -3,7 +3,7 @@
 
 return [
     'title_page' => 'Devenir bénévole',
-    'intro_title' => 'Devenez bénévole&nbsp;!',
+    'intro_title' => 'Devenez bénévole!',
     'intro_ariane' => 'Refuge/Bénévole',
     'field_last_name' => 'Entrez votre nom',
     'field_first_name' => 'Entrez votre prénom',

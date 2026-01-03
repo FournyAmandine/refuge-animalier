@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'search_fields' => 'Champs de recherche',
+    'search_fields' => 'Recherche',
     'placeholder' => 'Rechercher votre compagnon',
 ];

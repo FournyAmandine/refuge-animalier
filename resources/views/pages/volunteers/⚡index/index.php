@@ -10,6 +10,8 @@ new class extends Component
 {
 
     public string $term = '';
+    public $sortField = 'created_at';
+    public $sortOrder = 'asc';
     public string|Volunteer $chosenVolunteer = '';
     public bool $isOpenDeleteModal = false;
     #[Title('Vos bénévoles')]
@@ -18,8 +20,17 @@ new class extends Component
     public function render()
     {
         return view('pages.volunteers.⚡index.index', [
-            'volunteers' => auth()->user()->volunteers()->where('first_name', 'like', '%' . $this->term . '%')->orWhere('last_name', 'like', '%' . $this->term . '%')->orderBy('created_at', 'desc')->paginate(6),
+            'volunteers' => auth()->user()->volunteers()->where('first_name', 'like', '%' . $this->term . '%')->orWhere('last_name', 'like', '%' . $this->term . '%')->orderBy($this->sortField, $this->sortOrder)->paginate(6),
         ]);
+    }
+
+    public function sortBy($field){
+        if ($this->sortField === $field){
+            $this->sortOrder= $this->sortOrder === 'asc' ? 'desc' : 'asc';
+        } else{
+            $this->sortField = $field;
+            $this->sortOrder = 'asc';
+        }
     }
 
     #[On ('toggleModal')]
